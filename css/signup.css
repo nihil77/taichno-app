@@ -18,7 +18,7 @@ main {
   min-height: 100vh;
   overflow: hidden;
   background-color: #1eb292;
-  background: linear-gradient(to right, #e2e2e2, #b7e4db);
+  background: linear-gradient(to right, #e2e2e2, #1eb292);
   padding: 2rem;
   display: flex;
   align-items: center;
@@ -212,7 +212,7 @@ main.sign-up-mode .carousel {
   width: 55%;
   left: 45%;
   top: 0;
-  background-color: #76e79e;;
+  background-color: #98eeb6;;
   border-radius: 2rem;
   display: grid;
   grid-template-rows: auto 1fr;
@@ -245,6 +245,10 @@ main.sign-up-mode .carousel {
 
 .img-3 {
   transform: scale(0.3) rotate(-20deg);
+}
+
+.img-4 {
+  transform: translate(0, -50px);
 }
 
 .image.show {

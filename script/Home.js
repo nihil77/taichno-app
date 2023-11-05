@@ -52,6 +52,7 @@ events();
 
 // Get the link element by its ID
 const signupLink = document.getElementById('signupLink');
+const get_started = document.getElementById('get_startetd');
 
 // Add a click event listener to the link
 signupLink.addEventListener('click', function (event) {
@@ -61,5 +62,16 @@ signupLink.addEventListener('click', function (event) {
   const url = 'signup.html'; // Replace with your desired URL
 
   // Navigate to the specified URL
+  window.location.href = url;
+});
+
+
+const getStartedLink = document.getElementById('get_started'); // Correct the element ID
+
+getStartedLink.addEventListener('click', function (event){
+  event.preventDefault(); 
+
+  const url = 'realtime.html'; // Replace with your desired URL
+
   window.location.href = url;
 });
