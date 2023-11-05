@@ -7,9 +7,6 @@
 </head>
 <body>
     <h1>Real-time Pose Estimation with BlazePose</h1>
-    <video id="video" width="640" height="480" autoplay></video>
-    <canvas id="canvas" width="640" height="480"></canvas>
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision/vision_bundle.js" crossorigin="anonymous"></script>
-    <script src="{{ url_for('static', filename='app.js') }}"></script>
+    <img id="video_feed" src="{{ url_for('video_feed') }}" style="display:block; margin:0 auto;">
 </body>
 </html>
