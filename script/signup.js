@@ -85,7 +85,7 @@ signInForm.addEventListener('submit', function (event) {
   auth.signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
       console.log("User logged in:", userCredential.user);
-      window.location.href = "success.html";
+      window.location.href = "Home.html";
     })
     .catch((error) => {
       console.error("Error:", error);

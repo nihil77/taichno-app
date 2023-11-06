@@ -1,5 +1,5 @@
 body{
-    background-color: #efeff2;
+    background-color: #f9f9f9;
     overflow: hidden;
 }
 .container {
@@ -7,8 +7,8 @@ body{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%) scale(0.98); /* Added scale transformation */
-    width: 1300px;
-    height: 800px;
+    width: 1100px;
+    height: 600px;
     padding: 50px;
     background-color: #f5f5f5;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -30,7 +30,7 @@ body{
     top:50%;
     transform: translate(0,-50%);
     border-radius: 10px;
-    box-shadow: 0 60px 50px -30px rgba(0, 0, 0, 0.27);
+    box-shadow: 0 20px 30px -30px rgba(0, 0, 0, 0.27);
 }
 .item:nth-child(1),
 .item:nth-child(2){
@@ -69,11 +69,9 @@ body{
     left: 100px;
     width: 400px; 
     text-align: left;
-    padding: 10px; /* Add padding for content spacing */
-    color: #f5f5f5;
+    padding: 20px; /* Add padding for content spacing */
     transform: translate(0, -50%);
     display: none;
-    font-family: "Poppins", sans-serif;
   }
 .item:nth-child(2) .content{
     display: block;
@@ -85,10 +83,13 @@ body{
     opacity: 0;
     animation:showcontent 1s ease-in-out 1 forwards
 }
-.item .des{
-    margin:20px 0;
+.item .des {
+    margin: 20px 0;
     opacity: 0;
-    animation:showcontent 1s ease-in-out 0.3s 1 forwards
+    font-family: "Poppins", sans-serif;
+    animation: showcontent 1s ease-in-out 0.3s 1 forwards;
+    color: #f5f5f5; /* Change text color to black or any other color that contrasts with the background */
+    font-weight: bold; /* Make the text bold */
 }
 .item button{
     padding:10px 20px;
@@ -126,6 +127,7 @@ body{
     border-radius: 50%;
     border:1px solid #555;
     transition: 0.5s;
+    margin-right: 100px;
 }.buttons button:hover{
     background-color: #1eb292;
 }

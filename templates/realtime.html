@@ -3,10 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real-time Pose Estimation with BlazePose</title>
+    <link rel="icon" href="img/logo.png" type="image/png"> 
+    <title>Real-time Pose Estimation</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #video_feed {
+            width: 1300px;
+            height: 800px;
+        }
+
+        .guided-image {
+            width: 400px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
 </head>
 <body>
-    <h1>Real-time Pose Estimation with BlazePose</h1>
-    <img id="video_feed" src="{{ url_for('video_feed') }}" style="display:block; margin:0 auto;">
+    <div class="container">
+        <div>
+            <h1>Real-time Pose Estimation with BlazePose</h1>
+            <img id="video_feed" src="{{ url_for('video_feed') }}" style="display: block; width: 100%;" alt="Real-time Video Feed">
+        </div>
+        <div>
+            <img class="guided-image" src="img/1.png" alt="Guided Image">
+        </div>
+    </div>
 </body>
 </html>

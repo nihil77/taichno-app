@@ -9,6 +9,7 @@ document.getElementById('prev').onclick = function(){
 }
 
 // Add event listeners for each button
+// Add if the user click another stances
 for (let i = 1; i <= 8; i++) {
     const tryNowButton = document.getElementById(`tryNowButton${i}`);
   

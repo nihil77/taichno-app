@@ -364,8 +364,8 @@ header .container {
 }
 /*=============== Features ===============*/
 .features {
-  background-color:#f9f9f9;
-  padding: 0px;
+  background-color:#dcf7f1;
+  padding: 10px;
   border-radius: 10px;
 }
 
@@ -374,13 +374,20 @@ header .container {
   padding: 20px;
   margin: 50px;
   border-radius: 10px;
+  color: #2d3236;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
 }
+.container h2 {
+  color: #2d3236;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
 .feature h3 {
   font-size: 1.2rem;
+  color: #2d3236;
   margin-bottom: 10px;
 }
 
@@ -555,20 +562,33 @@ img {
   }
 }
 
+/* Slider container styles */
+.slider-container {
+  text-align: center; /* Center content within the slider container */
+}
+
+/* Image styles */
+.vision {
+  max-width: 100%;
+  margin-bottom: 20%;
+  height: auto;
+}
+
 /* About Us Section Styles */
 .about-us {
-  background-color: #f9f9f9; 
-  padding: 4rem 0; 
+  background-color: #75F1B5; 
+  padding: 10px; 
   text-align: center;
+  margin-top: 2px;
 }
 
 .about-us h2 {
   font-size: 2.5rem; 
   color: #333; 
-  margin-top: 40rem;
+  margin-top: 10rem;
   margin-bottom: 1rem; 
-  padding-top: 5rem;
-  border-top: 3px solid #008000; /* Add a green (color code: #008000) top border */
+  padding-top: 1rem;
+  margin-top: 1%;
 }
 
 .about-us p {
@@ -579,19 +599,8 @@ img {
 }
 .about-us a {
   color: black;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-right: 40px;
   align-items: center;
   text-decoration: none; 
 }
-
-.image-container {
-  background-color: #f9f9f9; 
-  padding: 10px;
-}
-
-.vision {
-  max-width: auto; 
-  height: auto; 
-}
-
