@@ -1,5 +1,6 @@
 body{
-    background-color: #eaeaea;
+    background-color: #1eb292;
+    background: linear-gradient(to right, #e2e2e2, #1eb292);
     overflow: hidden;
 }
 .container{
@@ -7,8 +8,8 @@ body{
     left:50%;
     top:50%;
     transform: translate(-50%,-50%);
-    width:1000px;
-    height:600px;
+    width:1300px;
+    height:800px;
     padding:50px;
     background-color: #f5f5f5;
     box-shadow: 0 30px 50px #dbdbdb;
@@ -61,7 +62,7 @@ body{
     width:300px;
     text-align: left;
     padding:0;
-    color:#1a1919;
+    color:#2d3236;
     transform: translate(0,-50%);
     display: none;
     font-family: system-ui;
@@ -84,6 +85,9 @@ body{
 .item button{
     padding:10px 20px;
     border:none;
+    color: #000; /* Set the text color to black */
+    background-color: #1eb292; /* Change the background color here */
+    border-radius: 5px;
     opacity: 0;
     animation:showcontent 1s ease-in-out 0.6s 1 forwards
 }
@@ -97,7 +101,7 @@ body{
         transform: translate(0,0);
         filter:blur(0);
     }
-}
+}  
 .buttons{
     position: absolute;
     bottom:30px;
@@ -112,5 +116,5 @@ body{
     border:1px solid #555;
     transition: 0.5s;
 }.buttons button:hover{
-    background-color: #bac383;
+    background-color: #1eb292;
 }
