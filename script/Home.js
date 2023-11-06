@@ -66,12 +66,13 @@ signupLink.addEventListener('click', function (event) {
 });
 
 
-const getStartedLink = document.getElementById('get_started'); // Correct the element ID
+// JavaScript to open another HTML page when the "Get started" link is clicked
+document.getElementById('get_started').addEventListener('click', function (event) {
+  event.preventDefault();  // Prevent the default behavior of the link (i.e., navigating to #)
 
-getStartedLink.addEventListener('click', function (event){
-  event.preventDefault(); 
+  // Specify the URL of the HTML page you want to open
+  const newPageUrl = 'get_started.html';
 
-  const url = 'realtime.html'; // Replace with your desired URL
-
-  window.location.href = url;
+  // Redirect the user to the new HTML page
+  window.location.href = newPageUrl;
 });
