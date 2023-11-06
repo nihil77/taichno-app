@@ -41,15 +41,6 @@ function toggleAnimation() {
   });
 }
 
-function events() {
-  toggle_btn.addEventListener("click", toggleAnimation);
-  hamburger_menu.addEventListener("click", () => {
-    big_wrapper.classList.toggle("active");
-  });
-}
-
-events();
-
 // Get the link element by its ID
 const signupLink = document.getElementById('signupLink');
 const get_started = document.getElementById('get_startetd');

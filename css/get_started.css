@@ -1,18 +1,18 @@
 body{
-    background-color: #1eb292;
-    background: linear-gradient(to right, #e2e2e2, #1eb292);
+    background-color: #efeff2;
     overflow: hidden;
 }
-.container{
+.container {
     position: absolute;
-    left:50%;
-    top:50%;
-    transform: translate(-50%,-50%);
-    width:1300px;
-    height:800px;
-    padding:50px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.98); /* Added scale transformation */
+    width: 1300px;
+    height: 800px;
+    padding: 50px;
     background-color: #f5f5f5;
-    box-shadow: 0 30px 50px #dbdbdb;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s; /* Added transition for smoother scaling */
 }
 #slide{
     width:max-content;
@@ -29,8 +29,8 @@ body{
     z-index: 1;
     top:50%;
     transform: translate(0,-50%);
-    border-radius: 20px;
-    box-shadow:  0 30px 50px #505050;
+    border-radius: 10px;
+    box-shadow: 0 60px 50px -30px rgba(0, 0, 0, 0.27);
 }
 .item:nth-child(1),
 .item:nth-child(2){
@@ -51,22 +51,30 @@ body{
 .item:nth-child(5){
     left:calc(50% + 440px);
 }
-.item:nth-child(n+6){
+.item:nth-child(6){
     left:calc(50% + 660px);
     opacity: 0;
 }
-.item .content{
-    position: absolute;
-    top:50%;
-    left:100px;
-    width:300px;
-    text-align: left;
-    padding:0;
-    color:#2d3236;
-    transform: translate(0,-50%);
-    display: none;
-    font-family: system-ui;
+.item:nth-child(7){
+    left:calc(50% + 1100px);
+    opacity: 0;
 }
+.item:nth-child(n+8){
+    left:calc(50% + 1320px);
+    opacity: 0;
+}
+.item .content {
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    width: 400px; 
+    text-align: left;
+    padding: 10px; /* Add padding for content spacing */
+    color: #f5f5f5;
+    transform: translate(0, -50%);
+    display: none;
+    font-family: "Poppins", sans-serif;
+  }
 .item:nth-child(2) .content{
     display: block;
     z-index: 11111;
@@ -85,11 +93,14 @@ body{
 .item button{
     padding:10px 20px;
     border:none;
-    color: #000; /* Set the text color to black */
-    background-color: #1eb292; /* Change the background color here */
+    color: #000; 
+    background-color: #f5f5f5; 
     border-radius: 5px;
     opacity: 0;
-    animation:showcontent 1s ease-in-out 0.6s 1 forwards
+    animation:showcontent 1s ease-in-out 0.6s 1 forwards;
+    transition: 1.5s;
+}.item button:hover {
+    background-color: #1eb292; /* Change the background color on hover */
 }
 @keyframes showcontent{
     from{

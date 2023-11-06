@@ -1,9 +1,10 @@
-from flask import Flask, render_template, Response
+from flask import Flask, render_template, Response, request
 import cv2
 import mediapipe as mp
+import subprocess  # Import subprocess module
 
 app = Flask(__name__)
-
+        
 # Initialize MediaPipe BlazePose
 mp_pose = mp.solutions.pose
 pose = mp_pose.Pose()
@@ -45,6 +46,14 @@ def process_pose_estimation(frame):
 @app.route('/video_feed')
 def video_feed():
     return Response(generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+@app.route('/start_flask_app', methods=['GET', 'POST'])
+def start_flask_app():
+    try:
+        subprocess.Popen(['python', 'app_runner.py'])  # Start the Flask app in a separate process
+        return 'Flask app started successfully', 200
+    except Exception as e:
+        return f'Failed to start Flask app: {e}', 500
 
 if __name__ == '__main__':
     app.run(debug=True)
