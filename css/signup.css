@@ -28,8 +28,8 @@ main {
 .box {
   position: relative;
   width: 100%;
-  max-width: 1020px;
-  height: 640px;
+  max-width: 1100px;
+  height: 680px;
   background-color: #fff;
   border-radius: 3.3rem;
   box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27);
@@ -295,8 +295,8 @@ main.sign-up-mode .carousel {
 
 .bullets span {
   display: block;
-  width: 1rem; /* Increase the width */
-  height: 1rem; /* Increase the height */
+  width: 1.0rem; /* Increase the width */
+  height: 1.0rem; /* Increase the height */
   background-color: #aaa;
   margin: 0 0.25rem 0.25rem 0.25rem; /* Add 1rem of margin to the bottom */
   border-radius: 50%;
@@ -357,7 +357,7 @@ main.sign-up-mode .carousel {
     position: revert;
     height: auto;
     width: 100%;
-    padding: 3rem 2rem;
+    padding: 2rem 2rem;
     display: flex;
   }
 
@@ -389,7 +389,7 @@ main.sign-up-mode .carousel {
   }
 
   .text-wrap {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 
   .text-group h2 {
