@@ -64,6 +64,41 @@ def is_horse_stance_correct(landmarks):
 
     return is_correct_horse_stance, angle_left_hip_knee, angle_right_hip_knee
 
+    # Stance for Bow Arrow Stance
+def is_bow_arrow_stance_correct(landmarks):
+    # Check if the required keypoints are detected
+    keypoints_detected = (
+        landmarks[11].visibility > 0.5 and  # Left hip
+        landmarks[12].visibility > 0.5 and  # Right hip
+        landmarks[23].visibility > 0.5 and  # Left knee
+        landmarks[24].visibility > 0.5  # Right knee
+    )
+
+    if keypoints_detected:
+        # Calculate angles between hips and knees
+        angle_left_hip_knee = calculate_angle(
+            landmarks[11].x, landmarks[11].y, landmarks[23].x, landmarks[23].y, landmarks[24].x, landmarks[24].y
+        )
+
+        angle_right_hip_knee = calculate_angle(
+            landmarks[12].x, landmarks[12].y, landmarks[24].x, landmarks[24].y, landmarks[23].x, landmarks[23].y
+        )
+
+        # Define angle thresholds for Bow-Arrow Stance (you may need to adjust these)
+        min_angle_threshold = 160  # Minimum angle between hip and knee
+        max_angle_threshold = 200  # Maximum angle between hip and knee
+
+        # Check if both angles are within the defined thresholds
+        is_correct_bow_arrow_stance = (
+            min_angle_threshold <= angle_left_hip_knee <= max_angle_threshold and
+            min_angle_threshold <= angle_right_hip_knee <= max_angle_threshold
+        )
+    else:
+        is_correct_bow_arrow_stance = False
+
+    return is_correct_bow_arrow_stance, angle_left_hip_knee, angle_right_hip_knee
+
+
 @app.route('/')
 def index():
     return render_template('realtime.html')

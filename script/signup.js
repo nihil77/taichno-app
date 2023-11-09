@@ -4,6 +4,7 @@ const main = document.querySelector("main");
 const bullets = document.querySelectorAll(".bullets span");
 const images = document.querySelectorAll(".image");
 
+
 inputs.forEach((inp) => {
   inp.addEventListener("focus", () => {
     inp.classList.add("active");
@@ -38,6 +39,8 @@ bullets.forEach((bullet) => {
   bullet.addEventListener("click", moveSlider);
 });
 
+
+// Web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCnWbrjWukZRLmPF6uWqR4Wo_3m-rtz2hI",
   authDomain: "web-tai-6ebaa.firebaseapp.com",
@@ -48,6 +51,7 @@ const firebaseConfig = {
   appId: "1:149766567228:web:202ecd644d35a3c251da39"
 };
 
+// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 const auth = firebase.auth()
@@ -83,15 +87,26 @@ signInForm.addEventListener('submit', function (event) {
   const password = passwordLoginInput.value;
 
   auth.signInWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      console.log("User logged in:", userCredential.user);
-      window.location.href = "Home.html";
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-      displayErrorMessage("Invalid email or password. Please try again.");
-    });
+  .then((userCredential) => {
+    const user = userCredential.user;
+    const name = user.name; // Replace with the actual user's name
+    const email = user.email; // Use the email from the user object
+
+    // Construct the URL with user data as parameters
+    const userProfileUrl = `userProfile.html?name=${name}&email=${email}`;
+
+    console.log("User logged in:", user);
+    
+    // Redirect the user to the user profile page with parameters
+    window.location.href = userProfileUrl;
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+    displayErrorMessage("Invalid email or password. Please try again.");
+  });
+
 });
+
 
 // SIGN UP FORM
 
@@ -127,16 +142,24 @@ signUpForm.addEventListener('submit', function (event) {
   auth.createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
       console.log("User signed up:", userCredential.user);
-      userCredential.user.updateProfile({
-        displayName: name
-      });
 
-      // Redirect the user to the login page after successful sign-up
-      window.location.href = "signup.html"; // Replace with the actual login page URL
+      // Redirect the user to the user profile page with parameters
+      window.location.href = "signup.html";
     })
     .catch((error) => {
       console.error("Error:", error);
       displayErrorSignUpMessage("An error occurred. Please try again later.");
     });
 });
+
+
+// Listen for the browser's back button event
+window.addEventListener('popstate', function(event) {
+  if (event.state != null) {
+    window.location.href = 'Home.html'; 
+  }
+});
+
+// Push a state to the browser's history to enable the popstate event
+history.pushState({}, '');
 

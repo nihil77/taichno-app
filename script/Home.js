@@ -62,7 +62,7 @@ document.getElementById('get_started').addEventListener('click', function (event
   event.preventDefault();  // Prevent the default behavior of the link (i.e., navigating to #)
 
   // Specify the URL of the HTML page you want to open
-  const newPageUrl = 'get_started.html';
+  const newPageUrl = 'signup.html';
 
   // Redirect the user to the new HTML page
   window.location.href = newPageUrl;

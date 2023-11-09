@@ -26,7 +26,7 @@ main {
 }
 
 .box {
-  position: relative;
+  position: absolute;
   width: 100%;
   max-width: 1100px;
   height: 680px;
@@ -80,8 +80,8 @@ form.sign-up-form {
 }
 
 .logo img {
-  width: 27px;
-  margin-right: 0.3rem;
+  width: 100px; /* Adjust the width as needed */
+  height: auto; /* Maintain the aspect ratio */
 }
 
 .logo h4 {
@@ -94,6 +94,7 @@ form.sign-up-form {
 .heading h2 {
   font-size: 2.1rem;
   font-weight: 600;
+  margin-top: -5%;
   color: #151111;
 }
 
