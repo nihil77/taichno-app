@@ -5,7 +5,7 @@
   
   * {
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
@@ -20,7 +20,7 @@
   
   h1 {
     font-size: 5.4rem;
-    color: #56a5eb;
+    color: #2d3236;
     margin-bottom: 5rem;
   }
   
@@ -79,31 +79,28 @@
     display: none;
   }
   
-  /* BUTTONS */
-  .btn {
-    font-size: 1.8rem;
-    padding: 1rem 0;
-    width: 20rem;
-    text-align: center;
-    border: 0.1rem solid #56a5eb;
-    margin-bottom: 1rem;
-    text-decoration: none;
-    color: #56a5eb;
-    background-color: white;
-  }
-  
-  .btn:hover {
-    cursor: pointer;
-    box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
-    transform: translateY(-0.1rem);
-    transition: transform 150ms;
-  }
-  
-  .btn[disabled]:hover {
-    cursor: not-allowed;
-    box-shadow: none;
-    transform: none;
-  }
+/* BUTTONS */
+.btn {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+  width: 20rem;
+  text-align: center;
+  border: 0.1rem solid #8aedb9;
+  margin-bottom: 2rem;
+  text-decoration: none;
+  color: #000;
+  background-color: white;
+  border-radius: 0.5rem; /* Adjust the value to control the roundness */
+}
+
+.btn:hover {
+  cursor: pointer;
+  color: #1eb292;
+  box-shadow: 0 0.4rem 1.4rem 0 #8aedb9;
+  transform: translateY(-0.1rem);
+  transition: transform 150ms;
+}
+
   
   /* FORMS */
   form {
@@ -113,15 +110,3 @@
     align-items: center;
   }
   
-  input {
-    margin-bottom: 1rem;
-    width: 20rem;
-    padding: 1.5rem;
-    font-size: 1.8rem;
-    border: none;
-    box-shadow: 0 0.1rem 1.4rem 0 rgba(86, 185, 235, 0.5);
-  }
-  
-  input::placeholder {
-    color: #aaa;
-  }

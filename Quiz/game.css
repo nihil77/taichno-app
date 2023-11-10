@@ -1,22 +1,23 @@
 .choice-container {
-    display: flex;
-    margin-bottom: 0.5rem;
-    width: 100%;
-    font-size: 1.8rem;
-    border: 0.1rem solid rgb(86, 165, 235, 0.25);
-    background-color: white;
-  }
-  
-  .choice-container:hover {
-    cursor: pointer;
-    box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
-    transform: translateY(-0.1rem);
-    transition: transform 150ms;
-  }
+  display: flex;
+  margin-bottom: 2.5rem;
+  width: 100%;
+  font-size: 1.8rem;
+  border: 0.1rem solid #8aedb9;
+  background-color: white;
+  transition: background-color 150ms; /* Add a transition for a smooth color change */
+}
+
+.choice-container:hover {
+  cursor: pointer;
+  transform: translateY(-0.1rem);
+  background-color: #8aedb9; /* Change the background color on hover */
+}
+
   
   .choice-prefix {
     padding: 1.5rem 2.5rem;
-    background-color: #56a5eb;
+    background-color: #2d3236;
     color: white;
   }
   
@@ -52,13 +53,13 @@
   #progressBar {
     width: 20rem;
     height: 4rem;
-    border: 0.3rem solid #56a5eb;
+    border: 0.3rem solid #dcddf7;
     margin-top: 1.5rem;
   }
   
   #progressBarFull {
     height: 3.6rem;
-    background-color: #56a5eb;
+    background-color: #2d3236;
     width: 0%;
   }
   
