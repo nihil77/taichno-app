@@ -4,33 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/logo.png" type="image/png"> 
+    <link rel="stylesheet" href="./realtime.css" />
     <title>Real-time Pose Estimation</title>
-    <style>
-        .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        #video_feed {
-            width: 900px;
-            height: 600px;
-        }
-
-        .guided-image {
-            width: 400px; /* Adjust the width as needed */
-            height: auto; /* Maintain aspect ratio */
-        }
-    </style>
+       
 </head>
 <body>
     <div class="container">
         <div>
             <h1>Real-time Pose Estimation with BlazePose</h1>
-            <img id="video_feed" src="{{ url_for('video_feed') }}" style="display: block; width: 100%;" alt="Real-time Video Feed">
+            <img id="video_feed" src="{{ url_for('video_feed') }}" alt="Real-time Video Feed">
         </div>
-        <div>
-            <img class="guided-image" src="img/1.png" alt="Guided Image">
+        <div class="guided-image-container">
+            <img class="guided-image" src="/static/1.png" alt="Guided Image">
         </div>
     </div>
 </body>

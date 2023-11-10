@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#video_feed {
+    max-width: 900px; /* Set the maximum width of the container */
+    height: 200px;
+    border-radius: 24px;
+    background: #05A14F;
+}
+
+.guided-image-container {
+    max-width: 400px; /* Set the maximum width of the container */
+}
+
+.guided-image {
+    width: 335px;
+    height: 392px;
+    border-radius: 16px;
+    background: #05A14F;
+}
