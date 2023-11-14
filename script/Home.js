@@ -65,5 +65,5 @@ document.getElementById('get_started').addEventListener('click', function (event
   const newPageUrl = 'signup.html';
 
   // Redirect the user to the new HTML page
-  window.location.href = newPageUrl;
+  // window.location.href = newPageUrl;
 });
