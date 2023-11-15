@@ -19,7 +19,7 @@ li {
 	--lato: 'Lato', sans-serif;
 
 	--light: #F9F9F9;
-	--blue: #1eb292;
+	--green: #1eb292;
 	--light-blue: #CFE8FF;
 	--grey: #dcf7f1;
 	--dark-grey: #AAAAAA;
@@ -76,7 +76,7 @@ body {
 	height: 56px;
 	display: flex;
 	align-items: center;
-	color: var(--blue);
+	color: var(--green);
 	position: sticky;
 	top: 0;
 	left: 0;
@@ -140,7 +140,7 @@ body {
 	overflow-x: hidden;
 }
 #sidebar .side-menu.top li.active a {
-	color: var(--blue);
+	color: var(--green);
 }
 #sidebar.hide .side-menu li a {
 	width: calc(48px - (4px * 2));
@@ -150,7 +150,7 @@ body {
 	color: var(--dark);
 }
 #sidebar .side-menu.top li a:hover {
-	color: var(--blue);
+	color: var(--green);
 }
 #sidebar .side-menu li a .bx {
 	min-width: calc(60px  - ((4px + 6px) * 2));
@@ -158,7 +158,7 @@ body {
 	justify-content: center;
 }
 #sidebar .side-menu li.logout-link a {
-    margin-top: 160px; /* Add margin-top to move the Logout link down */
+    margin-top: 50px; /* Add margin-top to move the Logout link down */
 }
 
 #sidebar .side-menu li.logout-link a:hover {
@@ -239,17 +239,7 @@ body {
 	align-items: center;
 	height: 36px;
 }
-#content nav form .form-input input {
-	flex-grow: 1;
-	padding: 0 16px;
-	height: 100%;
-	border: none;
-	background: var(--grey);
-	border-radius: 36px 0 0 36px;
-	outline: none;
-	width: 100%;
-	color: var(--dark);
-}
+
 #content nav form .form-input button {
 	width: 36px;
 	height: 100%;
@@ -306,7 +296,7 @@ body {
 	left: 2px;
 	bottom: 2px;
 	width: calc(25px - 4px);
-	background: var(--blue);
+	background: var(--green);
 	border-radius: 50%;
 	transition: all .3s ease;
 }
@@ -340,27 +330,12 @@ body {
 	margin-bottom: 10px;
 	color: var(--dark);
 }
-#content main .head-title .left .breadcrumb {
-	display: flex;
-	align-items: center;
-	grid-gap: 16px;
-}
-#content main .head-title .left .breadcrumb li {
-	color: var(--dark);
-}
-#content main .head-title .left .breadcrumb li a {
-	color: var(--dark-grey);
-	pointer-events: none;
-}
-#content main .head-title .left .breadcrumb li a.active {
-	color: var(--blue);
-	pointer-events: unset;
-}
+
 #content main .head-title .btn-download {
 	height: 36px;
 	padding: 0 16px;
 	border-radius: 36px;
-	background: var(--blue);
+	background: var(--green);
 	color: var(--light);
 	display: flex;
 	justify-content: center;
@@ -408,8 +383,8 @@ body {
 #content main .box-info li:nth-child(1) .bx,
 #content main .box-info li:nth-child(2) .bx,
 #content main .box-info li:nth-child(3) .bx {
-    background: var(--light-blue);
-    color: var(--blue);
+    background: var(--light-green);
+    color: var(--dark);
 }
 
 #content main .box-info li .text h3 {
@@ -418,7 +393,7 @@ body {
     color: var(--dark);
 }
 #content main .box-info li:hover {
-    background: var(--blue); /* Change to the color you want on hover */
+    background: var(--green); /* Change to the color you want on hover */
     transition: 0.3s;
 }
 
@@ -493,7 +468,7 @@ body {
 	object-fit: cover;
 }
 #content main .table-data .order table tbody tr:hover {
-    background-color: var(--blue);
+    background-color: var(--green);
 }
 #content main .table-data .order table tr td .status {
 	font-size: 10px;
@@ -503,7 +478,7 @@ body {
 	font-weight: 700;
 }
 #content main .table-data .order table tr td .status.completed {
-	background: var(--blue);
+	background: var(--green);
 }
 #content main .table-data .order table tr td .status.process {
 	background: var(--yellow);
@@ -534,7 +509,7 @@ body {
 	cursor: pointer;
 }
 #content main .table-data .todo .todo-list li.completed {
-	border-left: 10px solid var(--blue);
+	border-left: 10px solid var(--green);
 }
 #content main .table-data .todo .todo-list li.not-completed {
 	border-left: 10px solid var(--orange);
@@ -544,12 +519,6 @@ body {
 }
 /* MAIN */
 /* CONTENT */
-
-
-
-
-
-
 
 
 
@@ -567,9 +536,6 @@ body {
 		display: none;
 	}
 }
-
-
-
 
 
 
@@ -686,7 +652,7 @@ body {
 }
 
 .user-activities .todo-list li:hover {
-    background-color: var(--blue);
+    background-color: var(--green);
     cursor: pointer;
 }
 
