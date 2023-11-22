@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="img/logo.png" type="image/png"> 
-    <link rel="stylesheet" href="./realtime.css" />
-    <title>Real-time Pose Estimation</title>
-       
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='realtime.css') }}">
+    <title>Pose</title>
 </head>
 <body>
+
+    <div class="video-container">
+        <!-- Use Flask variable for the video feed URL -->
+        <img id="video_feed" src="{{ url_for('video_feed') }}" alt="Real-time Video Feed">
+    </div>
+
     <div class="container">
-        <div>
-            <h1>Real-time Pose Estimation with BlazePose</h1>
-            <img id="video_feed" src="{{ url_for('video_feed') }}" alt="Real-time Video Feed">
+        <div class="guided-image">
+            <!-- Use Flask variable for the guided image source -->
+            <img src="{{ url_for('static', filename='your-guided-image.jpg') }}" alt="Guided Image">
         </div>
-        <div class="guided-image-container">
-            <img class="guided-image" src="/static/1.png" alt="Guided Image">
+        <div class="guided-text">
+            <h1>Follow these <small></small>steps:</h1>
+            <ol>
+                <li>Step 1: Your instruction here</li>
+                <li>Step 2: Your instruction here</li>
+                <!-- Add more steps as needed -->
+            </ol>
         </div>
     </div>
+
 </body>
+
 </html>

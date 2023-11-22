@@ -7,14 +7,17 @@
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	
 	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
 	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>	<!-- My CSS -->
 	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>	
 	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
 	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
 	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+	
 	<link rel="stylesheet" href="css/userProfile.css">
     <link rel="icon" href="img/logo.png" type="image/png"> 
+
 
 	<title>Personalized</title>
 </head>
@@ -38,7 +41,6 @@
         </li>
 
         <!-- MY PROFILE -->
-
         <li>
             <a href="#" onclick="switchToContent('myProfileContent')">
                 <i class='bx fi-sr-user'></i>
@@ -46,23 +48,19 @@
             </a>
         </li>
 
+        <!-- MY INFORMATION -->
         <li>
             <a href="#" onclick="switchToContent('myInformationContent')">
                 <i class="bx fi-sr-form"></i>
                 <span class="text">Information</span>
             </a>
         </li>
+
+		<!-- MY HELP & SUPPORT -->
         <li>
             <a href="#" onclick="switchToContent('myHelpSupportContent')">
 				<i class="bx fi-ss-info"></i>
 				<span class="text">Help & Support</span>
-            </a>
-        </li>
-        
-        <li>
-            <a href="#">
-                <i class="bx fi-sr-user-gear"></i>
-                <span class="text">Settings</span>
             </a>
         </li>
     </ul>
@@ -88,7 +86,7 @@
 		<!-- NAVBAR -->
 		<nav>
 			<i class='bx bx-menu' ></i>
-			<a href="#" class="nav-link">Personalized</a>
+			<a href="#" class="nav-link">Dashboard</a>
 			<form action="#">
 				<div class="form-input">
 					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
@@ -108,16 +106,6 @@
 
          <!-- MAIN - Home Content (Initially visible) -->
          <main id="homeContent">
-			<div class="head-title">
-				<div class="left">
-					<h1>TAICHNO</h1>
-				</div>
-				<a href="#" class="btn-download">
-					<i class='bx bxs-cloud-download' ></i>
-					<span class="text">Download PDF</span>
-				</a>
-			</div>
-
 			<ul class="box-info">
                 <li>
                     <i class="bx bxs-book"></i>
@@ -263,7 +251,7 @@
 		<!-- MAIN -->
 
                 
-                <!-- MAIN - My Profile Content (Initially hidden) -->
+        <!-- MAIN - My Profile Content (Initially hidden) -->
         <main id="myProfileContent" style="display: none;">
             <div class="container mt-5">
                 <div class="row justify-content-center">
@@ -324,22 +312,116 @@
 
         <!-- MAIN - Information Content (Initially hidden) -->
         <main id="myInformationContent" style="display: none;">
-            <h1>My Information Content</h1>
-            <p>This is your information content section.</p>
+
+			<div class="infocontainer">
+				<div class="infocontent">
+				  <div class="accordion_item" style="background-color: #F9F9F9;">
+					<div class="accordion_header" onclick="toggleAccordion(this)">
+					  <span>
+						8 Foundational Taijiquan
+					  </span>
+					  <div class="icon">
+						+
+					  </div>
+					</div>
+			  
+					<div class="accordion_content">
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi incidunt vel magnam nesciunt quisquam. Numquam aspernatur voluptatum odio fugiat assumenda autem aliquid voluptas iure earum eaque. Aut voluptate laboriosam tempora?
+					</p>
+					</div>
+
+				  </div>
+				  <div class="accordion_item" style="background-color: #F9F9F9;">
+					<div class="accordion_header" onclick="toggleAccordion(this)">
+					  <span>
+						BlazePose with MediaPipe
+					  </span>
+					  <div class="icon">
+						+
+					  </div>
+					</div>
+			  
+					<div class="accordion_content">
+					  <p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi incidunt vel magnam nesciunt quisquam. Numquam aspernatur voluptatum odio fugiat assumenda autem aliquid voluptas iure earum eaque. Aut voluptate laboriosam tempora?
+					  </p>
+					</div>
+				  </div>
+				  <div class="accordion_item" style="background-color: #F9F9F9;">
+					<div class="accordion_header" onclick="toggleAccordion(this)">
+					  <span>
+						Educational & Assessment
+					  </span>
+					  <div class="icon">
+						+
+					  </div>
+					</div>
+			  
+					<div class="accordion_content">
+					  <p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi incidunt vel magnam nesciunt quisquam. Numquam aspernatur voluptatum odio fugiat assumenda autem aliquid voluptas iure earum eaque. Aut voluptate laboriosam tempora?
+					  </p>
+					</div>
+				  </div>
+				  <div class="accordion_item" style="background-color: #F9F9F9;">
+					<div class="accordion_header" onclick="toggleAccordion(this)">
+					  <span>
+						Taichno a web application
+					  </span>
+					  <div class="icon">
+						+
+					  </div>
+					</div>
+			  
+					<div class="accordion_content">
+					  <p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi incidunt vel magnam nesciunt quisquam. Numquam aspernatur voluptatum odio fugiat assumenda autem aliquid voluptas iure earum eaque. Aut voluptate laboriosam tempora?
+					  </p>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			  
+			  
+
+
+
         </main>
 
         <!-- MAIN - Help & Support Content (Initially hidden) -->
         <main id="myHelpSupportContent" style="display: none;">
-            <h1>Help & Support</h1>
-            <p>This is your Help & Support content section.</p>
+			<div class="row">
+				<div class="col-4">
+				  <div id="list-example" class="list-group">
+					<a class="list-group-item list-group-item-action" href="#list-item-1">Item 1</a>
+					<a class="list-group-item list-group-item-action" href="#list-item-2">Item 2</a>
+					<a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
+					<a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
+				  </div>
+				</div>
+				<div class="col-8">
+				  <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+					<h4 id="list-item-1">Item 1</h4>
+					<p>...</p>
+					<h4 id="list-item-2">Item 2</h4>
+					<p>...</p>
+					<h4 id="list-item-3">Item 3</h4>
+					<p>...</p>
+					<h4 id="list-item-4">Item 4</h4>
+					<p>...</p>
+				  </div>
+				</div>
+			  </div>
         </main>
 
 	</section>
 	<!-- CONTENT -->
 
 
-    
 
+	
 	<script src="script/userProfile.js"></script>
+		
 </body>
 </html>

@@ -49,8 +49,7 @@ const get_started = document.getElementById('get_startetd');
 signupLink.addEventListener('click', function (event) {
   event.preventDefault(); // Prevent the default behavior (navigating to the href)
   
-  // Define the URL you want to navigate to
-  const url = 'signup.html'; // Replace with your desired URL
+  const url = 'signup.html'; 
 
   // Navigate to the specified URL
   window.location.href = url;
@@ -59,11 +58,24 @@ signupLink.addEventListener('click', function (event) {
 
 // JavaScript to open another HTML page when the "Get started" link is clicked
 document.getElementById('get_started').addEventListener('click', function (event) {
-  event.preventDefault();  // Prevent the default behavior of the link (i.e., navigating to #)
+  event.preventDefault();  
 
   // Specify the URL of the HTML page you want to open
   const newPageUrl = 'signup.html';
 
   // Redirect the user to the new HTML page
    window.location.href = newPageUrl;
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const toastLiveExample = document.getElementById('liveToast');
+  const toastBootstrap = new bootstrap.Toast(toastLiveExample);
+
+  const readMoreBtn = document.getElementById('readMoreBtn');
+  if (readMoreBtn) {
+    readMoreBtn.addEventListener('click', () => {
+      toastBootstrap.show();
+    });
+  }
 });

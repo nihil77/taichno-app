@@ -152,11 +152,32 @@ const bioQuotes = [
     logoutLink.addEventListener("click", function(event) {
         event.preventDefault(); // Prevent the default link behavior
         
-            // If user confirms, redirect to the home screen (replace with your actual URL)
+            // If user confirms, redirect to the home screen
             window.location.href = "Home.html";
 
     });
        
 });
 
+// My Information
+document.addEventListener('DOMContentLoaded', function () {
+    const accordionHeaders = document.querySelectorAll('.accordion_header');
+
+    accordionHeaders.forEach(header => {
+      header.addEventListener('click', function () {
+        const accordionItem = this.parentElement;
+        accordionItem.classList.toggle('open');
+        const content = accordionItem.querySelector('.accordion_content');
+        content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + 'px';
+      });
+    });
+  });
+
+  function toggleAccordion(header) {
+    const accordionItem = header.closest('.accordion_item');
+    const icon = header.querySelector('.icon');
+  
+    accordionItem.classList.toggle('open');
+    icon.classList.toggle('rotate');
+  }
   
