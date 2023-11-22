@@ -14,7 +14,7 @@ let availableQuestions = []; // Modified variable name
 let questions = [];
 
 // Fetch your JSON data
-fetch('Question.json') // Replace with the correct path to your JSON file
+fetch('LV1_Ques.json') // Replace with the correct path to your JSON file
   .then((res) => {
     return res.json();
   })

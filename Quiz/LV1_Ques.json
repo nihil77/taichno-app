@@ -1,0 +1,69 @@
+{
+    "questions": [
+      {
+        "question": "What is the Chinese name for Horse Stance in Taijiquan?",
+        "choice1": "Ma Bu",
+        "choice2": "Gong JianBu",
+        "choice3": "Zuo Pan Bu",
+        "choice4": "Si Liu Bu",
+        "answer": 1
+      },
+      {
+        "question": "Which Taijiquan stance is also known as Gong JianBu?",
+        "choice1": "Bow-Arrow Stance",
+        "choice2": "Sitting on Crossed Legs Stance",
+        "choice3": "False Stance",
+        "choice4": "Golden Rooster Standing on One Leg Stance",
+        "answer": 1
+      },
+      {
+        "question": "In Taijiquan, what is the English translation for Zuo Pan Bu?",
+        "choice1": "Four-Six Stance",
+        "choice2": "Tame the Tiger Stance",
+        "choice3": "Squat Stance",
+        "choice4": "Sitting on Crossed Legs Stance",
+        "answer": 4
+      },
+      {
+        "question": "Which Taijiquan stance is known as Si Liu Bu?",
+        "choice1": "False Stance",
+        "choice2": "Golden Rooster Standing on One Leg Stance",
+        "choice3": "Squat Stance",
+        "choice4": "Four-Six Stance",
+        "answer": 4
+      },
+      {
+        "question": "Fu Hu Bu is also called?",
+        "choice1": "Tame the Tiger Stance",
+        "choice2": "Bow-Arrow Stance",
+        "choice3": "Squat Stance",
+        "choice4": "Golden Rooster Standing on One Leg Stance",
+        "answer": 1
+      },
+      {
+        "question": "What is Xuan Ji Bu (or Xu Bu) in Taijiquan?",
+        "choice1": "Golden Rooster Standing on One Leg Stance",
+        "choice2": "False Stance",
+        "choice3": "Squat Stance",
+        "choice4": "Tame the Tiger Stance",
+        "answer": 2
+      },
+      {
+        "question": "Jin Gi Du Li is the Chinese name for which Taijiquan stance?",
+        "choice1": "Four-Six Stance",
+        "choice2": "Horse Stance",
+        "choice3": "Bow-Arrow Stance",
+        "choice4": "Golden Rooster Standing on One Leg Stance",
+        "answer": 4
+      },
+      {
+        "question": "Which Taijiquan stance is referred to as Zuo Dun?",
+        "choice1": "Sitting on Crossed Legs Stance",
+        "choice2": "False Stance",
+        "choice3": "Four-Six Stance",
+        "choice4": "Squat Stance",
+        "answer": 4
+      }
+    ]
+  }
+  
