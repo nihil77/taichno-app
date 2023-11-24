@@ -639,53 +639,114 @@ body {
 
 
 /* MAIN Information Content */
+/* Light mode styles */
 .infocontainer {
-	max-width: auto;
-	margin: 2 auto;
+    max-width: auto;
+    margin: 2 auto;
 }
 
 .accordion_item {
-	border: 1px solid #ddd;
-	margin-bottom: 10px;
-	border-radius: 5px;
-	overflow: hidden;
-	transition: max-height 0.5s ease, opacity 0.5s ease;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 
 .accordion_header {
-	background-color: var(--light);
-	padding: 10px;
-	display: flex;
-	justify-content: space-between;
-	cursor: pointer;
+    background-color: var(--light);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
 }
 
 .accordion_content {
-	padding: 4px;
-	max-height: 0;
-	overflow: hidden;
-	opacity: 1;
+    padding: 4px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 1;
 }
 
 .accordion_content p {
-	color: var(--dark);
-	font-family: var(--poppins);
-	margin: 10px;
+    color: var(--dark);
+    font-family: var(--poppins);
+    margin: 10px;
 }
 
 .icon {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 .accordion_item.open {
-	max-height: 300px;
+    max-height: 300px;
 }
 
 .accordion_item.open .accordion_content {
-	opacity: 1;
+    opacity: 1;
 }
 
 .rotate {
-	transform: rotate(-180deg);
-	transition: transform 0.5s ease;
+    transform: rotate(-180deg);
+    transition: transform 0.5s ease;
 }
+
+/* Dark mode styles */
+.dark-mode {
+    --light: #FBFBFB;
+    --grey: #A0A0A0;
+    --dark: #060714;
+}
+
+.dark-mode .accordion_header {
+    background-color: var(--dark);
+}
+
+.dark-mode .accordion_content p {
+    color: var(--light);
+}
+
+/* Toggle between light and dark mode */
+body.dark-mode {
+    background-color: var(--grey);
+    color: var(--light);
+}
+
+
+
+
+
+
+/* Style the video container */
+.video {
+    display: flex;
+    justify-content: center;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.custom-video-card {
+    display: inline-block;
+    width: 48%; 
+    margin: 0 1% 20px; 
+    vertical-align: top; 
+}
+
+.video-container {
+    display: flex;
+    align-items: center; /* Vertically center the content */
+}
+
+.video-container video {
+    flex: 0 0 50%; 
+}
+
+.video-container h4 {
+    flex: 0 0 50%; 
+    padding-left: 30px; 
+	align-items: center;
+}
+
+
