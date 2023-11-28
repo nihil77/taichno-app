@@ -646,19 +646,23 @@ body {
 }
 
 .accordion_item {
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
+    border: 2px solid #1eb292;
+    margin-bottom: 30px;
     border-radius: 5px;
     overflow: hidden;
     transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 
 .accordion_header {
-    background-color: var(--light);
-    padding: 10px;
+    background-color: var(--grey);
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     cursor: pointer;
+	color: var(--dark);
+	font-size: large;
+	font-weight: bold;
+	font-family: var(--poppins);
 }
 
 .accordion_content {
@@ -676,6 +680,11 @@ body {
 
 .icon {
     font-weight: bold;
+    color: var(--dark); /* Icon color in light mode */
+}
+
+.accordion_item.open .icon {
+    color: var(--light); /* Icon color in dark mode when accordion is open */
 }
 
 .accordion_item.open {
@@ -689,13 +698,6 @@ body {
 .rotate {
     transform: rotate(-180deg);
     transition: transform 0.5s ease;
-}
-
-/* Dark mode styles */
-.dark-mode {
-    --light: #FBFBFB;
-    --grey: #A0A0A0;
-    --dark: #060714;
 }
 
 .dark-mode .accordion_header {
@@ -717,6 +719,7 @@ body.dark-mode {
 
 
 
+
 /* Style the video container */
 .video {
     display: flex;
@@ -732,6 +735,13 @@ body.dark-mode {
     width: 48%; 
     margin: 0 1% 20px; 
     vertical-align: top; 
+}
+
+.custom-video-card h3 {
+	margin-top: 40px;
+	padding-left: 95%;
+    margin-bottom: 20px;
+	align-items: center;
 }
 
 .video-container {
