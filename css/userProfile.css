@@ -158,7 +158,7 @@ body {
 	justify-content: center;
 }
 #sidebar .side-menu li.logout-link a {
-    margin-top: 240px; /* Add margin-top to move the Logout link down */
+    margin-top: 100px; /* Add margin-top to move the Logout link down */
 	max-height: auto;
 }
 

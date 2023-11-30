@@ -8,56 +8,28 @@ document.getElementById('prev').onclick = function(){
     document.getElementById('slide').prepend(lists[lists.length - 1]);
 }
 
-// Execute this code when the page is fully loaded
-document.addEventListener("DOMContentLoaded", function () {
-// Add event listeners for each button
-// Add if the user click another stances
-for (let i = 1; i <= 8; i++) {
-    const tryNowButton = document.getElementById(`tryNowButton${i}`);
+
+// Function to open another HTML page and set the panel-heading
+function openAnotherPage(buttonId) {
+    // Get the button element
+    const button = document.getElementById(buttonId);
   
-    tryNowButton.addEventListener("click", function () {
-      // Redirect to the video feed page with a specific identifier
-      window.location.href = `http://127.0.0.1:5000?buttonId=${i}`; // Modify the URL as needed
+    // Add a click event listener to the button
+    button.addEventListener('click', function () {
+      // Get the classname of the clicked button
+      const className = button.getAttribute('data-class');
+  
+      // Replace 'pose.html' with the actual HTML page you want to open
+      window.location.href = `pose.html?className=${className}`;
     });
-  }
-  
-  function startFlaskApp(buttonId) {
-    // Send a GET request to start the Flask app with the specific button identifier
-    fetch(`/start_flask_app?buttonId=${buttonId}`, {
-      method: "GET",
-    })
-      .then((response) => {
-        if (response.status === 200) {
-          console.log("Flask app started successfully.");
-        } else {
-          console.error("Failed to start Flask app.");
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  }
-
-})
-
-
-// Trigger the server start when the get_started HTML page is opened
-window.onload = function () {
-  startServerOnLoad();
-};
-
-function startServerOnLoad() {
-  fetch('/start_server', {
-      method: 'GET',
-  })
-      .then((response) => {
-          if (response.status === 200) {
-              console.log('Flask app started successfully.');
-          } else {
-              console.error('Failed to start Flask app.');
-          }
-      })
-      .catch((error) => {
-          console.error('Error:', error);
-      });
 }
+
+// Call the function for each "Try Now" button
+openAnotherPage('tryNowButton1');
+openAnotherPage('tryNowButton2');
+openAnotherPage('tryNowButton3');
+openAnotherPage('tryNowButton4');
+openAnotherPage('tryNowButton5');
+openAnotherPage('tryNowButton6');
+openAnotherPage('tryNowButton7');
+openAnotherPage('tryNowButton8');

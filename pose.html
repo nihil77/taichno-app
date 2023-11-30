@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/pose.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.1/control_utils.css" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.1/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.1/control_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.2/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose@0.2/pose.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- BULMA NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="get_started.html">
+            <img src="img/logo.png" alt="Logo">
+        </a>
+        <p class="navbar-item">Taijiquan Real-Time Assessment</p>
+    </div>
+    
+  </nav>
+
+  <!-- CONTENTS --> 
+  <div class="container" style="margin-top: 20px;">
+    <div class="columns">
+
+      <!-- GUIDE IMAGE -->
+      <div class="column">
+        <article class="panel is-info">
+          <p class="panel-heading">Guide Image: </p>
+          <div class="panel-block">
+            <img class="guide-image" src="img/1.png" alt="Guide Image">
+          </div>
+        </article>      
+      </div>
+
+        <!-- MEDIAPIPE OUTPUT -->
+        <div class="column">
+          <article class="panel is-info">
+            <p class="panel-heading">
+              Taijiquan Stances
+            </p>
+            <div class="panel-block">
+              <canvas class="output5" width="680px" height="490px"></canvas>
+            </div>
+          </article>
+        </div>
+
+    </div>
+
+    <div class="guided-text">
+      <h1>Follow these <small></small>steps:</h1>
+      <ol>
+          <li>Step instruction here</li>
+          <li>Step instruction here</li>
+          <!-- Add more steps as needed -->
+      </ol>
+    </div>
+    
+    <div class="loading">
+      <div class="spinner"></div>
+    </div>
+    <div style="visibility: hidden;" class="control5"></div>
+
+  <!-- Link your separate JavaScript file -->
+  <script src="./script/pose.js"></script>
+</body>
+</html>

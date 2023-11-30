@@ -101,7 +101,7 @@ def is_bow_arrow_stance_correct(landmarks):
 
 @app.route('/')
 def index():
-    return render_template('realtime.html')
+    return render_template('Home.html')
 
 def generate_frames():
     while True:
@@ -148,7 +148,7 @@ def video_feed():
     return Response(generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 # Flag to indicate whether the server should start
-start_server_flag = False
+start_server_flag = True;
 
 @app.route('/start_server', methods=['GET'])
 def start_server():
