@@ -101,9 +101,6 @@ def is_bow_arrow_stance_correct(landmarks):
 
 @app.route('/')
 def index():
-
-    start_flask_app()
-
     return render_template('realtime.html')
 
 def generate_frames():
@@ -146,13 +143,25 @@ def process_pose_estimation(frame):
 
     return frame
 
-@app.route('/start_flask_app', methods=['GET', 'POST'])
-def start_flask_app():
-    try:
-        subprocess.Popen(['python', 'app.py'])  # Start the Flask app in a separate process
-        return 'Flask app started successfully', 200
-    except Exception as e:
-        return f'Failed to start Flask app: {e}', 500
+@app.route('/video_feed')
+def video_feed():
+    return Response(generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+# Flag to indicate whether the server should start
+start_server_flag = False
+
+@app.route('/start_server', methods=['GET'])
+def start_server():
+    global start_server_flag
+    if start_server_flag:
+        try:
+            subprocess.Popen(['python', 'app_runner.py'])
+            return 'Flask app started successfully', 200
+        except Exception as e:
+            return f'Failed to start Flask app: {e}', 500
+    else:
+        return 'Server not started. Set start_server_flag to True to start the server.', 200
+
 
 if __name__ == '__main__':
     app.run(debug=True)

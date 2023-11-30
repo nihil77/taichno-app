@@ -8,6 +8,8 @@ document.getElementById('prev').onclick = function(){
     document.getElementById('slide').prepend(lists[lists.length - 1]);
 }
 
+// Execute this code when the page is fully loaded
+document.addEventListener("DOMContentLoaded", function () {
 // Add event listeners for each button
 // Add if the user click another stances
 for (let i = 1; i <= 8; i++) {
@@ -35,4 +37,27 @@ for (let i = 1; i <= 8; i++) {
         console.error("Error:", error);
       });
   }
-  
+
+})
+
+
+// Trigger the server start when the get_started HTML page is opened
+window.onload = function () {
+  startServerOnLoad();
+};
+
+function startServerOnLoad() {
+  fetch('/start_server', {
+      method: 'GET',
+  })
+      .then((response) => {
+          if (response.status === 200) {
+              console.log('Flask app started successfully.');
+          } else {
+              console.error('Failed to start Flask app.');
+          }
+      })
+      .catch((error) => {
+          console.error('Error:', error);
+      });
+}
