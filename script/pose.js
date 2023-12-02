@@ -145,30 +145,59 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Conditionally set the image source based on className
   if (className === 'Horse Stance (Ma Bu)') {
-      guideImage.src = 'img/1.png';
-      guideImage.alt = 'Guide Image 1';
+    guideImage.src = 'img/1.png';
+    guideImage.alt = 'Guide Image 1';
+    setGuideText('Follow these for Horse Stance.', ['Step 1: Instruction for Horse Stance', 'Step 2: Another instruction for Horse Stance']);
   } else if (className === 'Bow-Arrow Stance (Gong JianBu)') {
-      guideImage.src = 'img/2.png';
-      guideImage.alt = 'Guide Image 2';
+    guideImage.src = 'img/2.png';
+    guideImage.alt = 'Guide Image 2';
+    setGuideText('Follow these for Bow-Arrow Stance.', ['Step 1: Instruction for Bow-Arrow Stance', 'Step 2: Another instruction for Bow-Arrow Stance']);
   } else if (className == 'Sitting on Crossed Legs Stance (Zuo Pan Bu)') {
-      guideImage.src = 'img/3.png';
-      guideImage.alt = 'Guide Image 3';
+    guideImage.src = 'img/3.png';
+    guideImage.alt = 'Guide Image 3';
+    setGuideText('Follow these for Sitting on Crossed Legs Stance.', ['Step 1: Instruction for Sitting on Crossed Legs Stance', 'Step 2: Another instruction for Sitting on Crossed Legs Stance']);
   } else if (className == 'Four-Six Stance (Si Liu Bu)') {
     guideImage.src = 'img/4.png';
     guideImage.alt = 'Guide Image 4';
+    setGuideText('Follow these for Four-Six Stance.', ['Step 1: Instruction for Sitting on Crossed Legs Stance', 'Step 2: Another instruction for Sitting on Crossed Legs Stance']);
   } else if (className == 'Tame the Tiger Stance (Fu Hu Bu)') {
     guideImage.src = 'img/5.png';
     guideImage.alt = 'Guide Image 5';
+    setGuideText('Follow these for Tame the Tiger Stance.', ['Step 1: Instruction for Sitting on Crossed Legs Stance', 'Step 2: Another instruction for Sitting on Crossed Legs Stance']);
   } else if (className == 'False Stance (Xuan Ji Bu or Xu Bu)') {
     guideImage.src = 'img/6.png';
     guideImage.alt = 'Guide Image 6';
+    setGuideText('Follow these for False Stance.', ['Step 1: Instruction for Sitting on Crossed Legs Stance', 'Step 2: Another instruction for Sitting on Crossed Legs Stance']);
   } else if (className == 'Golden Rooster Standing on One Leg Stance (Jin Gi Du Li)') {
     guideImage.src = 'img/7.png';
     guideImage.alt = 'Guide Image 7';
+    setGuideText('Follow these for Golden Rooster Standing on One Leg Stance.', ['Step 1: Instruction for Sitting on Crossed Legs Stance', 'Step 2: Another instruction for Sitting on Crossed Legs Stance']);
   } else if (className == 'Squat Stance (Zuo Dun)') {
     guideImage.src = 'img/8.png';
     guideImage.alt = 'Guide Image 8';
+    setGuideText('Follow these for Squat Stance.', ['Step 1: Instruction for Sitting on Crossed Legs Stance', 'Step 2: Another instruction for Sitting on Crossed Legs Stance']);
+  }
+});
+
+function setGuideText(text, steps) {
+  // Set the guide text
+  const guidedText = document.querySelector('.guided-text');
+  guidedText.querySelector('small').textContent = text;
+
+  // Set the ordered list for steps
+  const ol = document.createElement('ol');
+  steps.forEach(step => {
+    const li = document.createElement('li');
+    li.textContent = step;
+    ol.appendChild(li);
+  });
+
+  // Clear any existing steps
+  const existingOl = guidedText.querySelector('ol');
+  if (existingOl) {
+    existingOl.remove();
   }
 
-
-});
+  // Append the new ordered list
+  guidedText.appendChild(ol);
+}

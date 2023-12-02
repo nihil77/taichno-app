@@ -53,38 +53,40 @@ body {
 
 
 
-/* Style for the guided text container */
+/* Custom styles for the guided text container */
 .guided-text {
-    display: flex;
-    flex-direction: column;
-    padding-left: 10px;
-    height: auto; /* Ensure the container takes full height */
-  }
-  
-  /* Style for the heading within the guided text */
-  .guided-text h1 {
-    font-size: 24px;
-    color: #333;
-    font-family: var(--poppins);
-    font-weight: bold;
-  }
-  
-  /* Style for the list items within the guided text */
-  .guided-text ol {
-    list-style-type: decimal;
-    font-family: var(--poppins);
-  }
-  
-  .guided-text li {
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: var(--dark);
-  }
-  
-  /* Style for the small element within the guided text */
-  .guided-text small {
-    color: var(--dark);
-  }
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  height: auto; /* Ensure the container takes full height */
+  margin-top: -120px; /* Add margin from the top */
+}
+
+/* Rest of your existing styles remain unchanged */
+.guided-text h1 {
+  font-size: 24px;
+  color: var(--dark);
+  font-family: var(--poppins);
+  font-weight: bold;
+}
+
+.guided-text ol {
+  list-style-type: none;
+  padding-left: 0;
+  font-family: var(--poppins);
+}
+
+.guided-text li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: var(--dark);
+}
+
+.guided-text small {
+  color: var(--dark);
+}
+
+
   
   
   
