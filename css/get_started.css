@@ -105,6 +105,8 @@ body{
     font-size: 40px;
     font-weight: bold;
     opacity: 0;
+    color: var(--light);
+    text-shadow: 1px 1px 2px rgba(0, 1, 10, 0.7); /* Add a subtle text shadow for better readability */
     animation:showcontent 1s ease-in-out 1 forwards
 }
 .item .des {
@@ -114,7 +116,10 @@ body{
     animation: showcontent 1s ease-in-out 0.3s 1 forwards;
     color: var(--light); /* Change text color to black or any other color that contrasts with the background */
     font-weight: bold; /* Make the text bold */
+    font-size: large;
+    text-shadow: 1px 1px 2px rgba(0, 1, 10, 0.7); /* Add a subtle text shadow for better readability */
 }
+
 .item button{
     padding:10px 20px;
     border:none;
@@ -122,6 +127,10 @@ body{
     background-color: var(--light); 
     border-radius: 5px;
     opacity: 0;
+    font-weight: bold;
+    font-size: large;
+    font-family: var(--poppins);
+    width: 100px;
     animation:showcontent 1s ease-in-out 0.6s 1 forwards;
     transition: 1.5s;
 }.item button:hover {

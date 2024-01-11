@@ -22,10 +22,10 @@
 
             <div class="links">
               <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#features">Features</a></li>
-                <li><a href="#about-us">About Us</a></li>
-                <li><a href="#" class="btn" id="signupLink">Sign up</a></li>
+                <li><a href="#about-us">Contact Us</a></li>
+                <li><a href="#signup" class="btn" id="signupLink">Sign up</a></li>
               </ul>
             </div>
 
@@ -79,76 +79,126 @@
           </div>          
         </div>
 
-      <div class="container">
-        <div class="card-container">
-          <div class="card__container">
+        <div class="container" id="blur-container">
+          <div class="card-container">
+            <div class="card__container">
+            <!-- Card 1-->
             <article class="card__article">
               <img src="img/bg4.png" alt="image" class="card__img">
-    
               <div class="card__data">
                 <span class="card__description">Taijiquan</span>
-                <h2 class="card__title">8  Taijiquan</h2>
-                <a href="#" class="card__button">Read More</a>
-              </div>
-              
+                <h2 class="card__title">8 Taijiquan</h2>
+                <a href="#myModal1" onclick="toggle('myModal1')" class="card__button">Read More</a>
+              </div> 
             </article>
-        
+      
+            <!-- Card 2-->
             <article class="card__article">
               <img src="img/bg5.png" alt="image" class="card__img">
-        
               <div class="card__data">
-                <span class="card__description">Computer Vision</span>
-                <h2 class="card__title">MediaPipe</h2>
-                <a href="#" class="card__button">Read More</a>
-              </div>
-            </article>
-        
-            <article class="card__article">
-              <img src="img/bg6.png" alt="image" class="card__img">
-        
-              <div class="card__data">
-                <span class="card__description">Educational & Assessment</span>
-                <h2 class="card__title">Real-Time</h2>
-                <a href="#" class="card__button">Read More</a>
+                <span class="card__description">MediaPipe</span>
+                <h2 class="card__title">BlazePose</h2>
+                <a href="#myModal2" onclick="toggle('myModal2')" class="card__button">Read More</a>
               </div>
             </article>
       
+            <!-- Card 3-->
+            <article class="card__article">
+              <img src="img/bg6.png" alt="image" class="card__img">
+              <div class="card__data">
+                <span class="card__description">Educational & Assessment</span>
+                <h2 class="card__title">Real-Time</h2>
+                <a href="#myModal3" onclick="toggle('myModal3')" class="card__button">Read More</a>
+              </div>
+            </article>
+      
+            <!-- Card 4-->
             <article class="card__article">
               <img src="img/bg7.png" alt="image" class="card__img">
-        
               <div class="card__data">
                 <span class="card__description">Taichno</span>
                 <h2 class="card__title">Web platform</h2>
-                <a href="#" class="card__button">Read More</a>
+                <a href="#myModal4" onclick="toggle('myModal4')" class="card__button">Read More</a>
               </div>
             </article>
+      
           </div>
+        </div>
+      
+      <!-- Modal 1 HTML structure -->
+      <div class="modal" id="myModal1">
+        <div class="modal-content">
+          <span class="close" onclick="toggle('myModal1', 'blur-container')">&times;</span>
+          <h2>Login Required</h2>
+          <p>
+            Please log in to access the features of the application.
+          </p>
         </div>
       </div>
 
+      <!-- Modal 2 HTML structure -->
+      <div class="modal" id="myModal2">
+        <div class="modal-content">
+          <span class="close" onclick="toggle('myModal2', 'blur-container')">&times;</span>
+          <h2>Login Required</h2>
+          <p>
+            Please log in to access the features of the application.
+          </p>
+        </div>
+      </div>
 
-      <div class="container">
+      <!-- Modal 3 HTML structure -->
+      <div class="modal" id="myModal3">
+        <div class="modal-content">
+          <span class="close" onclick="toggle('myModal3', 'blur-container')">&times;</span>
+          <h2>Login Required</h2>
+          <p>
+            Please log in to access the features of the application.
+          </p>
+        </div>
+      </div>
+
+      <!-- Modal 4 HTML structure -->
+      <div class="modal" id="myModal4">
+        <div class="modal-content">
+          <span class="close" onclick="toggle('myModal4', 'blur-container')">&times;</span>
+          <h2>Login Required</h2>
+          <p>
+            Please log in to access the features of the Taichno.
+          </p>
+        </div>
+      </div>
+
+      
+
         <div class="slider-container">
             <div class="slider-content">
                 <h2>Unlock the Full Potential of MediaPipe and BlazePose</h2>
                 <img src="./img/bg9.png" alt="vision Image" class="vision" />
             </div>
         </div>
-      </div>
        
     
   </section>
 
-    <section class="about-us" id="about-us">
-      <div class="container">
-        <h2>About Us</h2>
-        <p>
-          Our web application is the result of a collective effort to bridge the world of education and the art of Taijiquan.
-        </p>
+  
+      <section class="about-us" id="about-us">
+        <div class="container">
+          <h2>Contact Us</h2>
+          <p>
+            Our web application is the result of a collective effort to bridge the world of education and the art of Taijiquan.
+          </p>
           <a href="mailto:your.email@gmail.com"><i class="fas fa-envelope"></i> Email Us</a>
-          <a href="facebook.com"><i class="fab fa-facebook"></i> Facebook</a>
-      </div>
-    </section>
+          <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+          <a href="https://github.com/nihil77" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        </div>
+      </section>
+
+      <button class="scroll-to-top" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
+
+
+
     </main>
 
     <!-- JavaScript Files -->

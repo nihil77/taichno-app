@@ -33,3 +33,14 @@ openAnotherPage('tryNowButton5');
 openAnotherPage('tryNowButton6');
 openAnotherPage('tryNowButton7');
 openAnotherPage('tryNowButton8');
+
+// Listen for the browser's back button event
+window.addEventListener('popstate', function(event) {
+    if (event.state != null) {
+      window.location.href = 'userProfile.html'; 
+    }
+  });
+  
+  // Push a state to the browser's history to enable the popstate event
+  history.pushState({}, '');
+  

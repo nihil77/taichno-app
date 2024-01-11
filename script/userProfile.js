@@ -24,39 +24,6 @@ menuBar.addEventListener('click', function () {
 
 
 
-const searchButton = document.querySelector('#content nav form .form-input button');
-const searchButtonIcon = document.querySelector('#content nav form .form-input button .bx');
-const searchForm = document.querySelector('#content nav form');
-
-searchButton.addEventListener('click', function (e) {
-	if(window.innerWidth < 576) {
-		e.preventDefault();
-		searchForm.classList.toggle('show');
-		if(searchForm.classList.contains('show')) {
-			searchButtonIcon.classList.replace('bx-search', 'bx-x');
-		} else {
-			searchButtonIcon.classList.replace('bx-x', 'bx-search');
-		}
-	}
-})
-
-
-
-if(window.innerWidth < 768) {
-	sidebar.classList.add('hide');
-} else if(window.innerWidth > 576) {
-	searchButtonIcon.classList.replace('bx-x', 'bx-search');
-	searchForm.classList.remove('show');
-}
-
-
-window.addEventListener('resize', function () {
-	if(this.innerWidth > 576) {
-		searchButtonIcon.classList.replace('bx-x', 'bx-search');
-		searchForm.classList.remove('show');
-	}
-})
-
 
 const switchMode = document.getElementById('switch-mode');
 
@@ -68,34 +35,46 @@ switchMode.addEventListener('change', function () {
 	}
 })
 
-// MY PROFILE
+// MY PROFILE switch To content
 function switchToContent(contentId) {
     const homeContent = document.getElementById('homeContent');
     const myProfileContent = document.getElementById('myProfileContent');
     const myInformationContent = document.getElementById('myInformationContent');
     const myHelpSupportContent = document.getElementById('myHelpSupportContent');
+    const mymyKnowledgeNest = document.getElementById('myKnowledgeNest');
 
     if (contentId === 'homeContent') {
         homeContent.style.display = 'block';
         myProfileContent.style.display = 'none';
+        mymyKnowledgeNest.style.display = 'none';
         myInformationContent.style.display = 'none';
         myHelpSupportContent.style.display = 'none';
     } else if (contentId === 'myProfileContent') {
         homeContent.style.display = 'none';
         myProfileContent.style.display = 'block';
+        mymyKnowledgeNest.style.display = 'none';
         myInformationContent.style.display = 'none';
         myHelpSupportContent.style.display = 'none';
-    } else if (contentId === 'myInformationContent') {
+    } else if (contentId == 'myKnowledgeNest') {
+      homeContent.style.display = 'none';
+      myProfileContent.style.display = 'none';
+      mymyKnowledgeNest.style.display = 'block';
+      myInformationContent.style.display = 'none';
+      myHelpSupportContent.style.display = 'none';
+    }
+    else if (contentId === 'myInformationContent') {
         homeContent.style.display = 'none';
         myProfileContent.style.display = 'none';
+        mymyKnowledgeNest.style.display = 'none';
         myInformationContent.style.display = 'block';
         myHelpSupportContent.style.display = 'none';
     } else if (contentId === 'myHelpSupportContent') {
         homeContent.style.display = 'none';
         myProfileContent.style.display = 'none';
+        mymyKnowledgeNest.style.display = 'none';
         myInformationContent.style.display = 'none';
         myHelpSupportContent.style.display = 'block';
-    }
+    } 
 }
 
 // Get the parameters from the URL
@@ -144,20 +123,27 @@ const bioQuotes = [
 
 
   // User Logout
-  document.addEventListener("DOMContentLoaded", function() {
-    // Get the "Logout" link element
-    const logoutLink = document.querySelector(".logout-link a");
+document.addEventListener("DOMContentLoaded", function() {
+  // Get the "Logout" link element
+  const logoutLink = document.querySelector(".logout-link a");
 
-    // Add a click event listener to the "Logout" link
-    logoutLink.addEventListener("click", function(event) {
-        event.preventDefault(); // Prevent the default link behavior
-        
-            // If user confirms, redirect to the home screen
-            window.location.href = "Home.html";
+  // Add a click event listener to the "Logout" link
+  logoutLink.addEventListener("click", function(event) {
+      event.preventDefault(); // Prevent the default link behavior
 
-    });
-       
+      // If user confirms, redirect to the home screen
+      if (confirm("Are you sure you want to log out?")) {
+          // Clear all activity or perform necessary logout actions
+          
+          // Manipulate browser history to clear previous pages
+          history.pushState(null, null, "signup.html");
+          
+          // Redirect to the home screen
+          window.location.href = "signup.html";
+      }
+  });
 });
+;
 
 // My Information
 document.addEventListener('DOMContentLoaded', function () {
@@ -180,4 +166,6 @@ document.addEventListener('DOMContentLoaded', function () {
     accordionItem.classList.toggle('open');
     icon.classList.toggle('rotate');
   }
+
+
   

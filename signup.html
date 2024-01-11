@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign in & Sign up Form</title>
+    <title>Taichno</title>
     <link rel="icon" href="img/logo.png" type="image/png"> 
     <link rel="stylesheet" href="./css/signup.css" />
   </head>
@@ -16,7 +16,9 @@
             
             <form action="signup.html" autocomplete="off" class="sign-in-form">
                 <div class="logo">
-                  <img src="./img/lotus.png" alt="lotus_logo" />
+                  <a href="Home.html">
+                    <img src="./img/lotus.png" alt="lotus_logo" />
+                </a>
                   <h2>TAICHNO</h2>
                 </div>
         
@@ -33,7 +35,7 @@
                     type="email"
                     minlength="4"
                     class="input-field"
-                    autocomplete="off"
+                    autocomplete="on"
                     required
                     id="emailInput"
                   />
@@ -45,7 +47,7 @@
                     type="password"
                     minlength="4"
                     class="input-field"
-                    autocomplete="off"
+                    autocomplete="on"
                     required
                     id="passwordInput"
                   />
@@ -81,7 +83,7 @@
                     type="text"
                     minlength="4"
                     class="input-field"
-                    autocomplete="off"
+                    autocomplete="on"
                     required
                   />
                   <label>Name</label>
@@ -91,7 +93,7 @@
                   <input
                     type="email"
                     class="input-field"
-                    autocomplete="off"
+                    autocomplete="on"
                     required
                   />
                   <label>Email</label>
@@ -102,10 +104,22 @@
                     type="password"
                     minlength="4"
                     class="input-field"
-                    autocomplete="off"
+                    autocomplete="on"
                     required
                   />
                   <label>Password</label>
+                </div>
+
+                <div class="input-wrap">
+                  <input
+                    type="password"
+                    id="confirmPasswordInput"
+                    minlength="4"
+                    class="input-field"
+                    autocomplete="on"
+                    required
+                  />
+                  <label>Re-enter Password</label>
                 </div>
 
                 <input type="submit" value="Sign Up" class="sign-btn" />

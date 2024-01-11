@@ -2,7 +2,7 @@
 @import url('https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css');
 
 :root {
-    --poppins: 'Poppins', sans-serif;
+  --poppins: 'Poppins', sans-serif;
 	--lato: 'Lato', sans-serif;
 	--light: #F9F9F9;
 	--green: #1eb292;
@@ -20,46 +20,46 @@
 
 /* Override Bulma styles with your custom styles */
 body {
-    background-color: var(--light);
+  background-color: var(--light);
+  font-family: var(--poppins);
+  margin: 0; /* Remove default margin */
 }
 
 .navbar {
-    background-color: var(--grey);
-    color: var(--white);
+  background-color: var(--grey);
+  color: var(--white);
 }
 
 .navbar-item {
-    color: var(--white);
+  color: var(--white);
+  font-family: var(--poppins);
 }
 
 .panel {
-    background-color: var(--white);
-    color: var(--dark);
+  background-color: var(--white);
+  color: var(--dark);
 }
 
-
 .panel-heading {
-    background-color: var(--dark); /* Change this to your desired background color for the heading */
-    color: var(--red);
+  background-color: var(--dark); /* Change this to your desired background color for the heading */
+  color: var(--red);
 }
 
 .guide-image {
-    border: 2px solid var(--dark);
+  border: 2px solid var(--dark);
+  width: 100%; /* Make the image responsive */
 }
 
 .column {
-    color: var(--orange);
+  color: var(--orange);
 }
-
-
 
 /* Custom styles for the guided text container */
 .guided-text {
   display: flex;
   flex-direction: column;
   padding-left: 10px;
-  height: auto; /* Ensure the container takes full height */
-  margin-top: -120px; /* Add margin from the top */
+  margin-top: 20px; /* Adjusted margin from the top */
 }
 
 /* Rest of your existing styles remain unchanged */
@@ -86,6 +86,36 @@ body {
   color: var(--dark);
 }
 
+
+/*  LOADING */
+
+.panel-block {
+  position: relative; /* Ensure proper positioning of the loading spinner */
+}
+
+.loading {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spinner {
+  /* Add your spinner styles here */
+  /* For example, you can use an animated GIF, or use CSS animations */
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
   
   

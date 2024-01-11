@@ -44,6 +44,8 @@ body.dark {
 body {
 	background: var(--grey);
 	overflow-x: hidden;
+	display: flex;
+	font-family: var(--poppins);
 }
 
 
@@ -482,14 +484,21 @@ body {
 	cursor: pointer;
 }
 #content main .table-data .todo .todo-list li.completed {
-	border-left: 10px solid var(--green);
+    border-left: 10px solid var(--green);
+    background-color: var(--green);
+    color: #fff;
 }
+
 #content main .table-data .todo .todo-list li.not-completed {
-	border-left: 10px solid var(--orange);
+    border-left: 10px solid var(--orange);
+    background-color: var(--grey); /* Set a different background color for not completed tasks */
+    color: #000; /* Set text color for not completed tasks */
 }
+
 #content main .table-data .todo .todo-list li:last-child {
 	margin-bottom: 0;
 }
+
 /* MAIN */
 /* CONTENT */
 
@@ -724,6 +733,8 @@ body.dark-mode {
 .video {
     display: flex;
     justify-content: center;
+	flex-wrap: wrap;
+
 }
 
 .card-body {
@@ -734,15 +745,10 @@ body.dark-mode {
     display: inline-block;
     width: 48%; 
     margin: 0 1% 20px; 
+	margin-right: 55%;
     vertical-align: top; 
 }
 
-.custom-video-card h3 {
-	margin-top: 40px;
-	padding-left: 95%;
-    margin-bottom: 20px;
-	align-items: center;
-}
 
 .video-container {
     display: flex;
@@ -759,4 +765,121 @@ body.dark-mode {
 	align-items: center;
 }
 
+/* IMAGE EDUCATION */
 
+.card-container {
+	position: relative;
+	top: 50px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 100px 50px;
+	padding: 100px 50px;
+}
+
+.card-container .card {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	width: 350px;
+	height: 300px;
+	background: #fff;
+	border-radius: 20px;
+	box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+	transition: 0.5s;
+}
+
+.card-container .card:hover {
+	height: 420px;
+
+}
+
+.card-container .card .imgBx {
+	position: absolute;
+	top: 20px;
+	width: 300px;
+	height: 220px;
+	background: var(--hoverColor);
+	border-radius: 12px;
+	overflow: hidden;
+	transition: 0.5s;
+}
+
+.card-container .card:hover .imgBx {
+	top: -100px;
+	scale: 0.75;
+	box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+}
+
+.card-container .card .imgBx img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.card-container .card .content {
+	position: absolute;
+	top: 252px;
+	width: 100%;
+	padding: 0 30px;
+	height: 35px;
+	overflow: hidden;
+	text-align: center;
+	transition: 0.5s;
+}
+
+.card-container .card:hover .content {
+	height: 250px;
+	top: 150px;
+}
+
+.card-container .card .content h2 {
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: var(--dark);
+}
+
+.card-container .card .content p {
+	color: var(--dark);
+	font-size: 1rem;
+	font-style: var(--poppins);
+}
+
+.card-container .card .content a {
+    position: relative;
+    top: 10%; /* Adjust the top position as needed */
+    display: inline-block;
+    padding: 1% 2%; /* Adjust the padding values as needed using relative units */
+    background: var(--green);
+    color: var(--light);
+    font-size: medium;
+    font-family: var(--poppins);
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 1200px) {
+	.card {
+	  width: 45vw;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.card {
+	  width: 80vw;
+	}
+
+    .card-container .card .content a {
+        top: 5%; /* Adjust the top position for smaller screens */
+        padding: 2% 4%; /* Adjust the padding for smaller screens using relative units */
+    }
+}
+
+  
+/* Help & Support Content  */

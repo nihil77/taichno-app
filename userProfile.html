@@ -19,7 +19,7 @@
     <link rel="icon" href="img/logo.png" type="image/png"> 
 
 
-	<title>Profile</title>
+    <title>Taichno</title>
 </head>
 <body>
 
@@ -35,7 +35,7 @@
     <ul class="side-menu top">
         <li class="active">
             <a href="#" onclick="switchToContent('homeContent')">
-                <i class='bx fi-sr-apps'></i>
+                <i class='bx fi-sr-home'></i>
                 <span class="text">Home</span>
             </a>
         </li>
@@ -45,6 +45,14 @@
             <a href="#" onclick="switchToContent('myProfileContent')">
                 <i class='bx fi-sr-user'></i>
                 <span class="text">Profile</span>
+            </a>
+        </li>
+
+		<!-- MY EDUCATION CONTENT -->
+		<li>
+            <a href="#" onclick="switchToContent('myKnowledgeNest')">
+                <i class='bx fi-sr-book'></i>
+                <span class="text">Knowledge Nest</span>
             </a>
         </li>
 
@@ -63,6 +71,7 @@
 				<span class="text">Help & Support</span>
             </a>
         </li>
+
     </ul>
 
     <ul class="side-menu">
@@ -127,7 +136,7 @@
                     <i class="bx bxs-comment-detail"></i>
                     <div class="text">
                         <a href="" class="box-link">
-                            <h3>Personalized Feedback</h3>
+                            <h3>Results & Feedback</h3>
                         </a>
                     </div>
                 </li>
@@ -220,32 +229,44 @@
 				<div class="todo">
 					<div class="head">
 						<h3>Progress</h3>
-						<i class='bx bx-plus' ></i>
-						<i class='bx bx-filter' ></i>
+						<i class='bx bx-plus'></i>
+						<i class='bx bx-filter'></i>
 					</div>
 					<ul class="todo-list">
 						<li class="completed">
 							<p>Horse Stance</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
+							<div class="progress-bar">
+								<span class="percentage">100%</span>
+							</div>
 						</li>
 						<li class="completed">
 							<p>Bow-Arrow</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
+							<div class="progress-bar">
+								<span class="percentage">100%</span>
+							</div>
 						</li>
 						<li class="not-completed">
 							<p>Sitting on Crossed Legs</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
+							<div class="progress-bar">
+								<span class="percentage">100%</span>
+							</div>
 						</li>
 						<li class="completed">
 							<p>Four-Six</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
+							<div class="progress-bar">
+								<span class="percentage">100%</span>
+							</div>
 						</li>
 						<li class="not-completed">
 							<p>Tame the Tiger</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
+							<div class="progress-bar">
+								<span class="percentage">0%</span>
+							</div>
 						</li>
 					</ul>
 				</div>
+				
+				
 			</div> 
 		</main>
 		<!-- MAIN -->
@@ -304,66 +325,175 @@
                     </div>
                 </div>
 			</div>
-			
-				<!-- VIDEO CONTENT FOR TAIJIQUAN -->
+		</main>
 
-					<div class="video">
-						<div class="card user-activities">
-							<div class="custom-video-card">
-								<h3>Education Content</h3>
-								<div class="card-body">
-									<div class="video-container">
-										<h4>Horse Stance</h4>
-										<video width="640" height="360" controls>
-											<source src="your-video-file-1.mp4" type="video/mp4">
-											Your browser does not support the video tag.
-										</video>
+
+	
+		<!-- MAIN - Knowledge Nest Content (Initially hidden) -->
+		<main id="myKnowledgeNest" style="display: none;">
+			<div class="container mt-5">
+				<div class="row justify-content-center">
+					<!-- Add your content specific to Knowledge Nest here -->
+					<div class="col-lg-8">
+						<h2>Knowledge Nest</h2>
+						<p>
+							Dive in, expand your horizons, and embark on a journey of continuous learning.
+						</p>
+					</div>
+						<!-- VIDEO CONTENT FOR TAIJIQUAN -->
+
+						<div class="video">
+							<div class="card user-activities">
+								<div class="custom-video-card">
+									<div class="card-body">
+										<div class="video-container">
+											<h4>Horse Stance</h4>
+											<video width="640" height="360" controls>
+												<source src="vid/leg_movement_taichi.mp4" type="video/mp4">
+												Your browser does not support the video tag.
+											</video>
+										</div>
 									</div>
 								</div>
-							</div>
-					
-							<div class="custom-video-card">
-								<div class="card-body">
-									<div class="video-container">
-										<h4>Bow-Arrow Stance</h4>
-										<video width="640" height="360" controls>
-											<source src="your-video-file-2.mp4" type="video/mp4">
-											Your browser does not support the video tag.
-										</video>
+						
+								<div class="custom-video-card">
+									<div class="card-body">
+										<div class="video-container">
+											<h4>Bow-Arrow Stance</h4>
+											<video width="640" height="360" controls>
+												<source src="vid/leg_movement_taichi.mp4" type="video/mp4">
+												Your browser does not support the video tag.
+											</video>
+										</div>
 									</div>
 								</div>
-							</div>
-					
-							<div class="custom-video-card">
-								<div class="card-body">
-									<div class="video-container">
-										<h4>Some Other Stance</h4>
-										<video width="640" height="360" controls>
-											<source src="your-video-file-3.mp4" type="video/mp4">
-											Your browser does not support the video tag.
-										</video>
+						
+								<div class="custom-video-card">
+									<div class="card-body">
+										<div class="video-container">
+											<h4>Some Other Stance</h4>
+											<video width="640" height="360" controls>
+												<source src="vid/leg_movement_taichi.mp4" type="video/mp4">
+												Your browser does not support the video tag.
+											</video>
+										</div>
 									</div>
 								</div>
-							</div>
-					
-							<div class="custom-video-card">
-								<div class="card-body">
-									<div class="video-container">
-										<h4>Another Stance</h4>
-										<video width="640" height="360" controls>
-											<source src="your-video-file-4.mp4" type="video/mp4">
-											Your browser does not support the video tag.
-										</video>
+						
+								<div class="custom-video-card">
+									<div class="card-body">
+										<div class="video-container">
+											<h4>Another Stance</h4>
+											<video width="640" height="360" controls>
+												<source src="vid/leg_movement_taichi.mp4" type="video/mp4">
+												Your browser does not support the video tag.
+											</video>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-				
-				
-            </div>
-        </main>
+						<!-- IMAGE EDUCATION -->
 
+						<div class="card-container">
+							<div class="card">
+								<div class="imgBx">
+									<img src="img/1.png">
+								</div>
+								<div class="content">
+									<h2>Horse Stance</h2>
+									<p>It is characterized by a <strong>wide</strong> and <strong>low stance</strong> that resembles the position one would take when riding a horse. The horse stance is used for building <strong>leg strength,</strong><strong>stability</strong>, and <strong>endurance.</strong></p>
+									<a href="get_started.html">Try Now</a>
+								</div>
+							</div>
+
+							<div class="card">
+								<div class="imgBx">
+									<img src="img/1.png">
+								</div>
+								<div class="content">
+									<h2>Bow-Arrow Stance</h2>
+									<p>The bow and arrow stance is versatile, employed for techniques such as <strong>punches, blocks,</strong> and <strong>strikes.</strong> It offers a stable foundation, facilitating power generation and ensuring stability in movement.</p>
+									<a href="get_started.html">Try Now</a>
+								</div>
+							</div>
+
+							<div class="card">
+								<div class="imgBx">
+									<img src="img/1.png">
+								</div>
+								<div class="content">
+									<h2>Sitting on Crossed Legs</h2>
+									<p>A versatile, informal posture linked to <strong>yoga</strong> and <strong>meditation.</strong> It fosters a relaxed, open stance for diverse activities, aiding in grounding and sustaining focus comfortably over extended periods.</p>
+									<a href="get_started.html">Try Now</a>
+								</div>
+							</div>
+
+							<div class="card">
+								<div class="imgBx">
+									<img src="img/1.png">
+								</div>
+								<div class="content">
+									<h2>Four-Six Stance</h2>
+									<p>A transitional stance, allowing for <strong>quick</strong> and <strong>efficient movement</strong> in various directions. It serves as a foundation for executing techniques and maintaining stability during martial arts practice</p>
+									<a href="get_started.html">Try Now</a>
+								</div>
+							</div>
+							
+							<div class="card">
+								<div class="imgBx">
+									<img src="img/1.png">
+								</div>
+								<div class="content">
+									<h2>Tame the Tiger</h2>
+									<p>The Tame the Tiger Stance emphasizes <strong>quick footwork</strong> and the ability to pivot easily. It's particularly useful for evasive maneuvers and transitioning between <strong>offensive</strong> and <strong>defensive postures.</strong></p>
+									<a href="get_started.html">Try Now</a>
+								</div>
+							</div>
+
+							<div class="card">
+								<div class="imgBx">
+									<img src="img/1.png">
+								</div>
+								<div class="content">
+									<h2>False Stance</h2>
+									<p>Employed strategically, it disrupts the adversary's perception, paving the way for <strong>advantageous offensive</strong> or <strong>defensive actions.</strong> It is often employed as part of a strategy to mislead the adversary</p>
+									<a href="get_started.html">Try Now</a>
+								</div>
+							</div>
+
+							<div class="card">
+								<div class="imgBx">
+									<img src="img/1.png">
+								</div>
+								<div class="content">
+									<h2>Golden Rooster</h2>
+									<p>The Golden Rooster stance emphasizes <strong>stability,</strong> <strong>balance,</strong> and <strong>agility,</strong> reflecting the martial artist's ability to control and maneuver their body with precision. </p>
+									<a href="get_started.html">Try Now</a>
+								</div>
+							</div>
+
+							<div class="card">
+								<div class="imgBx">
+									<img src="img/1.png">
+								</div>
+								<div class="content">
+									<h2>Squat Stance</h2>
+									<p>Engages multiple muscle groups, including the <strong>hamstrings,</strong> <strong>glutes,</strong> and <strong>core.</strong> It is commonly used to build <strong>lower body strength, improve mobility,</strong> and enhance overall functional fitness.</p>
+									<a href="get_started.html">Try Now</a>
+								</div>
+							</div>
+
+
+
+						</div>
+					
+				</div>
+			</div>
+		</main>
+
+
+		
 
         <!-- MAIN - Information Content (Initially hidden) -->
         <main id="myInformationContent" style="display: none;">
@@ -376,7 +506,7 @@
 						8 Foundational Taijiquan
 					  </span>
 					  <div class="icon">
-						-
+						+
 					  </div>
 					</div>
 			  
@@ -448,8 +578,9 @@
 			  
 					<div class="accordion_content">
 					  <p>
-						BlazePose is a highfidelity body pose model developed by Google's MediaPipe. It can detect 33 keypoints, extending the 17 keypoints topology of the original PoseNet model. These additional keypoints provide vital information about face, hands, and feet location with scale and rotation
-					  </p>
+						<strong>BlazePose</strong> is a highfidelity body pose model developed by Google's MediaPipe. It can detect 33 keypoints, extending the 17 keypoints topology of the original PoseNet model. These additional keypoints provide vital information about face, hands, and feet location with scale and rotation
+					    <br>
+					</p>
 					</div>
 				  </div>
 				  <div class="accordion_item">
@@ -495,9 +626,7 @@
 					</div>
 			  
 					<div class="accordion_content">
-					  <p>
-						By utilizing the TAICHNO: An Educational Assessment Tool for Taijiquan’s Stance with Real-time Accuracy and Feedback Utilizing Blaze Pose MediaPipe Algorithm, you acknowledge and grant permission for the University of Makati (UMak) to process the data you provide. Your information will be handled with the highest regard for confidentiality and respect. UMak adheres to the fundamental principles and regulations of data privacy protection specific to the development and utilization of TAICHNO in the context of Taijiquan's stance assessment.
-					  </p>
+						<p>By utilizing the <strong>TAICHNO: An Educational Assessment Tool for Taijiquan’s Stance</strong> with <strong>Real-time Accuracy and Feedback Utilizing Blaze Pose MediaPipe Algorithm</strong>, you acknowledge and grant permission for the <strong>University of Makati (UMak)</strong> to process the data you provide. Your information will be handled with the highest regard for confidentiality and respect. <strong>UMak</strong> adheres to the fundamental principles and regulations of data privacy protection specific to the development and utilization of <strong>TAICHNO</strong> in the context of <strong>Taijiquan's stance assessment</strong>.</p>
 					</div>
 				  </div>
 				</div>
@@ -510,6 +639,7 @@
         <main id="myHelpSupportContent" style="display: none;">
 			<div class="row">
 				<div class="col-4">
+				 <h1>CONTACT US AND HELP AND SUPPORT </h1>
 				  <div id="list-example" class="list-group">
 					<a class="list-group-item list-group-item-action" href="#list-item-1">Item 1</a>
 					<a class="list-group-item list-group-item-action" href="#list-item-2">Item 2</a>

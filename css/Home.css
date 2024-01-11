@@ -432,8 +432,8 @@ img {
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-around;
+  align-items: stretch;
   padding: 0 10px; 
   margin-block: 30rem;
 }
@@ -447,20 +447,22 @@ img {
   position: relative;
   overflow: hidden;
   width: calc(30% - 20px); 
-  margin: 0 5px; 
+  margin: 0 10px; 
+  height: 150%;
 }
 
 .card-container .card__img {
   width: 100%;
-  max-width: 420px;
-  border-radius: 1.5rem;
+  max-width: 650px;
+  height: 100%;
+  border-radius: 10px;
 }
 
 .card-container .card__data {
-  width: 100%; 
+  width: 95%; 
   background-color: var(--container-color);
   padding: 1.5rem 2rem;
-  box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+  box-shadow: 0 8px 24px hsla(0, 0%, 5%, 0.15);
   border-radius: 1rem;
   position: absolute;
   bottom: -9rem;
@@ -552,6 +554,43 @@ img {
   }
 }
 
+#blur-container.blur-background {
+  filter: blur(5px);
+  transition: filter 0.3s ease;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Added box shadow for depth */
+  z-index: 2;
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 30px;
+  color: #555;
+}
+
+/* You can customize the close button further if needed */
+.close:hover {
+  color: #d01b1b;
+}
+
+
 /* Slider container styles */
 .slider-container {
   text-align: center; /* Center content within the slider container */
@@ -583,7 +622,7 @@ img {
 
 .about-us p {
   font-size: 1.2rem; 
-  color: #555; 
+  color: black; 
   max-width: 800px; 
   margin: 0 auto 2rem;
 }
@@ -593,4 +632,42 @@ img {
   margin-right: 40px;
   align-items: center;
   text-decoration: none; 
+}
+
+
+.scroll-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #1eb292;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 15px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-to-top i {
+  font-size: 20px;
+}
+
+/* Responsive styles using media queries */
+@media screen and (max-width: 600px) {
+  /* Styles for screens up to 600px wide */
+  header, section, footer {
+    margin: 10px 0;
+  }
+
+  .container {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  /* Styles for screens between 601px and 1024px wide */
+  header, section, footer {
+    margin: 15px 0;
+  }
 }

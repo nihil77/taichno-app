@@ -115,20 +115,42 @@ function displayErrorSignUpMessage(message) {
   const errorMessageElement = document.getElementById('error-message-signup');
   errorMessageElement.textContent = message;
   errorMessageElement.style.display = 'block'; // Show the error message
+  errorMessageElement.style.color = 'red';
+
+  // Clear form fields on error
+  nameInput.value = '';
+  emailInput.value = '';
+  passwordInput.value = '';
+  confirmPasswordInput.value = '';
 }
 
 function hideErrorSignUpMessage() {
   const errorMessageElement = document.getElementById('error-message-signup');
   errorMessageElement.textContent = '';
   errorMessageElement.style.display = 'none'; // Hide the error message
-  errorMessageElement.style.color = 'red';
 }
 
-// Sign-up Form
 const signUpForm = document.querySelector('.sign-up-form');
 const nameInput = signUpForm.querySelector('input[type="text"]');
 const emailInput = signUpForm.querySelector('input[type="email"]');
 const passwordInput = signUpForm.querySelector('input[type="password"]');
+const confirmPasswordInput = signUpForm.querySelector('#confirmPasswordInput');
+
+// Event listener to hide error message when user starts typing
+nameInput.addEventListener('input', hideErrorSignUpMessage);
+emailInput.addEventListener('input', hideErrorSignUpMessage);
+passwordInput.addEventListener('input', hideErrorSignUpMessage);
+confirmPasswordInput.addEventListener('input', hideErrorSignUpMessage);
+
+// Event listener to toggle password visibility when focused
+//passwordInput.addEventListener('focus', function () {
+  //passwordInput.type = 'text';
+//});
+
+// Event listener to reset password input type after typing
+//passwordInput.addEventListener('blur', function () {
+ // passwordInput.type = 'password';
+//});
 
 signUpForm.addEventListener('submit', function (event) {
   event.preventDefault();
@@ -138,6 +160,13 @@ signUpForm.addEventListener('submit', function (event) {
   const name = nameInput.value;
   const email = emailInput.value;
   const password = passwordInput.value;
+  const confirmPassword = confirmPasswordInput.value;
+
+  // check the passwords match
+  if (password !== confirmPassword) {
+    displayErrorSignUpMessage("Passwords do not match.");
+    return;
+  }
 
   auth.createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
@@ -148,7 +177,7 @@ signUpForm.addEventListener('submit', function (event) {
     })
     .catch((error) => {
       console.error("Error:", error);
-      displayErrorSignUpMessage("An error occurred. Please try again later.");
+      displayErrorSignUpMessage("An error occurred. Try again.");
     });
 });
 
