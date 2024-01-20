@@ -639,24 +639,29 @@
         <main id="myHelpSupportContent" style="display: none;">
 			<div class="row">
 				<div class="col-4">
-				 <h1>CONTACT US AND HELP AND SUPPORT </h1>
-				  <div id="list-example" class="list-group">
-					<a class="list-group-item list-group-item-action" href="#list-item-1">Item 1</a>
-					<a class="list-group-item list-group-item-action" href="#list-item-2">Item 2</a>
-					<a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
-					<a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
-				  </div>
+				 <h2>Contact Us</h2>
+				  <p>If you have a question, or concern leave us a message:</p>
 				</div>
 				<div class="col-8">
-				  <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
-					<h4 id="list-item-1">Item 1</h4>
-					<p>...</p>
-					<h4 id="list-item-2">Item 2</h4>
-					<p>...</p>
-					<h4 id="list-item-3">Item 3</h4>
-					<p>...</p>
-					<h4 id="list-item-4">Item 4</h4>
-					<p>...</p>
+					<div class="column">
+						<img src="img/image_canva3.png" style="width:100%">
+					</div>
+				  <div class="column">
+					<form action="/user">
+						<label for="fname">First Name</label>
+						<input type="text" id="fname" name="firstname" placeholder="Your name..">
+						<label for="lname">Last Name</label>
+						<input type="text" id="lname" name="lastname" placeholder="Your last name..">
+						<label for="concern">Concern</label>
+						<select name="country" id="country">
+							<option value="concern 1">Concern 1</option>
+							<option value="concern 2">Concern 2</option>
+							<option value="concern 3">Concern 3</option>
+						</select>
+						<label for="subject">Subject</label>
+						<textarea name="subject" id="subject" placeholder="Write something.." style="height:170px"></textarea>
+						<input type="submit" value="Submit">
+					</form>
 				  </div>
 				</div>
 			  </div>

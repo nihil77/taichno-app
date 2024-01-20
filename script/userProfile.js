@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
   });
 });
-;
+
 
 // My Information
 document.addEventListener('DOMContentLoaded', function () {
