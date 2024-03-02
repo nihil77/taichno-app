@@ -135,7 +135,7 @@
                 <li>
                     <i class="bx bxs-comment-detail"></i>
                     <div class="text">
-                        <a href="" class="box-link">
+                        <a href="results_feed.html" class="box-link">
                             <h3>Results & Feedback</h3>
                         </a>
                     </div>
@@ -272,61 +272,103 @@
 		<!-- MAIN -->
 
                 
-        <!-- MAIN - My Profile Content (Initially hidden) -->
-        <main id="myProfileContent" style="display: none;">
-            <div class="container mt-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-4">
-                        <div class="card user-card">
-                            <img id="profile-image" src="img/user.png" alt="Profile Image" class="card-img-top">
-                            <div class="card-body">
-                                <h2 id="user-name" class="card-title">
-                                    <span id="user-name-display">John Doe</span>
-                                </h2>
-                                <p id="user-email" class="card-text">
-                                    <span id="user-email-display">johndoe@example.com</span>
-                                </p>
-                                <p id="user-bio" class="card-text">
-                                    <span id="user-bio-display">A brief bio about the user goes here.</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card user-activities">
-                            <div class="card-body">
-                                <h3>Complete</h3>
-                                <i class='bx bx-plus'></i>
-                                <i class='bx bx-filter'></i>
-                            </div>
-                            <ul class="todo-list">
-                                <li class="completed">
-                                    <p>Stance 1</p>
-                                    <i class='bx bx-dots-vertical-rounded'></i>
-                                </li>
-                                <li class="completed">
-                                    <p>Stance 2</p>
-                                    <i class='bx bx-dots-vertical-rounded'></i>
-                                </li>
-                                <li class="completed">
-                                    <p>Stance 3</p>
-                                    <i class='bx bx-dots-vertical-rounded'></i>
-                                </li>
-                                <li class="completed">
-                                    <p>Stance 4</p>
-                                    <i class='bx bx-dots-vertical-rounded'></i>
-                                </li>
-                                <li class="completed">
-                                    <p>Stance 5</p>
-                                    <i class='bx bx-dots-vertical-rounded'></i>
-                                </li>
-                            </ul>
-                        </div>
+<!-- MAIN - My Profile Content (Initially hidden) -->
+<main id="myProfileContent" style="display: none;">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-4">
+                <div class="card user-card">
+                    <img id="profile-image" src="img/user.png" alt="Profile Image" class="card-img-top">
+                    <div class="card-body">
+                        <h2 id="user-name" class="card-title">
+                            <span id="user-name-display">John Doe</span>
+                        </h2>
+                        <p id="user-email" class="card-text">
+                            <span id="user-email-display">johndoe@example.com</span>
+                        </p>
+                        <p id="user-bio" class="card-text">
+                            <span id="user-bio-display">A brief bio about the user goes here.</span>
+                        </p>
                     </div>
                 </div>
-			</div>
-		</main>
+            </div>
+            <div class="col-lg-4">
+                <div class="card user-activities">
+                    <div class="card-body">
+                        <h3>Complete</h3>
+                        <i class='bx bx-plus'></i>
+                        <i class='bx bx-filter'></i>
+                    </div>
+                    <ul class="todo-list">
+                        <li class="completed">
+                            <p>Stance 1</p>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+                        <li class="completed">
+                            <p>Stance 2</p>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+                        <li class="completed">
+                            <p>Stance 3</p>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+                        <li class="completed">
+                            <p>Stance 4</p>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+                        <li class="completed">
+                            <p>Stance 5</p>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <!-- Statistics Chart Canvas -->
+                <canvas id="statisticsChart" width="400" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+</main>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Sample data for the statistics chart
+        const data = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'Activities Completed',
+                data: [12, 19, 3, 5, 2, 3, 8],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)', // Fill color
+                borderColor: 'rgba(54, 162, 235, 1)', // Border color
+                borderWidth: 1
+            }]
+        };
+
+        // Get the canvas element
+        const ctx = document.getElementById('statisticsChart').getContext('2d');
+
+        // Create the statistics chart
+        const statisticsChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    });
+</script>
+    
+	
+  
+
+  
+						
 
 	
 		<!-- MAIN - Knowledge Nest Content (Initially hidden) -->
@@ -495,143 +537,82 @@
 
 		
 
-        <!-- MAIN - Information Content (Initially hidden) -->
-        <main id="myInformationContent" style="display: none;">
+       <!-- MAIN - Information Content (Initially hidden) -->
+<main id="myInformationContent" style="display: none;">
+    <div class="infocontainer">
+        <div class="infocontent">
+            <div class="accordion_item">
+                <div class="accordion_header" onclick="toggleAccordion(this)">
+                    <span>8 Foundational Taijiquan</span>
+                    <div class="icon">+</div>
+                </div>
+                <div class="accordion_content">
+					<p>
+                        Taijiquan, also known as Tai Chi, is an ancient Chinese martial art that focuses on internal energy cultivation and mind-body harmony. It has become popular worldwide for its health benefits and graceful movements.
+                    </p>
+                    <p>
+                        The 8 Foundational Taijiquan stances are essential for building strength, balance, and flexibility. Each stance emphasizes specific principles and contributes to the overall practice of Taijiquan.
+                    </p>
+                    <p>
+                        Explore each stance to deepen your understanding of Taijiquan and enhance your practice.
+                    </p>
+                </div>
+            </div>
+            <div class="accordion_item">
+                <div class="accordion_header" onclick="toggleAccordion(this)">
+                    <span>BlazePose with MediaPipe</span>
+                    <div class="icon">+</div>
+                </div>
+                <div class="accordion_content">
+                    <p>
+                        <strong>BlazePose</strong> is a high-fidelity body pose model developed by Google's MediaPipe. It can detect 33 keypoints, extending the 17 keypoints topology of the original PoseNet model. These additional keypoints provide vital information about face, hands, and feet location with scale and rotation.
+                    </p>
+                </div>
+            </div>
+            <!-- More accordion items -->
+            <div class="accordion_item">
+                <div class="accordion_header" onclick="toggleAccordion(this)">
+                    <span>Educational & Assessment</span>
+                    <div class="icon">+</div>
+                </div>
+                <div class="accordion_content">
+                    <p>
+                        <strong>Educational and Assessment for Taijiquan:</strong><br>
+                        Taijiquan, often referred to simply as Tai Chi, is a traditional Chinese martial art known for its gentle, flowing movements and focus on internal energy cultivation. It combines physical exercise, mental relaxation, and meditation to promote overall health and well-being.<br><br>
+                        <!-- Assessment details -->
+                    </p>
+                </div>
+            </div>
+            <div class="accordion_item">
+                <div class="accordion_header" onclick="toggleAccordion(this)">
+                    <span>Taichno a web application</span>
+                    <div class="icon">+</div>
+                </div>
+                <div class="accordion_content">
+                    <p>
+                        <strong>Educational and Assessment for Taijiquan:</strong><br>
+                        Taijiquan, often referred to simply as Tai Chi, is a traditional Chinese martial art known for its gentle, flowing movements and focus on internal energy cultivation. It combines physical exercise, mental relaxation, and meditation to promote overall health and well-being.<br><br>
+                        <!-- Assessment details -->
+                    </p>
+                </div>
+            </div>
+            <div class="accordion_item">
+                <div class="accordion_header" onclick="toggleAccordion(this)">
+                    <span>Terms and Privacy</span>
+                    <div class="icon">+</div>
+                </div>
+                <div class="accordion_content">
+                    <p>
+                        <strong>By utilizing the TAICHNO: An Educational Assessment Tool for Taijiquan’s Stance with Real-time Accuracy and Feedback Utilizing Blaze Pose MediaPipe Algorithm,</strong><br>
+                        you acknowledge and grant permission for the University of Makati (UMak) to process the data you provide. Your information will be handled with the highest regard for confidentiality and respect.<br><br>
+                        <strong>UMak adheres to the fundamental principles and regulations of data privacy protection specific to the development and utilization of TAICHNO in the context of Taijiquan's stance assessment.</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
 
-			<div class="infocontainer">
-				<div class="infocontent">
-				  <div class="accordion_item">
-					<div class="accordion_header" onclick="toggleAccordion(this)">
-					  <span>
-						8 Foundational Taijiquan
-					  </span>
-					  <div class="icon">
-						+
-					  </div>
-					</div>
-			  
-					<div class="accordion_content">
-						<p>
-							Taijiquan, often referred to as Tai Chi, is a traditional Chinese martial art that has evolved into a popular practice for physical and mental well-being.
-							<br>
-
-							<br>
-							<strong>Horse Stance (Ma Bu)</strong>
-							<br>
-							<strong>Description:</strong> This fundamental pose is a cornerstone of Taijiquan, emphasizing a balanced, rooted posture. It is key to the practice, fostering stability and strength.
-							<br>
-
-							<br>
-							<strong>Bow-Arrow Stance (Gong JianBu)</strong>
-							<br>
-							<strong>Description:</strong> This foundational posture embodies the balance of a warrior and the fluidity of a dancer. It focuses on alignment and inner strength, providing a step-by-step guide for practitioners.
-							<br>
-
-							<br>
-							<strong>Sitting on Crossed Legs Stance (Zuo Pan Bu)</strong>
-							<br>
-							<strong>Description:</strong> Combining principles of stability and inner peace, this foundational posture is an essential aspect of Taijiquan. The practice encourages tranquility, emphasizing posture and breath.
-							<br>
-
-							<br>
-							<strong>Four-Six Stance (Si Liu Bu)</strong>
-							<br>
-							<strong>Description:</strong> This unique posture captures the delicate balance between strength and flexibility. Exploring the intricacies of the Four-Six Stance refines understanding and execution.
-							<br>
-
-							<br>
-							<strong>Tame the Tiger Stance (Fu Hu Bu)</strong>
-							<br>
-							<strong>Description:</strong> Mastering this foundational technique involves a profound connection between mind and body. Real-time guidance and personalized feedback enhance stance, balance, and the overall Taijiquan practice.
-							<br>
-
-							<br>
-							<strong>False Stance (Xuan Ji Bu or Xu Bu)</strong>
-							<br>
-							<strong>Description:</strong> This foundational technique challenges balance and precision. The platform guides practitioners through weight distribution and alignment in real-time learning experiences.
-							<br>
-
-							<br>
-							<strong>Golden Rooster Standing on One Leg Stance (Jin Gi Du Li)</strong>
-							<br>
-							<strong>Description:</strong> This intricate technique demands concentration, balance, and stability. Real-time guidance and interactive learning experiences assist in mastering this challenging stance.
-							<br>
-
-							<br>
-							<strong>Squat Stance (Zuo Dun)</strong>
-							<br>
-							<strong>Description:</strong> As a cornerstone for Taijiquan practice, the Squat Stance emphasizes strength, balance, and flexibility. Interactive sessions offer comprehensive guidance to enhance understanding.
-						</p>
-					</div>
-					
-
-				  </div>
-				  <div class="accordion_item">
-					<div class="accordion_header" onclick="toggleAccordion(this)">
-					  <span>
-						BlazePose with MediaPipe
-					  </span>
-					  <div class="icon">
-						+
-					  </div>
-					</div>
-			  
-					<div class="accordion_content">
-					  <p>
-						<strong>BlazePose</strong> is a highfidelity body pose model developed by Google's MediaPipe. It can detect 33 keypoints, extending the 17 keypoints topology of the original PoseNet model. These additional keypoints provide vital information about face, hands, and feet location with scale and rotation
-					    <br>
-					</p>
-					</div>
-				  </div>
-				  <div class="accordion_item">
-					<div class="accordion_header" onclick="toggleAccordion(this)">
-					  <span>
-						Educational & Assessment
-					  </span>
-					  <div class="icon">
-						+
-					  </div>
-					</div>
-			  
-					<div class="accordion_content">
-					  <p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi incidunt vel magnam nesciunt quisquam. Numquam aspernatur voluptatum odio fugiat assumenda autem aliquid voluptas iure earum eaque. Aut voluptate laboriosam tempora?
-					  </p>
-					</div>
-				  </div>
-				  <div class="accordion_item">
-					<div class="accordion_header" onclick="toggleAccordion(this)">
-					  <span>
-						Taichno a web application
-					  </span>
-					  <div class="icon">
-						+
-					  </div>
-					</div>
-			  
-					<div class="accordion_content">
-					  <p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi incidunt vel magnam nesciunt quisquam. Numquam aspernatur voluptatum odio fugiat assumenda autem aliquid voluptas iure earum eaque. Aut voluptate laboriosam tempora?
-					  </p>
-					</div>
-				  </div>
-				  <div class="accordion_item">
-					<div class="accordion_header" onclick="toggleAccordion(this)">
-					  <span>
-						Terms and Privacy
-					  </span>
-					  <div class="icon">
-						+
-					  </div>
-					</div>
-			  
-					<div class="accordion_content">
-						<p>By utilizing the <strong>TAICHNO: An Educational Assessment Tool for Taijiquan’s Stance</strong> with <strong>Real-time Accuracy and Feedback Utilizing Blaze Pose MediaPipe Algorithm</strong>, you acknowledge and grant permission for the <strong>University of Makati (UMak)</strong> to process the data you provide. Your information will be handled with the highest regard for confidentiality and respect. <strong>UMak</strong> adheres to the fundamental principles and regulations of data privacy protection specific to the development and utilization of <strong>TAICHNO</strong> in the context of <strong>Taijiquan's stance assessment</strong>.</p>
-					</div>
-				  </div>
-				</div>
-			</div>
-        </main>
 
 
 
@@ -674,6 +655,8 @@
 
 	
 	<script src="script/userProfile.js"></script>
-		
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
 </body>
 </html>
