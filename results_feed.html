@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taijiquan Results</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="css/userProfile.css">
+  <link rel="icon" href="img/logo.png" type="image/png"> 
+
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+    }
+
+    .section-title {
+      text-align: center;
+    }
+
+    .charts {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+
+    canvas {
+      width: 100%;
+      height: 300px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 class="section-title">Taijiquan Assessment Results</h2>
+    <div class="charts">
+      <canvas id="barChart"></canvas>
+      <canvas id="quizChart"></canvas>
+      <canvas id="radarChart"></canvas>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const barChartData = {
+        labels: ['Strength', 'Flexibility', 'Balance', 'Coordination', 'Breath Control'],
+        datasets: [{
+          label: 'Assessment Results',
+          data: [80, 70, 90, 85, 75],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(54, 162, 235, 0.6)',
+            'rgba(255, 206, 86, 0.6)',
+            'rgba(75, 192, 192, 0.6)',
+            'rgba(153, 102, 255, 0.6)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)'
+          ],
+          borderWidth: 1
+        }]
+      };
+
+      const quizChartData = {
+        labels: ['Quiz 1', 'Quiz 2', 'Quiz 3', 'Quiz 4', 'Quiz 5'],
+        datasets: [{
+          label: 'Quiz Scores',
+          data: [90, 85, 92, 88, 95],
+          backgroundColor: 'rgba(75, 192, 192, 0.6)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1,
+          fill: false
+        }]
+      };
+
+      const radarChartData = {
+        labels: ['Strength', 'Flexibility', 'Balance', 'Coordination', 'Breath Control'],
+        datasets: [{
+          label: 'Assessment Results',
+          data: [80, 70, 90, 85, 75],
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          borderColor: 'rgba(255, 99, 132, 1)',
+          borderWidth: 1
+        }]
+      };
+
+      const chartOptions = {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      };
+
+      const barCtx = document.getElementById('barChart').getContext('2d');
+      const quizCtx = document.getElementById('quizChart').getContext('2d');
+      const radarCtx = document.getElementById('radarChart').getContext('2d');
+
+      const barChart = new Chart(barCtx, {
+        type: 'bar',
+        data: barChartData,
+        options: chartOptions
+      });
+
+      const quizChart = new Chart(quizCtx, {
+        type: 'line',
+        data: quizChartData,
+        options: chartOptions
+      });
+
+      const radarChart = new Chart(radarCtx, {
+        type: 'radar',
+        data: radarChartData,
+        options: chartOptions
+      });
+    });
+  </script>
+</body>
+</html>
