@@ -277,12 +277,6 @@ body {
 	justify-content: center;
 	align-items: center;
 }
-#content nav .profile img {
-	width: 36px;
-	height: 36px;
-	object-fit: cover;
-	border-radius: 50%;
-}
 #content nav .switch-mode {
 	display: block;
 	min-width: 50px;

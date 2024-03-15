@@ -671,3 +671,26 @@ img {
     margin: 15px 0;
   }
 }
+
+/* Apply transition to image scaling */
+.features .feature img,
+.card-container .card__article .card__img {
+  transition: transform 0.3s ease; /* Apply transition effect with a duration of 0.3 seconds */
+}
+
+/* Scale up the image when hovering over */
+.features .feature img:hover,
+.card-container .card__article .card__img:hover {
+  transform: scale(1.1); /* Scale the image to 110% of its original size */
+}
+
+/* Apply transition to image scaling */
+.slider-content .vision {
+  transition: transform 0.3s ease; /* Apply transition effect with a duration of 0.3 seconds */
+}
+
+/* Scale up the image when hovering over */
+.slider-content .vision:hover {
+  transform: scale(1.1); /* Scale the image to 110% of its original size */
+}
+
