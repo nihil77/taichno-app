@@ -31,35 +31,34 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   loadData();
-  
 
   function zColor(data) {
     const z = clamp(data.from.z + 0.5, 0, 1);
     return `rgba(0, ${255 * z}, ${255 * (1 - z)}, 1)`;
   }
 
-  function validateHorseStance(poseLandmarks) {
+  function validateStance(poseLandmarks, stance) {
     // Check if poseLandmarks is undefined or null
     if (!poseLandmarks) {
       return false; // Pose landmarks are not available
     }
   
-    // Example: Check the position of key landmarks or angles.
-    const leftKnee = poseLandmarks[POSE_LANDMARKS_LEFT.KNEE];
-    const rightKnee = poseLandmarks[POSE_LANDMARKS_RIGHT.KNEE];
-    const leftAnkle = poseLandmarks[POSE_LANDMARKS_LEFT.ANKLE];
-    const rightAnkle = poseLandmarks[POSE_LANDMARKS_RIGHT.ANKLE];
-  
-    // Check if any of the landmarks are undefined
-    if (!leftKnee || !rightKnee || !leftAnkle || !rightAnkle) {
-      return false; // Some landmarks are not available
+    // Example: Check the position of key landmarks or angles for different stances
+    switch(stance) {
+      case "Horse Stance":
+        // Example: Check if knees are lower than ankles (simplified logic)
+        const leftKnee = poseLandmarks[POSE_LANDMARKS_LEFT.KNEE];
+        const rightKnee = poseLandmarks[POSE_LANDMARKS_RIGHT.KNEE];
+        const leftAnkle = poseLandmarks[POSE_LANDMARKS_LEFT.ANKLE];
+        const rightAnkle = poseLandmarks[POSE_LANDMARKS_RIGHT.ANKLE];
+        return leftKnee.y > leftAnkle.y && rightKnee.y > rightAnkle.y;
+      
+      // Add cases for other stances here
+      
+      default:
+        return false; // Stance not recognized
     }
-  
-    // Example: Check if knees are lower than ankles (simplified logic)
-    return leftKnee.y > leftAnkle.y && rightKnee.y > rightAnkle.y;
   }
-  
-  
 
   function onResultsPose(results) {
     document.body.classList.add('loaded');
@@ -77,10 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
       out5.height
     );
   
-    // Check if the detected pose corresponds to Horse Stance
-    const isHorseStance = validateHorseStance(results.poseLandmarks);
+    // Validate the detected stance
+    const isHorseStance = validateStance(results.poseLandmarks, "Horse Stance");
   
-    // Set the color for connectors and landmarks based on Horse Stance validation
+    // Set the color for connectors and landmarks based on validation result
     const connectorColor = isHorseStance ? 'green' : 'red';
   
     // Draw connectors with the determined color
@@ -91,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
       { color: connectorColor }
     );
   
-    // Set the color for landmarks based on Horse Stance validation
+    // Set the color for landmarks based on validation result
     const landmarkColor = isHorseStance ? zColor : 'red';
   
     // Draw landmarks with the determined color
@@ -120,9 +119,8 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   
     canvasCtx5.restore();
-  }
-  
-  
+}
+
   const pose = new Pose({
     locateFile: (file) => {
       return `https://cdn.jsdelivr.net/npm/@mediapipe/pose@0.2/${file}`;
@@ -170,6 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
       pose.setOptions(options);
     });
 });
+
 
 document.addEventListener('DOMContentLoaded', function () {
   // Get the query parameter from the URL
