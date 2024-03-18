@@ -1,69 +1,86 @@
 {
-    "questions": [
-      {
-        "question": "What is this stance?",
-        "choice1": "Ma Bu",
-        "choice2": "Gong JianBu",
-        "choice3": "Zuo Pan Bu",
-        "choice4": "Si Liu Bu",
-        "answer": 1
-      },
-      {
-        "question": "Which Taijiquan stance is also known as Gong JianBu?",
-        "choice1": "Bow-Arrow Stance",
-        "choice2": "Sitting on Crossed Legs Stance",
-        "choice3": "False Stance",
-        "choice4": "Golden Rooster Standing on One Leg Stance",
-        "answer": 1
-      },
-      {
-        "question": "In Taijiquan, what is the English translation for Zuo Pan Bu?",
-        "choice1": "Four-Six Stance",
-        "choice2": "Tame the Tiger Stance",
-        "choice3": "Squat Stance",
-        "choice4": "Sitting on Crossed Legs Stance",
-        "answer": 4
-      },
-      {
-        "question": "Which Taijiquan stance is known as Si Liu Bu?",
-        "choice1": "False Stance",
-        "choice2": "Golden Rooster Standing on One Leg Stance",
-        "choice3": "Squat Stance",
-        "choice4": "Four-Six Stance",
-        "answer": 4
-      },
-      {
-        "question": "Fu Hu Bu is also called?",
-        "choice1": "Tame the Tiger Stance",
-        "choice2": "Bow-Arrow Stance",
-        "choice3": "Squat Stance",
-        "choice4": "Golden Rooster Standing on One Leg Stance",
-        "answer": 1
-      },
-      {
-        "question": "What is Xuan Ji Bu (or Xu Bu) in Taijiquan?",
-        "choice1": "Golden Rooster Standing on One Leg Stance",
-        "choice2": "False Stance",
-        "choice3": "Squat Stance",
-        "choice4": "Tame the Tiger Stance",
-        "answer": 2
-      },
-      {
-        "question": "Jin Gi Du Li is the Chinese name for which Taijiquan stance?",
-        "choice1": "Four-Six Stance",
-        "choice2": "Horse Stance",
-        "choice3": "Bow-Arrow Stance",
-        "choice4": "Golden Rooster Standing on One Leg Stance",
-        "answer": 4
-      },
-      {
-        "question": "Which Taijiquan stance is referred to as Zuo Dun?",
-        "choice1": "Sitting on Crossed Legs Stance",
-        "choice2": "False Stance",
-        "choice3": "Four-Six Stance",
-        "choice4": "Squat Stance",
-        "answer": 4
-      }
-    ]
+  "questions": [
+    {
+      "question": "What role does the Four-Six Stance play in martial arts practice?",
+      "choice1": "It emphasizes meditation and mental focus",
+      "choice2": "It is used solely for defensive maneuvers",
+      "choice3": "It serves as a foundation for executing techniques such as punches, kicks, and blocks",
+      "choice4": "It primarily focuses on breathing techniques",
+      "answer": 3
+    },
+    {
+      "question": "What role does the Four-Six Stance play in martial arts training?",
+      "choice1": "It is primarily used for meditation and mental clarity",
+      "choice2": "It helps beginners develop proper posture, balance, and coordination",
+      "choice3": "It serves as a finishing move in sparring sessions  ",
+      "choice4": "It is used for advanced combat techniques",
+      "answer": 2
+    },
+    {
+      "question": "What are some benefits associated with practicing the Four-Six Stance?",
+      "choice1": "Improved lower body strength, stability, and flexibility ",
+      "choice2": "Better hand-eye coordination and reflexes",
+      "choice3": "Enhanced cardiovascular endurance",
+      "choice4": "Increased upper body strength and agility",
+      "answer": 1
+    },
+    {
+      "question": "How can the principles of the Four-Six Stance be applied beyond combat?",
+      "choice1": "By promoting better posture, balance, and body alignment",
+      "choice2": "By increasing hand-eye coordination",
+      "choice3": "By enhancing mental focus and concentration",
+      "choice4": "By improving cardiovascular health",
+      "answer": 1
+    },
+    {
+      "question": "What is the Four-Six Stance also known as in Chinese martial arts?    ",
+      "choice1": "Si Qi Bu",
+      "choice2": "Si Lei Bu",
+      "choice3": "Si Wu Bu",
+      "choice4": "Si Liu Bu ",
+      "answer": 4
+    },
+    {
+      "question": "What is the historical origin of the Four-Six Stance?",
+      "choice1": "The Forbidden City in Beijing",
+      "choice2": "The Great Wall of China",
+      "choice3": "The Shaolin Temple",
+      "choice4": "The Terracotta Army",
+      "answer": 3
+    },
+    {
+      "question": "What was the primary purpose behind developing the Four-Six Stance?",
+      "choice1": "To showcase flexibility",
+      "choice2": "To provide a stable and balanced posture",
+      "choice3": "To focus solely on defense",
+      "choice4": "To emphasize speed",
+      "answer": 2
+    },
+    {
+      "question": "What are the key characteristics of the Four-Six Stance?",
+      "choice1": "Uneven weight distribution and a high center of gravity",
+      "choice2": "Narrow stance with one foot raised off the ground",
+      "choice3": "Wide stance with feet together and front foot pointing backward",
+      "choice4": "Even weight distribution and a low center of gravity ",
+      "answer": 4
+    },
+    {
+    "question": "What does the term Four-Six in the Four-Six Stance refer to?",
+    "choice1": "The distribution of weight between the legs",
+    "choice2": "The number of punches executed in a sequence",
+    "choice3": "The number of kicks incorporated into the stance",
+    "choice4": "The number of steps required to perform the stance ",
+    "answer": 1
+  },
+  {
+    
+    "question": "What is the significance of the Four-Six Stance in Chinese martial arts?",
+    "choice1": "It originated from Japanese martial arts.",
+    "choice2": "It is primarily used for offensive maneuvers.",
+    "choice3": "It serves as a foundational stance valued for stability, balance, and versatility. ",
+    "choice4": "It is exclusive to Shaolin Kung Fu. ",
+    "answer": 3
   }
-  
+
+  ]
+}

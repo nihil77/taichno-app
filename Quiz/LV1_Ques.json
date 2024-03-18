@@ -1,69 +1,86 @@
 {
-    "questions": [
-      {
-        "question": "What is the Chinese name for Horse Stance in Taijiquan?",
-        "choice1": "Ma Bu",
-        "choice2": "Gong JianBu",
-        "choice3": "Zuo Pan Bu",
-        "choice4": "Si Liu Bu",
-        "answer": 1
-      },
-      {
-        "question": "Which Taijiquan stance is also known as Gong JianBu?",
-        "choice1": "Bow-Arrow Stance",
-        "choice2": "Sitting on Crossed Legs Stance",
-        "choice3": "False Stance",
-        "choice4": "Golden Rooster Standing on One Leg Stance",
-        "answer": 1
-      },
-      {
-        "question": "In Taijiquan, what is the English translation for Zuo Pan Bu?",
-        "choice1": "Four-Six Stance",
-        "choice2": "Tame the Tiger Stance",
-        "choice3": "Squat Stance",
-        "choice4": "Sitting on Crossed Legs Stance",
-        "answer": 4
-      },
-      {
-        "question": "Which Taijiquan stance is known as Si Liu Bu?",
-        "choice1": "False Stance",
-        "choice2": "Golden Rooster Standing on One Leg Stance",
-        "choice3": "Squat Stance",
-        "choice4": "Four-Six Stance",
-        "answer": 4
-      },
-      {
-        "question": "Fu Hu Bu is also called?",
-        "choice1": "Tame the Tiger Stance",
-        "choice2": "Bow-Arrow Stance",
-        "choice3": "Squat Stance",
-        "choice4": "Golden Rooster Standing on One Leg Stance",
-        "answer": 1
-      },
-      {
-        "question": "What is Xuan Ji Bu (or Xu Bu) in Taijiquan?",
-        "choice1": "Golden Rooster Standing on One Leg Stance",
-        "choice2": "False Stance",
-        "choice3": "Squat Stance",
-        "choice4": "Tame the Tiger Stance",
-        "answer": 2
-      },
-      {
-        "question": "Jin Gi Du Li is the Chinese name for which Taijiquan stance?",
-        "choice1": "Four-Six Stance",
-        "choice2": "Horse Stance",
-        "choice3": "Bow-Arrow Stance",
-        "choice4": "Golden Rooster Standing on One Leg Stance",
-        "answer": 4
-      },
-      {
-        "question": "Which Taijiquan stance is referred to as Zuo Dun?",
-        "choice1": "Sitting on Crossed Legs Stance",
-        "choice2": "False Stance",
-        "choice3": "Four-Six Stance",
-        "choice4": "Squat Stance",
-        "answer": 4
-      }
-    ]
-  }
-  
+  "questions": [
+    {
+      "question": "What is the Chinese name for Horse Stance in Taijiquan?",
+      "choice1": "Ma Bu",
+      "choice2": "Gong JianBu",
+      "choice3": "Zuo Pan Bu",
+      "choice4": "Si Liu Bu",
+      "answer": 1
+    },
+    {
+      "question": "Horse stance was developed and practiced by ___________.",
+      "choice1": "artist",
+      "choice2": "horse Rider",
+      "choice3": "Martial Artist and Warriors",
+      "choice4": "Players",
+      "answer": 3
+    },
+    {
+      "question": "The monks of Shaolin Temple recognize the importance of strong foundation and developed the Horse Stance as a way to ________ and __________.",
+      "choice1": "Physical, emotional",
+      "choice2": "Cultivate physical, mental strength",
+      "choice3": "mental health",
+      "choice4": "Physical Touch",
+      "answer": 2
+    },
+    {
+      "question": "What is the primary purposes of the Horse Stance?",
+      "choice1": "Widening Legs",
+      "choice2": "To develop Muscle Legs",
+      "choice3": "Just to exercise",
+      "choice4": "To develop Physical Strength and endurance",
+      "answer": 4
+    },
+    {
+      "question": "What requires to hold the Horse Stance",
+      "choice1": "Breathing",
+      "choice2": "Concentration",
+      "choice3": "Standing",
+      "choice4": "Techniques",
+      "answer": 2
+    },
+    {
+      "question": "What is Horse Stance in Martial Arts",
+      "choice1": "Timeless and Foundational Posture",
+      "choice2": "Hard Stance",
+      "choice3": "Defense",
+      "choice4": "All of the Above",
+      "answer": 2
+    },
+    {
+      "question": "It is serves as a training tool for developing physical and mental attributes.",
+      "choice1": "Four-Six Stance",
+      "choice2": "False Stance",
+      "choice3": "Bow-Arrow Stance",
+      "choice4": "Horse Stance",
+      "answer": 4
+    },
+    {
+      "question": "What is the right standing posture of Horse Stance?",
+      "choice1": "The feet wider than shoulder-width apart, with the knees bent and the thighs parallel to the ground.",
+      "choice2": "The feet is wider enough.",
+      "choice3": "The back is straight",
+      "choice4": "Balance",
+      "answer": 1
+    },
+
+    {
+      "question": "The arms can be positioned in various way depending on the ___________.",
+      "choice1": "Martial Arts style.",
+      "choice2": "Techniques being practiced.",
+      "choice3": "A and B",
+      "choice4": "None of the Above",
+      "answer": 3
+    },
+
+    {
+      "question": "It generate power and maintain balance. What Horse Stance provides?",
+      "choice1": "Stable Base of executing strikes",
+      "choice2": "All of the Above",
+      "choice3": "Kicks and blocks",
+      "choice4": "To generate power and maintain balance",
+      "answer": 3
+    }
+  ]
+}

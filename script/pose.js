@@ -271,7 +271,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-
 // Function to handle pose results
 function onResultsPose(results) {
   document.body.classList.add('loaded');
@@ -309,16 +308,18 @@ function onResultsPose(results) {
     isCorrectStance = validateSquatStance(results.poseLandmarks);
   }
 
-  // Check if the user is smiling
-  const isSmiling = validateSmile(results.poseLandmarks);
-
-  // Define a separate green color for perfect pose
-  const perfectPoseColor = 'limegreen';
-
   // Set the color for connectors and landmarks based on correctness of stance and smiling
-  const lineColor = (isCorrectStance && isSmiling) ? perfectPoseColor : 'red';
-  const landmarkColor = isCorrectStance ? (isSmiling ? perfectPoseColor : 'green') : zColor;
-
+  let lineColor, landmarkColor;
+  if (isCorrectStance && isSmiling) {
+    lineColor = perfectPoseColor; // Perfect pose color
+    landmarkColor = perfectPoseColor; // Perfect pose color
+  } else if (isCorrectStance) {
+    lineColor = 'green'; // Correct stance color
+    landmarkColor = 'green'; // Correct stance color
+  } else {
+    lineColor = 'red'; // Incorrect stance color
+    landmarkColor = zColor; // Use zColor for incorrect stance
+  }
 
   // Draw connectors with the determined color
   drawConnectors(
@@ -392,40 +393,129 @@ function onResultsPose(results) {
   // Set the image source
   const guideImage = document.querySelector('.guide-image');
 
-  // Conditionally set the image source based on className
-  if (className === 'Horse Stance (Ma Bu)') {
-    guideImage.src = 'img/1.png';
-    guideImage.alt = 'Guide Image 1';
-    setGuideText('Follow these for Horse Stance.', ['Step 1: Instruction for Horse Stance', 'Step 2: Another instruction for Horse Stance']);
-  } else if (className === 'Bow-Arrow Stance (Gong JianBu)') {
-    guideImage.src = 'img/2.png';
-    guideImage.alt = 'Guide Image 2';
-    setGuideText('Follow these for Bow-Arrow Stance.', ['Step 1: Instruction for Bow-Arrow Stance', 'Step 2: Another instruction for Bow-Arrow Stance']);
-  } else if (className == 'Sitting on Crossed Legs Stance (Zuo Pan Bu)') {
-    guideImage.src = 'img/3.png';
-    guideImage.alt = 'Guide Image 3';
-    setGuideText('Follow these for Sitting on Crossed Legs Stance.', ['Step 1: Instruction for Sitting on Crossed Legs Stance', 'Step 2: Another instruction for Sitting on Crossed Legs Stance']);
-  } else if (className == 'Four-Six Stance (Si Liu Bu)') {
-    guideImage.src = 'img/4.png';
-    guideImage.alt = 'Guide Image 4';
-    setGuideText('Follow these for Four-Six Stance.', ['Step 1: Instruction for Sitting on Crossed Legs Stance', 'Step 2: Another instruction for Sitting on Crossed Legs Stance']);
-  } else if (className == 'Tame the Tiger Stance (Fu Hu Bu)') {
-    guideImage.src = 'img/5.png';
-    guideImage.alt = 'Guide Image 5';
-    setGuideText('Follow these for Tame the Tiger Stance.', ['Step 1: Instruction for Sitting on Crossed Legs Stance', 'Step 2: Another instruction for Sitting on Crossed Legs Stance']);
-  } else if (className == 'False Stance (Xuan Ji Bu or Xu Bu)') {
-    guideImage.src = 'img/6.png';
-    guideImage.alt = 'Guide Image 6';
-    setGuideText('Follow these for False Stance.', ['Step 1: Instruction for Sitting on Crossed Legs Stance', 'Step 2: Another instruction for Sitting on Crossed Legs Stance']);
-  } else if (className == 'Golden Rooster Standing on One Leg Stance (Jin Gi Du Li)') {
-    guideImage.src = 'img/7.png';
-    guideImage.alt = 'Guide Image 7';
-    setGuideText('Follow these for Golden Rooster Standing on One Leg Stance.', ['Step 1: Instruction for Sitting on Crossed Legs Stance', 'Step 2: Another instruction for Sitting on Crossed Legs Stance']);
-  } else if (className == 'Squat Stance (Zuo Dun)') {
-    guideImage.src = 'img/8.png';
-    guideImage.alt = 'Guide Image 8';
-    setGuideText('Follow these for Squat Stance.', ['Step 1: Instruction for Sitting on Crossed Legs Stance', 'Step 2: Another instruction for Sitting on Crossed Legs Stance']);
+  // Define an object to map class names to image source paths and guide texts
+const classGuideMap = {
+  'Horse Stance (Ma Bu)': {
+    src: 'img/1.png',
+    alt: 'Guide Image 1',
+    text: 'Follow these for Horse Stance.',
+    steps: [
+      'Step 1: Stand with feet shoulder-width apart, toes forward, back straight.',
+      'Step 2: Bend knees, lowering thighs parallel to ground.',
+      'Step 3: Ensure knees aligned with toes, weight evenly distributed.',
+      'Step 4: Maintain position, engage core muscles, breathe steadily.',
+      'Step 5: Straighten legs, return to starting position.',
+    ]
+      },
+  'Bow-Arrow Stance (Gong JianBu)': {
+    src: 'img/2.png',
+    alt: 'Guide Image 2',
+    text: 'Follow these for Bow-Arrow Stance.',
+    steps: [
+      'Step 1: Stand with feet shoulder-width apart, toes pointing forward.',
+      'Step 2: Extend arms forward, palms facing down, as if holding a bow and arrow.',
+      'Step 3: Bend knees slightly, keeping back straight and core engaged.',
+      'Step 4: Lower body into a stable stance, aligning knees with feet.',
+      'Step 5: Focus on maintaining balance and stability, breathe steadily.',
+    ]
+      },
+  'Sitting on Crossed Legs Stance (Zuo Pan Bu)': {
+    src: 'img/3.png',
+    alt: 'Guide Image 3',
+    text: 'Follow these for Sitting on Crossed Legs Stance.',
+    steps: [
+      'Step 1: Sit on the ground with legs extended in front of you.',
+      'Step 2: Cross one leg over the other at the knees, keeping back straight.',
+      'Step 3: Place hands on knees or floor for support, if needed.',
+      'Step 4: Relax shoulders and lengthen the spine, maintaining good posture.',
+      'Step 5: Breathe deeply and evenly, focusing on relaxation and balance.',
+      'Step 6: Hold the crossed-leg position for a comfortable duration.',
+    ]
+      },
+  'Four-Six Stance (Si Liu Bu)': {
+    src: 'img/4.png',
+    alt: 'Guide Image 4',
+    text: 'Follow these for Four-Six Stance.',
+    steps: [
+      'Step 1: Stand with feet shoulder-width apart and arms relaxed at sides.',
+      'Step 2: Bend knees slightly while keeping back straight and chest lifted.',
+      'Step 3: Shift weight onto balls of feet while maintaining balance.',
+      'Step 4: Lower hips down and back as if sitting into a chair, thighs parallel to the ground.',
+      'Step 5: Keep knees aligned over ankles, not extending past toes.',
+      'Step 6: Engage core muscles for stability and support.',
+      'Step 7: Hold the position for a comfortable duration, breathing steadily.',
+    ]
+  },
+  'Tame the Tiger Stance (Fu Hu Bu)': {
+    src: 'img/5.png',
+    alt: 'Guide Image 5',
+    text: 'Follow these for Tame the Tiger Stance.',
+    steps: [
+      'Step 1: Begin in a standing position with feet hip-width apart and arms relaxed at sides.',
+      'Step 2: Shift weight onto one leg while lifting the opposite foot off the ground.',
+      'Step 3: Bend the knee of the lifted leg and bring it towards the chest.',
+      'Step 4: Hold the lifted foot with one or both hands, finding balance.',
+      'Step 5: Keep the standing leg slightly bent for stability and support.',
+      'Step 6: Engage the core muscles to maintain balance and control.',
+    ]
+  },
+  'False Stance (Xuan Ji Bu or Xu Bu)': {
+    src: 'img/6.png',
+    alt: 'Guide Image 6',
+    text: 'Follow these for False Stance.',
+    steps: [
+      'Step 1: Start in a standing position with feet shoulder-width apart',
+      'Step 2: Shift weight onto one foot while lifting the opposite foot off the ground.',
+      'Step 3: Bend the knee of the lifted leg and bring it towards the chest.',
+      'Step 4: Keep the standing leg slightly bent for stability and support.',
+      'Step 5: Engage the core muscles to maintain balance and control.',
+      'Step 6: Hold the lifted foot with one or both hands, finding balance.',
+      'Step 7: Keep the torso upright and the gaze forward, maintaining alignment.',
+      'Step 8: Breathe deeply and evenly to stay centered and focused.',
+    ]
+  },
+  'Golden Rooster Standing on One Leg Stance (Jin Gi Du Li)': {
+    src: 'img/7.png',
+    alt: 'Guide Image 7',
+    text: 'Follow these for Golden Rooster Standing on One Leg Stance.',
+    steps: [
+      'Step 1: Begin in a standing position with feet hip-width apart and arms relaxed at sides.',
+      'Step 2: Shift weight onto one leg while keeping the other foot firmly planted on the ground.',
+      'Step 3: Engage the core muscles to stabilize the body and maintain balance.',
+      'Step 4: Bend the knee of the supporting leg slightly, maintaining a stable stance.',
+      'Step 5: Lift the opposite leg off the ground, bringing the knee towards the chest.',
+      'Step 6: Extend the lifted leg forward, finding a comfortable balance point.',
+      'Step 7: Keep the torso upright and the gaze focused ahead for stability.',
+      'Step 8: Hold the lifted leg with one or both hands to assist with balance.',
+      'Step 9: Breathe deeply and evenly, maintaining a steady rhythm.',
+    ]
+  },
+  'Squat Stance (Zuo Dun)': {
+    src: 'img/8.png',
+    alt: 'Guide Image 8',
+    text: 'Follow these for Squat Stance.',
+    steps: [
+      'Step 1: Begin in a standing position with feet shoulder-width apart and arms relaxed at sides.',
+      'Step 2: Engage the core muscles and shift hips back as if sitting into a chair, bending knees.',
+      'Step 3: Lower the body down, keeping the chest lifted and back straight, as if sitting back.',
+      'Step 4: Lower until thighs are parallel to the ground or as low as comfortable, keeping heels down.',
+      'Step 5: Keep knees aligned with toes and avoid letting them extend beyond toes.',
+      'Step 6: Engage glutes and thigh muscles to push through heels and rise back to standing.',
+      'Step 7: Keep weight evenly distributed on both feet throughout the movement.',
+      'Step 8: Maintain a neutral spine and avoid rounding or arching the back.',
+      'Step 9: Exhale as you push up from the squat, keeping breath controlled and steady.',
+    ]
   }
+};
+
+// Set image source, alt text, and guide text based on className
+const guideInfo = classGuideMap[className];
+if (guideInfo) {
+  guideImage.src = guideInfo.src;
+  guideImage.alt = guideInfo.alt;
+  setGuideText(guideInfo.text, guideInfo.steps);
+}
+
 
   const pose = new Pose({
     locateFile: (file) => {

@@ -1,35 +1,33 @@
 {
   "questions": [
     {
-      "question": "What is the Chinese name for Horse Stance in Taijiquan?",
-      "choice1": "Ma Bu",
-      "choice2": "Gong JianBu",
-      "choice3": "Zuo Pan Bu",
-      "choice4": "Si Liu Bu",
+      "question": "It is a fundamental position in martial arts discipllines that is known for its combiniation of power, stability, and balance",
+      "choice1": "Horse Stance",
+      "choice2": "Bow-Arrow Stance",
+      "choice3": "Tiger Stance",
+      "choice4": "False Stance",
+      "answer": 2
+    },
+    {
+      "question": "True or False: Bow-Arrow emphasizes the connection between mind and body.",
+      "choice1": "True",
+      "choice2": "False",
       "answer": 1
     },
     {
-      "question": "Which Taijiquan stance is also known as Gong JianBu?",
-      "choice1": "Bow-Arrow Stance",
-      "choice2": "Sitting on Crossed Legs Stance",
-      "choice3": "False Stance",
-      "choice4": "Golden Rooster Standing on One Leg Stance",
-      "answer": 1
+      "question": "Bow Arrow Stance is renowned for its _________.",
+      "choice1": "Generate Electricty",
+      "choice2": "Power",
+      "choice3": "Power-Generating Capabilities",
+      "choice4": "Energy",
+      "answer": 3
     },
     {
-      "question": "In Taijiquan, what is the English translation for Zuo Pan Bu?",
-      "choice1": "Four-Six Stance",
-      "choice2": "Tame the Tiger Stance",
-      "choice3": "Squat Stance",
-      "choice4": "Sitting on Crossed Legs Stance",
-      "answer": 4
-    },
-    {
-      "question": "Which Taijiquan stance is known as Si Liu Bu?",
-      "choice1": "False Stance",
-      "choice2": "Golden Rooster Standing on One Leg Stance",
-      "choice3": "Squat Stance",
-      "choice4": "Four-Six Stance",
+      "question": "What Bow Arrow Stance requires in the lower body?",
+      "choice1": "Speed",
+      "choice2": "Endurance",
+      "choice3": "Power",
+      "choice4": "Strength and Flexibility",
       "answer": 4
     },
     {
@@ -41,28 +39,38 @@
       "answer": 1
     },
     {
-      "question": "What is Xuan Ji Bu (or Xu Bu) in Taijiquan?",
-      "choice1": "Golden Rooster Standing on One Leg Stance",
-      "choice2": "False Stance",
-      "choice3": "Squat Stance",
-      "choice4": "Tame the Tiger Stance",
-      "answer": 2
+      "question": "What are the primary benefits of Bow Arrow stance?",
+      "choice1": "Stability",
+      "choice2": "Balance",
+      "choice3": "Choices 1 and 2",
+      "choice4": "None of the above",
+      "answer": 3
     },
     {
-      "question": "Jin Gi Du Li is the Chinese name for which Taijiquan stance?",
+      "question": " This Stance is often to used in disciplines such as Kung Fu, Tai Chi, and Karate rgar serves a foundation foe executing powerful strikes.",
       "choice1": "Four-Six Stance",
       "choice2": "Horse Stance",
       "choice3": "Bow-Arrow Stance",
       "choice4": "Golden Rooster Standing on One Leg Stance",
-      "answer": 4
+      "answer": 3
     },
     {
-      "question": "Which Taijiquan stance is referred to as Zuo Dun?",
-      "choice1": "Sitting on Crossed Legs Stance",
-      "choice2": "False Stance",
-      "choice3": "Four-Six Stance",
-      "choice4": "Squat Stance",
+      "question": "The front leg's bent position, what are the things engages for to develop  strength and enducance in muscles?",
+      "choice1": "Quadriceps",
+      "choice2": "Harmstings",
+      "choice3": "Glutes",
+      "choice4": "All of the Above",
       "answer": 4
+    },
+
+    {
+      "question": "Which aspect of the Bow-Arrow stance underscores the connection between the mind and body in martial arts practice?",
+      "choice1": "Prioritizing speed over technique and control.",
+      "choice2": "Emphasizing brute force and power generation.",
+      "choice3": "Maintaining proper alignment, balance, and stability during technique execution.",
+      "choice4": "Neglecting mindfulness and concentration in favor of physical strength.",
+      "answer": 3
     }
+  
   ]
 }

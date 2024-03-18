@@ -479,8 +479,7 @@ body {
 }
 #content main .table-data .todo .todo-list li.completed {
     border-left: 10px solid var(--green);
-    background-color: var(--green);
-    color: #fff;
+    color: #000;
 }
 
 #content main .table-data .todo .todo-list li.not-completed {
@@ -643,11 +642,6 @@ body {
 
 /* MAIN Information Content */
 /* Light mode styles */
-.infocontainer {
-    max-width: auto;
-    margin: 2 auto;
-}
-
 .accordion_item {
     border: 2px solid #1eb292;
     margin-bottom: 20px;
@@ -662,15 +656,14 @@ body {
     display: flex;
     justify-content: space-between;
     cursor: pointer;
-	color: var(--dark);
-	font-size: large;
-	font-weight: bold;
-	font-family: var(--poppins);
+    color: var(--dark);
+    font-size: large;
+    font-weight: bold;
+    font-family: var(--poppins);
 }
 
 .accordion_content {
     padding: 4px;
-    max-height: 0;
     overflow: hidden;
     opacity: 1;
 }
@@ -681,17 +674,8 @@ body {
     margin: 10px;
 }
 
-.icon {
-    font-weight: bold;
-    color: var(--dark); /* Icon color in light mode */
-}
-
-.accordion_item.open .icon {
-    color: var(--light); /* Icon color in dark mode when accordion is open */
-}
-
 .accordion_item.open {
-    max-height: 300px;
+    max-height: auto; /* Allow content to expand freely */
 }
 
 .accordion_item.open .accordion_content {
@@ -708,12 +692,6 @@ body {
 }
 
 .dark-mode .accordion_content p {
-    color: var(--light);
-}
-
-/* Toggle between light and dark mode */
-body.dark-mode {
-    background-color: var(--grey);
     color: var(--light);
 }
 

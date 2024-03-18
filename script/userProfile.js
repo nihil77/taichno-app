@@ -24,7 +24,6 @@ menuBar.addEventListener('click', function () {
 
 
 
-
 const switchMode = document.getElementById('switch-mode');
 
 switchMode.addEventListener('change', function () {
@@ -145,25 +144,112 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-// My Information
-document.addEventListener('DOMContentLoaded', function () {
-    const accordionHeaders = document.querySelectorAll('.accordion_header');
+document.addEventListener("DOMContentLoaded", function() {
+  // Get the parameters from the URL
+  const params = new URLSearchParams(window.location.search);
+  const email = params.get("email");
 
-    accordionHeaders.forEach(header => {
-      header.addEventListener('click', function () {
-        const accordionItem = this.parentElement;
-        accordionItem.classList.toggle('open');
-        const content = accordionItem.querySelector('.accordion_content');
-        content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + 'px';
-      });
-    });
-  });
+  // Extract the username from the email
+  const emailParts = email.split("@");
+  let username = emailParts[0];
 
-  function toggleAccordion(header) {
-    const accordionItem = header.closest('.accordion_item');
-    const icon = header.querySelector('.icon');
-  
-    accordionItem.classList.toggle('open');
-    icon.classList.toggle('rotate');
+  // Capitalize the first letter of the username
+  username = username.charAt(0).toUpperCase() + username.slice(1);
+
+  // Display the user data including background color
+  const nameDisplay = document.getElementById("user-name-display");
+  const emailDisplay = document.getElementById("user-email-display");
+
+  nameDisplay.textContent = username;
+  emailDisplay.textContent = email;
+
+  // Apply green background color to user name if the user's name is 'John'
+  if (username === 'John') {
+      nameDisplay.style.backgroundColor = 'var(--green)';
   }
 
+  // Define the completion status for each stance based on the user
+  let completionStatus = {};
+  if (username === 'John') {
+      completionStatus = {
+          "Horse Stance": 100,
+          "Bow-Arrow": 100,
+          "Sitting on Crossed Legs": 100,
+          "Four-Six": 100,
+          "Tame the Tiger": 0,
+          "False Stance": 0,
+          "Golden Rooster Stance": 0,
+          "Squat Stance": 0
+
+      };
+  } else {
+      completionStatus = {
+          "Horse Stance": 0,
+          "Bow-Arrow": 0,
+          "Sitting on Crossed Legs": 0,
+          "Four-Six": 0,
+          "Tame the Tiger": 0,
+          "False Stance": 0,
+          "Golden Rooster Stance": 0,
+          "Squat Stance": 0
+      };
+  }
+
+  // Get all todo items
+  const todoItems = document.querySelectorAll(".todo-list li");
+
+  // Loop through each todo item
+  todoItems.forEach(item => {
+      // Get the name of the stance from the todo item
+      const stanceName = item.querySelector("p").textContent;
+
+      // Find the corresponding completion percentage
+      const percentage = completionStatus[stanceName];
+
+      // Update the progress bar with the calculated percentage
+      const progressBar = item.querySelector(".progress-bar .percentage");
+      progressBar.textContent = `${percentage}%`;
+      progressBar.style.width = `${percentage}%`;
+
+      // Update the class of the todo item based on completion status
+      if (percentage === 100) {
+          item.classList.add("completed");
+          item.classList.remove("not-completed");
+      } else {
+          item.classList.add("not-completed");
+          item.classList.remove("completed");
+      }
+
+      // Apply background color to todo items if the user is 'John'
+      if (username === 'John' && percentage === 100) {
+          item.style.backgroundColor = 'var(--green)';
+      }
+  });
+});
+
+
+function toggleAccordion(element) {
+    var accordionContent = element.nextElementSibling;
+    if (accordionContent.style.display === "none") {
+        accordionContent.style.display = "block";
+    } else {
+        accordionContent.style.display = "none";
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Get all the <td> elements containing the date
+    const dateCells = document.querySelectorAll("tbody td:nth-child(2)");
+
+    // Get today's date
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+    const yyyy = today.getFullYear();
+    const currentDate = `${dd}-${mm}-${yyyy}`;
+
+    // Update each date cell with today's date
+    dateCells.forEach(cell => {
+      cell.textContent = currentDate;
+    });
+  });

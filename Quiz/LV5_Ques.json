@@ -1,69 +1,84 @@
 {
-    "questions": [
-      {
-        "question": "What is this stance?",
-        "choice1": "Ma Bu",
-        "choice2": "Gong JianBu",
-        "choice3": "Zuo Pan Bu",
-        "choice4": "Si Liu Bu",
-        "answer": 1
-      },
-      {
-        "question": "Which Taijiquan stance is also known as Gong JianBu?",
-        "choice1": "Bow-Arrow Stance",
-        "choice2": "Sitting on Crossed Legs Stance",
-        "choice3": "False Stance",
-        "choice4": "Golden Rooster Standing on One Leg Stance",
-        "answer": 1
-      },
-      {
-        "question": "In Taijiquan, what is the English translation for Zuo Pan Bu?",
-        "choice1": "Four-Six Stance",
-        "choice2": "Tame the Tiger Stance",
-        "choice3": "Squat Stance",
-        "choice4": "Sitting on Crossed Legs Stance",
-        "answer": 4
-      },
-      {
-        "question": "Which Taijiquan stance is known as Si Liu Bu?",
-        "choice1": "False Stance",
-        "choice2": "Golden Rooster Standing on One Leg Stance",
-        "choice3": "Squat Stance",
-        "choice4": "Four-Six Stance",
-        "answer": 4
-      },
-      {
-        "question": "Fu Hu Bu is also called?",
-        "choice1": "Tame the Tiger Stance",
-        "choice2": "Bow-Arrow Stance",
-        "choice3": "Squat Stance",
-        "choice4": "Golden Rooster Standing on One Leg Stance",
-        "answer": 1
-      },
-      {
-        "question": "What is Xuan Ji Bu (or Xu Bu) in Taijiquan?",
-        "choice1": "Golden Rooster Standing on One Leg Stance",
-        "choice2": "False Stance",
-        "choice3": "Squat Stance",
-        "choice4": "Tame the Tiger Stance",
-        "answer": 2
-      },
-      {
-        "question": "Jin Gi Du Li is the Chinese name for which Taijiquan stance?",
-        "choice1": "Four-Six Stance",
-        "choice2": "Horse Stance",
-        "choice3": "Bow-Arrow Stance",
-        "choice4": "Golden Rooster Standing on One Leg Stance",
-        "answer": 4
-      },
-      {
-        "question": "Which Taijiquan stance is referred to as Zuo Dun?",
-        "choice1": "Sitting on Crossed Legs Stance",
-        "choice2": "False Stance",
-        "choice3": "Four-Six Stance",
-        "choice4": "Squat Stance",
-        "answer": 4
-      }
-    ]
-  }
-  
+  "questions": [
+    {
+      "question": "Which traditional Chinese martial arts stance is also known as Hu Bu?",
+      "choice1": "Dragon Stance",
+      "choice2": "Crane Stance",
+      "choice3": "Monkey Stance",
+      "choice4": "Tiger Stance",
+      "answer": 4
+    },
+    {
+      "question": "What inspired the creation of the Tiger Stance in martial arts?",
+      "choice1": " Observing the movements of eagles",
+      "choice2": "Studying the behavior of wolves",
+      "choice3": "Observing the movements and behavior of tigers",
+      "choice4": "Emulating the movements of snakes",
+      "answer": 3
+    },
+    {
+      "question": "How is the Tiger Stance characterized in terms of leg positioning?",
+      "choice1": "Low and wide-legged position with the back leg bent",
+      "choice2": "Both legs straight and narrow stance",
+      "choice3": "Low and wide-legged position with the back leg bent",
+      "choice4": "Both legs bent with a high stance",
+      "answer": 1
+    },
+    {
+      "question": "What symbolic significance does the Tiger Stance hold in Chinese culture?",
+      "choice1": "Represents wisdom and strategy",
+      "choice2": "Embodying the qualities of courage, strength, and protection",
+      "choice3": "Symbolizes freedom and flexibility",
+      "choice4": "Signifies peace and tranquility",
+      "answer": 2
+    },
+    {
+      "question": "Which martial arts style is NOT commonly associated with incorporating the Tiger Stance?",
+      "choice1": "Shaolin Kung Fu",
+      "choice2": "Hung Gar",
+      "choice3": "Shaolin Kung Fu",
+      "choice4": "Wing Chun",
+      "answer": 4
+    },
+    {
+      "question": "How has the Tiger Stance contributed to the personal development of martial artists?",
+      "choice1": "By encouraging laziness and lack of discipline",
+      "choice2": "By promoting humility and self-awareness",
+      "choice3": "By focusing solely on physical strength without mental development",
+      "choice4": "By discouraging perseverance and dedicatio",
+      "answer": 2
+    },
+    {
+      "question": "Which of the following best describes the Tiger Stance's application in combat?",
+      "choice1": "Emphasizes slow and deliberate movements",
+      "choice2": "Prioritizes defensive maneuvers over offensive strikes",
+      "choice3": "Utilizes aggressive and explosive movements",
+      "choice4": "Symbolizes patience and endurance",
+      "answer": 3
+    },
+    {
+      "question": "Which aspect of the Tiger Stance emphasizes its association with tigers in combat?",
+      "choice1": "The hands are held in a claw-like position",
+      "choice2": "The stance requires practitioners to stand upright",
+      "choice3": "The stance is primarily used for long-range attacks",
+      "choice4": "The stance encourages passive movements",
+      "answer": 1
+    },
+    {
+      "question": "What role does the Tiger Stance play in modern martial arts training?",
+      "choice1": " It has become obsolete and is rarely practiced",
+      "choice2": "It focuses solely on meditation and relaxation techniques",
+      "choice3": " It serves as a foundation for various techniques and forms",
+      "choice4": "It is exclusively used for ceremonial purposes",
+      "answer": 3
+    },
+    {
+      "question": "How does the Tiger Stance contribute to the overall physical development of martial artists?",
+      "choice1": " By encouraging a sedentary lifestyle and lack of physical activity",
+      "choice2": "By enhancing strength, speed, and martial prowess",
+      "choice3": "By neglecting speed and agility",
+      "choice4": "By promoting rigidity and inflexibility",
+      "answer": 2
+    }
+  ]
+}

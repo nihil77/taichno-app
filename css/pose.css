@@ -59,12 +59,12 @@ body {
   display: flex;
   flex-direction: column;
   padding-left: 10px;
-  margin-top: -100px;
+  margin-top: -130px;
 }
 
 /* Rest of your existing styles remain unchanged */
 .guided-text h1 {
-  font-size: 24px;
+  font-size: 19px;
   color: var(--dark);
   font-family: var(--poppins);
   font-weight: bold;

@@ -1,69 +1,68 @@
 {
-    "questions": [
-      {
-        "question": "It is the one of the best known martial arts of the internals systems from ancient China?",
-        "choice1": "Taigi",
-        "choice2": "Tai Chi",
-        "choice3": "Taichequan",
-        "choice4": "Qigong",
-        "answer": 2
-      },
-      {
-        "question": "A style that develop by Chen Wang ting around 1670 and it called",
-        "choice1": "Wang Style",
-        "choice2": "Ting-Ting Style",
-        "choice3": "Chen Style",
-        "choice4": "Cheng Style",
-        "answer": 3
-      },
-      {
-        "question": "Taichi is a type of?",
-        "choice1": "Martial Arts",
-        "choice2": "Karate",
-        "choice3": "Taekwondo",
-        "choice4": "Qigong",
-        "answer": 4
-      },
-      {
-        "question": "Tai Chi Quan is translate as?",
-        "choice1": "Supreme Ultimate Exercise",
-        "choice2": "Supreme Student Goverment",
-        "choice3": "Supreme Noodles",
-        "choice4": "Ultimate Powers",
-        "answer": 1
-      },
-      {
-        "question": "Fu Hu Bu is also called?",
-        "choice1": "Tame the Tiger Stance",
-        "choice2": "Bow-Arrow Stance",
-        "choice3": "Squat Stance",
-        "choice4": "Golden Rooster Standing on One Leg Stance",
-        "answer": 1
-      },
-      {
-        "question": "What is Xuan Ji Bu (or Xu Bu) in Taijiquan?",
-        "choice1": "Golden Rooster Standing on One Leg Stance",
-        "choice2": "False Stance",
-        "choice3": "Squat Stance",
-        "choice4": "Tame the Tiger Stance",
-        "answer": 2
-      },
-      {
-        "question": "Jin Gi Du Li is the Chinese name for which Taijiquan stance?",
-        "choice1": "Four-Six Stance",
-        "choice2": "Horse Stance",
-        "choice3": "Bow-Arrow Stance",
-        "choice4": "Golden Rooster Standing on One Leg Stance",
-        "answer": 4
-      },
-      {
-        "question": "Which Taijiquan stance is referred to as Zuo Dun?",
-        "choice1": "Sitting on Crossed Legs Stance",
-        "choice2": "False Stance",
-        "choice3": "Four-Six Stance",
-        "choice4": "Squat Stance",
-        "answer": 4
-      }
-    ]
-  }
-  
+  "questions": [
+    {
+      "question": "It is the one of the best known martial arts of the internals systems from ancient China?",
+      "choice1": "Taigi",
+      "choice2": "Tai Chi",
+      "choice3": "Taichequan",
+      "choice4": "Qigong",
+      "answer": 2
+    },
+    {
+      "question": "A style that develop by Chen Wang ting around 1670 and it called",
+      "choice1": "Wang Style",
+      "choice2": "Ting-Ting Style",
+      "choice3": "Chen Style",
+      "choice4": "Cheng Style",
+      "answer": 3
+    },
+    {
+      "question": "Taichi is a type of?",
+      "choice1": "Martial Arts",
+      "choice2": "Karate",
+      "choice3": "Taekwondo",
+      "choice4": "Qigong",
+      "answer": 4
+    },
+    {
+      "question": "Tai Chi Quan is translate as?",
+      "choice1": "Supreme Ultimate Exercise",
+      "choice2": "Supreme Student Goverment",
+      "choice3": "Supreme Noodles",
+      "choice4": "Ultimate Powers",
+      "answer": 1
+    },
+    {
+      "question": "Fu Hu Bu is also called?",
+      "choice1": "Tame the Tiger Stance",
+      "choice2": "Bow-Arrow Stance",
+      "choice3": "Squat Stance",
+      "choice4": "Golden Rooster Standing on One Leg Stance",
+      "answer": 1
+    },
+    {
+      "question": "What is Xuan Ji Bu (or Xu Bu) in Taijiquan?",
+      "choice1": "Golden Rooster Standing on One Leg Stance",
+      "choice2": "False Stance",
+      "choice3": "Squat Stance",
+      "choice4": "Tame the Tiger Stance",
+      "answer": 2
+    },
+    {
+      "question": "Jin Gi Du Li is the Chinese name for which Taijiquan stance?",
+      "choice1": "Four-Six Stance",
+      "choice2": "Horse Stance",
+      "choice3": "Bow-Arrow Stance",
+      "choice4": "Golden Rooster Standing on One Leg Stance",
+      "answer": 4
+    },
+    {
+      "question": "Which Taijiquan stance is referred to as Zuo Dun?",
+      "choice1": "Sitting on Crossed Legs Stance",
+      "choice2": "False Stance",
+      "choice3": "Four-Six Stance",
+      "choice4": "Squat Stance",
+      "answer": 4
+    }
+  ]
+}

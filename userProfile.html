@@ -131,10 +131,10 @@
                     </div>
                 </li>
                 <li>
-                    <i class="bx bxs-comment-detail"></i>
+                    <i class="bx bxs-analyse"></i>
                     <div class="text">
                         <a href="results_feed.html" class="box-link">
-                            <h3>Results & Feedback</h3>
+                            <h3>Assessment Results</h3>
                         </a>
                     </div>
                 </li>
@@ -224,6 +224,7 @@
 						</tbody>
 					</table>
 				</div>
+
 				<div class="todo">
 					<div class="head">
 						<h3>Progress</h3>
@@ -234,29 +235,47 @@
 						<li class="completed">
 							<p>Horse Stance</p>
 							<div class="progress-bar">
-								<span class="percentage">100%</span>
+								<span class="percentage">0%</span>
 							</div>
 						</li>
 						<li class="completed">
 							<p>Bow-Arrow</p>
 							<div class="progress-bar">
-								<span class="percentage">100%</span>
+								<span class="percentage">0%</span>
 							</div>
 						</li>
 						<li class="not-completed">
 							<p>Sitting on Crossed Legs</p>
 							<div class="progress-bar">
-								<span class="percentage">100%</span>
+								<span class="percentage">0%</span>
 							</div>
 						</li>
 						<li class="completed">
 							<p>Four-Six</p>
 							<div class="progress-bar">
-								<span class="percentage">100%</span>
+								<span class="percentage">0%</span>
 							</div>
 						</li>
 						<li class="not-completed">
 							<p>Tame the Tiger</p>
+							<div class="progress-bar">
+								<span class="percentage">0%</span>
+							</div>
+						</li>
+						<li class="not-completed">
+							<p>False Stance</p>
+							<div class="progress-bar">
+								<span class="percentage">0%</span>
+							</div>
+						</li>
+						<li class="not-completed">
+							<p>Golden Rooster Stance</p>
+							<div class="progress-bar">
+								<span class="percentage">0%</span>
+							</div>
+						</li>
+						<li class="not-completed">
+							<p>Squat Stance</p>
 							<div class="progress-bar">
 								<span class="percentage">0%</span>
 							</div>
@@ -299,23 +318,23 @@
                     </div>
                     <ul class="todo-list">
                         <li class="completed">
-                            <p>Stance 1</p>
+                            <p>Horse Stance (Ma Bu)</p>
                             <i class='bx bx-dots-vertical-rounded'></i>
                         </li>
                         <li class="completed">
-                            <p>Stance 2</p>
+                            <p>Bow-Arrow Stance (Gong JianBu)</p>
                             <i class='bx bx-dots-vertical-rounded'></i>
                         </li>
                         <li class="completed">
-                            <p>Stance 3</p>
+                            <p>Sitting on Crossed Legs Stance (Zuo Pan Bu)</p>
                             <i class='bx bx-dots-vertical-rounded'></i>
                         </li>
                         <li class="completed">
-                            <p>Stance 4</p>
+                            <p>Four-Six Stance (Si Liu Bu)</p>
                             <i class='bx bx-dots-vertical-rounded'></i>
                         </li>
                         <li class="completed">
-                            <p>Stance 5</p>
+                            <p>Tame the Tiger Stance (Fu Hu Bu)</p>
                             <i class='bx bx-dots-vertical-rounded'></i>
                         </li>
                     </ul>
@@ -333,16 +352,36 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         // Sample data for the statistics chart
-        const data = {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-            datasets: [{
-                label: 'Activities Completed',
-                data: [12, 19, 3, 5, 2, 3, 8],
-                backgroundColor: 'rgba(54, 162, 235, 0.2)', // Fill color
-                borderColor: 'rgba(54, 162, 235, 1)', // Border color
-                borderWidth: 1
-            }]
-        };
+        let data;
+        const params = new URLSearchParams(window.location.search);
+        const email = params.get("email");
+        const emailParts = email.split("@");
+        let username = emailParts[0].toLowerCase(); // Convert to lowercase for case-insensitive comparison
+        if (username !== "john") {
+            // If the user is not John, set all values to 0
+            data = {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [{
+                    label: 'Activities Completed',
+                    data: [0, 0, 0, 0, 0, 0, 0],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)', // Fill color
+                    borderColor: 'rgba(54, 162, 235, 1)', // Border color
+                    borderWidth: 1
+                }]
+            };
+        } else {
+            // If the user is John, use the original data
+            data = {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [{
+                    label: 'Activities Completed',
+                    data: [12, 19, 3, 5, 2, 3, 8],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)', // Fill color
+                    borderColor: 'rgba(54, 162, 235, 1)', // Border color
+                    borderWidth: 1
+                }]
+            };
+        }
 
         // Get the canvas element
         const ctx = document.getElementById('statisticsChart').getContext('2d');
@@ -360,7 +399,7 @@
             }
         });
     });
-</script>
+  </script>
     
 	
   
@@ -411,7 +450,7 @@
 								<div class="custom-video-card">
 									<div class="card-body">
 										<div class="video-container">
-											<h4>Some Other Stance</h4>
+											<h4>Sitting on Crossed Legs Stance</h4>
 											<video width="640" height="360" controls>
 												<source src="vid/leg_movement_taichi.mp4" type="video/mp4">
 												Your browser does not support the video tag.
@@ -423,7 +462,7 @@
 								<div class="custom-video-card">
 									<div class="card-body">
 										<div class="video-container">
-											<h4>Another Stance</h4>
+											<h4>Golden Rooster Standing on One Leg Stance</h4>
 											<video width="640" height="360" controls>
 												<source src="vid/leg_movement_taichi.mp4" type="video/mp4">
 												Your browser does not support the video tag.
@@ -535,7 +574,7 @@
 
 		
 
-       <!-- MAIN - Information Content (Initially hidden) -->
+     <!-- MAIN - Information Content (Initially hidden) -->
 <main id="myInformationContent" style="display: none;">
     <div class="infocontainer">
         <div class="infocontent">
@@ -544,12 +583,12 @@
                     <span>8 Foundational Taijiquan</span>
                     <div class="icon">+</div>
                 </div>
-                <div class="accordion_content">
-					<p>
-                        Taijiquan, also known as Tai Chi, is an ancient Chinese martial art that focuses on internal energy cultivation and mind-body harmony. It has become popular worldwide for its health benefits and graceful movements.
+                <div class="accordion_content" style="display: none;">
+                    <p>
+                        <strong>Taijiquan</strong>, also known as <strong>Tai Chi</strong>, is an ancient Chinese martial art that focuses on internal energy cultivation and mind-body harmony. It has become popular worldwide for its health benefits and graceful movements.
                     </p>
                     <p>
-                        The 8 Foundational Taijiquan stances are essential for building strength, balance, and flexibility. Each stance emphasizes specific principles and contributes to the overall practice of Taijiquan.
+                        The <strong>8 Foundational Taijiquan stances</strong> are essential for building strength, balance, and flexibility. Each stance emphasizes specific principles and contributes to the overall practice of Taijiquan.
                     </p>
                     <p>
                         Explore each stance to deepen your understanding of Taijiquan and enhance your practice.
@@ -561,7 +600,7 @@
                     <span>BlazePose with MediaPipe</span>
                     <div class="icon">+</div>
                 </div>
-                <div class="accordion_content">
+                <div class="accordion_content" style="display: none;">
                     <p>
                         <strong>BlazePose</strong> is a high-fidelity body pose model developed by Google's MediaPipe. It can detect 33 keypoints, extending the 17 keypoints topology of the original PoseNet model. These additional keypoints provide vital information about face, hands, and feet location with scale and rotation.
                     </p>
@@ -570,13 +609,13 @@
             <!-- More accordion items -->
             <div class="accordion_item">
                 <div class="accordion_header" onclick="toggleAccordion(this)">
-                    <span>Educational & Assessment</span>
+                    <span>Educational &amp; Assessment</span>
                     <div class="icon">+</div>
                 </div>
-                <div class="accordion_content">
+                <div class="accordion_content" style="display: none;">
                     <p>
                         <strong>Educational and Assessment for Taijiquan:</strong><br>
-                        Taijiquan, often referred to simply as Tai Chi, is a traditional Chinese martial art known for its gentle, flowing movements and focus on internal energy cultivation. It combines physical exercise, mental relaxation, and meditation to promote overall health and well-being.<br><br>
+                        <strong>Taijiquan</strong>, often referred to simply as <strong>Tai Chi</strong>, is a traditional Chinese martial art known for its gentle, flowing movements and focus on internal energy cultivation. It combines physical exercise, mental relaxation, and meditation to promote overall health and well-being.<br><br>
                         <!-- Assessment details -->
                     </p>
                 </div>
@@ -586,30 +625,86 @@
                     <span>Taichno a web application</span>
                     <div class="icon">+</div>
                 </div>
-                <div class="accordion_content">
+                <div class="accordion_content" style="display: none;">
                     <p>
                         <strong>Educational and Assessment for Taijiquan:</strong><br>
-                        Taijiquan, often referred to simply as Tai Chi, is a traditional Chinese martial art known for its gentle, flowing movements and focus on internal energy cultivation. It combines physical exercise, mental relaxation, and meditation to promote overall health and well-being.<br><br>
+                        <strong>Taijiquan</strong>, often referred to simply as <strong>Tai Chi</strong>, is a traditional Chinese martial art known for its gentle, flowing movements and focus on internal energy cultivation. It combines physical exercise, mental relaxation, and meditation to promote overall health and well-being.<br><br>
                         <!-- Assessment details -->
                     </p>
                 </div>
             </div>
-            <div class="accordion_item">
+        
+			<div class="accordion_item">
                 <div class="accordion_header" onclick="toggleAccordion(this)">
-                    <span>Terms and Privacy</span>
+                    <span>History of Taijiquan</span>
                     <div class="icon">+</div>
                 </div>
-                <div class="accordion_content">
+                <div class="accordion_content" style="display: none;">
                     <p>
-                        <strong>By utilizing the TAICHNO: An Educational Assessment Tool for Taijiquan’s Stance with Real-time Accuracy and Feedback Utilizing Blaze Pose MediaPipe Algorithm,</strong><br>
-                        you acknowledge and grant permission for the University of Makati (UMak) to process the data you provide. Your information will be handled with the highest regard for confidentiality and respect.<br><br>
-                        <strong>UMak adheres to the fundamental principles and regulations of data privacy protection specific to the development and utilization of TAICHNO in the context of Taijiquan's stance assessment.</strong>
+                        <strong>Taijiquan</strong>, also known as <strong>Tai Chi</strong>, is an ancient Chinese martial art with a rich history that dates back centuries. It originated in the Wudang Mountains of China and was developed by Taoist monk Zhang Sanfeng.
+                    </p>
+                    <p>
+                        Originally conceived as a martial art for self-defense, Taijiquan evolved over time to incorporate principles of Taoism, Chinese medicine, and philosophy. It emphasizes the cultivation of internal energy (qi) and harmony between mind, body, and spirit.
+                    </p>
+                    <p>
+                        Today, Taijiquan is practiced worldwide for its health benefits, stress reduction, and spiritual growth. It has various styles, including Chen, Yang, Wu, and Sun styles, each with its own unique characteristics and forms.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Stances of Taijiquan -->
+            <div class="accordion_item">
+                <div class="accordion_header" onclick="toggleAccordion(this)">
+                    <span>Stances of Taijiquan</span>
+                    <div class="icon">+</div>
+                </div>
+                <div class="accordion_content" style="display: none;">
+                    <p>
+                        <strong>Horse Stance (Ma Bu):</strong> Provides stability and strength, resembling the stance of a horse.
+                    </p>
+                    <p>
+                        <strong>Bow-Arrow Stance (Gong JianBu):</strong> Emulates the posture of shooting a bow and arrow, enhancing balance and focus.
+                    </p>
+                    <p>
+                        <strong>Sitting on Crossed Legs Stance (Zuo Pan Bu):</strong> Improves flexibility and relaxation, commonly used in meditation.
+                    </p>
+                    <p>
+                        <strong>Four-Six Stance (Si Liu Bu):</strong> Enhances leg strength and stability, resembling the stance of a martial artist.
+                    </p>
+                    <p>
+                        <strong>Tame the Tiger Stance (Fu Hu Bu):</strong> Fosters agility and agility, mimicking the readiness to face a tiger.
+                    </p>
+                    <p>
+                        <strong>False Stance (Xuan Ji Bu or Xu Bu):</strong> Challenges balance and coordination, useful for advanced practitioners.
+                    </p>
+                    <p>
+                        <strong>Golden Rooster Standing on One Leg Stance (Jin Gi Du Li):</strong> Develops concentration and balance, symbolizing the stance of a rooster.
+                    </p>
+                    <p>
+                        <strong>Squat Stance (Zuo Dun):</strong> Builds leg strength and endurance, resembling a deep squat position.
                     </p>
                 </div>
             </div>
         </div>
     </div>
+        </div>
+		<div class="accordion_item">
+			<div class="accordion_header" onclick="toggleAccordion(this)">
+				<span>Terms and Privacy</span>
+				<div class="icon">+</div>
+			</div>
+			<div class="accordion_content" style="display: none;">
+				<p>
+					<strong>By utilizing the TAICHNO: An Educational Assessment Tool for Taijiquan’s Stance with Real-time Accuracy and Feedback Utilizing Blaze Pose MediaPipe Algorithm,</strong><br>
+					you acknowledge and grant permission for the University of Makati (UMak) to process the data you provide. Your information will be handled with the highest regard for confidentiality and respect.<br><br>
+					<strong>UMak adheres to the fundamental principles and regulations of data privacy protection specific to the development and utilization of TAICHNO in the context of <strong>Taijiquan's stance assessment</strong>.</strong>
+				</p>
+			</div>
+		</div>
+    </div>
 </main>
+
+	
 
 
 
