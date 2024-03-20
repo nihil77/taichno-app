@@ -87,25 +87,32 @@ signInForm.addEventListener('submit', function (event) {
   const password = passwordLoginInput.value;
 
   auth.signInWithEmailAndPassword(email, password)
-  .then((userCredential) => {
-    const user = userCredential.user;
-    const name = user.name; // Replace with the actual user's name
-    const email = user.email; // Use the email from the user object
+      .then((userCredential) => {
+          const user = userCredential.user;
 
-    // Construct the URL with user data as parameters
-    const userProfileUrl = `userProfile.html?name=${name}&email=${email}`;
+          // Check if the email is admin's email
+          if (email === "admin.admin@gmail.com") {
+              // Redirect the admin to a different HTML page
+              window.location.href = "userAdmin.html";
+          } else {
+              const name = user.name; // Replace with the actual user's name
+              const userEmail = user.email; // Use the email from the user object
 
-    console.log("User logged in:", user);
-    
-    // Redirect the user to the user profile page with parameters
-    window.location.href = userProfileUrl;
-  })
-  .catch((error) => {
-    console.error("Error:", error);
-    displayErrorMessage("Invalid email or password. Please try again.");
-  });
+              // Construct the URL with user data as parameters
+              const userProfileUrl = `userProfile.html?name=${name}&email=${userEmail}`;
 
+              console.log("User logged in:", user);
+
+              // Redirect the user to the user profile page with parameters
+              window.location.href = userProfileUrl;
+          }
+      })
+      .catch((error) => {
+          console.error("Error:", error);
+          displayErrorMessage("Invalid email or password. Please try again.");
+      });
 });
+
 
 
 // SIGN UP FORM
