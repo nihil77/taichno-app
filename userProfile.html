@@ -318,88 +318,150 @@
                     </div>
                     <ul class="todo-list">
                         <li class="completed">
-                            <p>Horse Stance (Ma Bu)</p>
+                            <p id="horse_stance">Horse Stance (Ma Bu)</p>
                             <i class='bx bx-dots-vertical-rounded'></i>
                         </li>
                         <li class="completed">
-                            <p>Bow-Arrow Stance (Gong JianBu)</p>
+                            <p id="bow_arrow_stance">Bow-Arrow Stance (Gong JianBu)</p>
                             <i class='bx bx-dots-vertical-rounded'></i>
                         </li>
                         <li class="completed">
-                            <p>Sitting on Crossed Legs Stance (Zuo Pan Bu)</p>
+                            <p id="sitting_on_stance">Sitting on Crossed Legs Stance (Zuo Pan Bu)</p>
                             <i class='bx bx-dots-vertical-rounded'></i>
                         </li>
                         <li class="completed">
-                            <p>Four-Six Stance (Si Liu Bu)</p>
+                            <p id="four_six_stance">Four-Six Stance (Si Liu Bu)</p>
                             <i class='bx bx-dots-vertical-rounded'></i>
                         </li>
                         <li class="completed">
-                            <p>Tame the Tiger Stance (Fu Hu Bu)</p>
+                            <p id="tame_the_stance">Tame the Tiger Stance (Fu Hu Bu)</p>
                             <i class='bx bx-dots-vertical-rounded'></i>
                         </li>
+						<li class="completed">
+                            <p id="false_stance">False Stance (Xuan Ji Bu or Xu Bu)</p>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+						<li class="completed">
+                            <p id="one_leg_stance">Golden Rooster Standing on One Leg Stance (Jin Gi Du Li)</p>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+						<li class="completed">
+                            <p id="squat_stance">Squat Stance (Zuo Dun)</p>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+
                     </ul>
+					<div class="col-lg-4">
+						<!-- Statistics Chart Canvas -->
+						<canvas id="statisticsChart" width="400" height="200"></canvas>
+					</div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <!-- Statistics Chart Canvas -->
-                <canvas id="statisticsChart" width="400" height="200"></canvas>
-            </div>
+            
         </div>
     </div>
 </main>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // Sample data for the statistics chart
-        let data;
-        const params = new URLSearchParams(window.location.search);
-        const email = params.get("email");
-        const emailParts = email.split("@");
-        let username = emailParts[0].toLowerCase(); // Convert to lowercase for case-insensitive comparison
-        if (username !== "john") {
-            // If the user is not John, set all values to 0
-            data = {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                datasets: [{
-                    label: 'Activities Completed',
-                    data: [0, 0, 0, 0, 0, 0, 0],
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)', // Fill color
-                    borderColor: 'rgba(54, 162, 235, 1)', // Border color
-                    borderWidth: 1
-                }]
-            };
-        } else {
-            // If the user is John, use the original data
-            data = {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                datasets: [{
-                    label: 'Activities Completed',
-                    data: [12, 19, 3, 5, 2, 3, 8],
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)', // Fill color
-                    borderColor: 'rgba(54, 162, 235, 1)', // Border color
-                    borderWidth: 1
-                }]
-            };
-        }
+    // Sample data for the statistics chart
+    let data;
+    const params = new URLSearchParams(window.location.search);
+    const email = params.get("email");
+    const emailParts = email.split("@");
+    let username = emailParts[0].toLowerCase(); // Convert to lowercase for case-insensitive comparison
+    if (username !== "john") {
+        // If the user is not John, set all values to 0
+        data = {
+            labels: ['Horse Stance', 'Bow Stance', 'Sitting on Crossed', 'Four-Six', 'Tiger Stance', 'False Stance', 'One Leg Stance', 'Squat Stance'],
+            datasets: [{
+                label: 'Activities Completed',
+                data: [0, 0, 0, 0, 0, 0, 0, 0],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)', // Fill color
+                borderColor: 'rgba(54, 162, 235, 1)', // Border color
+                borderWidth: 1
+            }]
+        };
+    } else {
+        // If the user is John, use the original data
+        data = {
+            labels: ['Horse Stance', 'Bow Stance', 'Sitting on Crossed', 'Four-Six', 'Tiger Stance', 'False Stance', 'One Leg Stance', 'Squat Stance'],
+            datasets: [{
+                label: 'Activities Completed',
+                data: [12, 10, 3, 5, 2, 3, 8, 2],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)', // Fill color
+                borderColor: 'rgba(54, 162, 235, 1)', // Border color
+                borderWidth: 1
+            }]
+        };
+    }
 
-        // Get the canvas element
-        const ctx = document.getElementById('statisticsChart').getContext('2d');
+    // Get the canvas element
+    const ctx = document.getElementById('statisticsChart').getContext('2d');
 
-        // Create the statistics chart
-        const statisticsChart = new Chart(ctx, {
-            type: 'bar',
-            data: data,
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
+    // Create the statistics chart
+    const statisticsChart = new Chart(ctx, {
+        type: 'bar',
+        data: data,
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
                 }
             }
-        });
+        }
     });
-  </script>
+
+    // Function to update chart data based on the clicked stance
+	function updateChartData(newData) {
+		// Sort the newData array from highest to lowest
+		newData.sort((a, b) => b - a);
+		
+		// Update the chart data
+		statisticsChart.data.datasets[0].data = newData;
+		statisticsChart.update();
+	}
+
+
+    // Event listeners for clicking on <p> elements of different stances
+    if (username === "john") {
+        document.getElementById('horse_stance').addEventListener('click', function() {
+            updateChartData([2, 4, 3, 5, 5, 6, 8, 1]); // Example data for Horse Stance
+        });
+
+        document.getElementById('bow_arrow_stance').addEventListener('click', function() {
+            updateChartData([5, 10, 2, 2, 3, 1, 8, 2]); // Example data for Bow-Arrow Stance
+        });
+
+        document.getElementById('sitting_on_stance').addEventListener('click', function() {
+            updateChartData([2, 3, 1, 2, 2, 1, 3, 9]); // Example data for Sitting on Crossed Legs Stance
+        });
+
+        document.getElementById('four_six_stance').addEventListener('click', function() {
+            updateChartData([1, 2, 3, 2, 3, 1, 5, 10]); // Example data for Four-Six Stance
+        });
+
+        document.getElementById('tame_the_stance').addEventListener('click', function() {
+            updateChartData([1, 2, 0, 0, 5, 0, 2, 0]); // Example data for Tame the Tiger Stance
+        });
+
+		document.getElementById('false_stance').addEventListener('click', function() {
+            updateChartData([5, 2, 1, 5, 22, 8, 9, 4]); // Example data for False Stance
+        });
+
+        document.getElementById('one_leg_stance').addEventListener('click', function() {
+            updateChartData([2, 1, 10, 2, 8, 4, 9, 6]); // Example data for Golden Rooster Standing on One Leg Stance
+        });
+
+        document.getElementById('squat_stance').addEventListener('click', function() {
+            updateChartData([2, 5, 7, 8, 10, 8, 9, 1]); // Example data for Squat Stance
+        });
+    }
+});
+
+
+</script>
     
 	
   

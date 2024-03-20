@@ -253,3 +253,37 @@ document.addEventListener("DOMContentLoaded", function() {
       cell.textContent = currentDate;
     });
   });
+
+// activity
+
+document.addEventListener("DOMContentLoaded", function() {
+    const params = new URLSearchParams(window.location.search);
+    const email = params.get("email");
+    const emailParts = email.split("@");
+    let username = emailParts[0].toLowerCase();
+
+    // Check if the user is not John
+    if (username !== "john") {
+        // Get all table rows
+        const tableRows = document.querySelectorAll('tr');
+
+        // Loop through each table row
+        tableRows.forEach(function(row) {
+            // Update the status to "Pending"
+            const statusCell = row.querySelector('.status');
+            if (statusCell) {
+                statusCell.textContent = "Pending";
+                statusCell.classList.remove('completed', 'process');
+                statusCell.classList.add('pending');
+
+                // Start a timer to change the status to "Process" after 1 minute
+                setTimeout(function() {
+                    statusCell.textContent = "Process";
+                    statusCell.classList.remove('pending');
+                    statusCell.classList.add('process');
+                }, 60000); // 1 minute (in milliseconds)
+            }
+        });
+    }
+});
+
