@@ -41,3 +41,7 @@ window.addEventListener('popstate', function(event) {
 
 // Push a state to the browser's history to enable the popstate event
 history.pushState({}, '');
+
+function goBack() {
+  window.history.back();
+}

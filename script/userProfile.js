@@ -287,3 +287,30 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the submit button
+var submitButton = document.querySelector("#contactForm input[type='submit']");
+
+// When the user clicks on the submit button, display the modal
+submitButton.addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent form submission
+    modal.style.display = "block"; // Display the modal
+});
+
+// Get the <span> element that closes the modal
+var span = document.querySelector(".close");
+
+// When the user clicks on <span> (x), close the modal
+span.addEventListener("click", function() {
+    modal.style.display = "none"; // Hide the modal
+});
+
+// When the user clicks anywhere outside of the modal, close it
+window.addEventListener("click", function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none"; // Hide the modal
+    }
+});

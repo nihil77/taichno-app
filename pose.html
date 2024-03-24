@@ -96,13 +96,69 @@
     </div>
     <div style="visibility: hidden;" class="control5"></div>
 
+    <!-- The Modal no Detected -->
+    <div id="myModal" class="modal">
+      <!-- Modal background -->
+      <div class="modal-background"></div>
+      
+      <!-- Modal content -->
+      <div class="modal-content">
+        <!-- Close button -->
+        <button class="modal-close is-large" aria-label="close"></button>
+        
+        <!-- Centered image -->
+        <div style="text-align: center;">
+          <img src="/img/image_canva5.png" alt="Thank you image" style="width: 80%; height: 70; display: block; margin: 0 auto;">
+        </div>
+        
+        <!-- Thank you message -->
+        <p style="text-align: center; color: #fff; background-color: #363636; padding: 10px;">
+          We apologize, but the camera is not detected. Please make sure your camera is properly connected and try again.
+        </p>
+      </div>
+    </div>
+
+    <!-- The Modal for Correct Stance Detected -->
+    <div id="correctStanceModal" class="modal">
+      <!-- Modal background -->
+      <div class="modal-background"></div>
+      
+      <!-- Modal content -->
+      <div class="modal-content">
+        <!-- Close button -->
+        <button class="modal-close is-large" aria-label="close"></button>
+        
+        <!-- Centered image -->
+        <div style="text-align: center;">
+          <img src="/img/image_canva5.png" alt="Correct Stance Detected Image" style="width: 80%; height: 70; display: block; margin: 0 auto;">
+        </div>
+        
+        <!-- Correct stance message -->
+        <p style="text-align: center; color: #fff; background-color: #00cc66; padding: 10px;">
+          Congratulations! You performed the correct stance.
+        </p>
+      </div>
+    </div>
+
+
+  
+
+
     
 
+
+   
+  
   </div>
+
+  
 
   <!-- Link your separate JavaScript file -->
   <script src="./script/pose.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+
+
+
  
 </body>
 </html>
