@@ -448,7 +448,7 @@ img {
   overflow: hidden;
   width: calc(30% - 20px); 
   margin: 0 10px; 
-  height: 150%;
+  height: 120%;
 }
 
 .card-container .card__img {
@@ -694,3 +694,76 @@ img {
   transform: scale(1.1); /* Scale the image to 110% of its original size */
 }
 
+/* Base styles */
+
+/* Apply default font and colors */
+body {
+  font-family: var(--body-font);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+/* Add styles for mobile devices */
+@media screen and (max-width: 600px) {
+  /* Adjust container padding for smaller screens */
+  .container {
+    padding: 0 1rem;
+  }
+
+  /* Adjust font size for smaller screens */
+  .big-title {
+    font-size: 1.2rem;
+  }
+
+  .text {
+    font-size: 0.9rem;
+  }
+
+  .logo h3 {
+    font-size: 1.1rem;
+  }
+
+  /* Hide hamburger menu on larger screens */
+  .hamburger-menu {
+    display: none;
+  }
+
+  /* Adjust padding and margin for showcase area */
+  .showcase-area {
+    padding: 1rem 0;
+    margin-top: 150px; /* Adjust margin-top as needed */
+  }
+
+  /* Adjust grid columns for smaller screens */
+  .showcase-area .container {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    grid-gap: 1rem;
+  }
+}
+
+/* Add styles for tablets and larger screens */
+@media screen and (min-width: 601px) {
+  /* Adjust container padding for larger screens */
+  .container {
+    padding: 0 2rem;
+  }
+
+  /* Adjust font size for larger screens */
+  .big-title {
+    font-size: 1.4rem;
+  }
+
+  .text {
+    font-size: 1.1rem;
+  }
+
+  .logo h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Adjust margin-top for showcase area */
+  .showcase-area {
+    margin-top: 200px; /* Adjust margin-top as needed */
+  }
+}

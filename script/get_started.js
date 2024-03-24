@@ -34,14 +34,15 @@ openAnotherPage('tryNowButton6');
 openAnotherPage('tryNowButton7');
 openAnotherPage('tryNowButton8');
 
-// Listen for the browser's back button event
-window.addEventListener('popstate', function(event) {
-  window.location.href = 'userProfile.html'; 
-});
 
-// Push a state to the browser's history to enable the popstate event
-history.pushState({}, '');
-
-function goBack() {
-  window.history.back();
+// Function to go back to the previous HTML page or navigate to another HTML page
+function goBack(destinationURL) {
+  if (destinationURL) {
+      // Navigate to the specified destination URL
+      window.location.href = destinationURL;
+  } else {
+      // Go back to the previous page in the browser's history
+      window.history.back();
+  }
 }
+
