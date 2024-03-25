@@ -76,6 +76,20 @@ const signInForm = document.querySelector('.sign-in-form');
 const emailLoginInput = signInForm.querySelector('input[type="email"]');
 const passwordLoginInput = signInForm.querySelector('input[type="password"]');
 
+// Save user input to localStorage on form submission
+signInForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  // Get user input
+  const email = emailLoginInput.value;
+  const password = passwordLoginInput.value;
+
+  // Save user input to localStorage
+  localStorage.setItem('userEmail', email);
+  localStorage.setItem('userPassword', password);
+
+});
+
 // Add event listeners to clear the error message when input fields receive focus
 emailLoginInput.addEventListener('focus', clearErrorMessage);
 passwordLoginInput.addEventListener('focus', clearErrorMessage);
@@ -91,7 +105,7 @@ signInForm.addEventListener('submit', function (event) {
           const user = userCredential.user;
 
           // Check if the email is admin's email
-          if (email === "admin.admin@gmail.com") {
+          if (email === "taichno@tai.com") {
               // Redirect the admin to a different HTML page
               window.location.href = "userAdmin.html";
           } else {
@@ -192,7 +206,7 @@ signUpForm.addEventListener('submit', function (event) {
 // Listen for the browser's back button event
 window.addEventListener('popstate', function(event) {
   if (event.state != null) {
-    window.location.href = 'Home.html'; 
+    window.location.href = 'index.html'; 
   }
 });
 

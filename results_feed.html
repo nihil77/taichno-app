@@ -4,22 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Taijiquan Stance Assessment Results</title>
-  <link rel="stylesheet" href="css/userProfile.css">
-  <link rel="icon" href="img/logo.png" type="image/png"> 
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.css">
   <style>
     /* General styling */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #dcf7f1; /* Change background color for better contrast */
+      background-color: #f8f9fa;
     }
 
     .container {
       max-width: 800px;
       margin: 50px auto;
-      background-color: #FBFBFB;
+      background-color: #fff;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       padding: 20px;
@@ -38,12 +36,18 @@
     }
 
     canvas {
-      width: 45%;
+      width: 48%;
       height: 300px;
       margin-bottom: 20px;
       border-radius: 5px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      background-color: #CFE8FF;
+      background-color: #f8f9fa;
+    }
+
+    .note {
+      margin-top: 20px;
+      color: #666;
+      text-align: center;
     }
   </style>
 </head>
@@ -54,119 +58,150 @@
       <canvas id="barChart"></canvas>
       <canvas id="radarChart"></canvas>
     </div>
+    <p class="note">Note: Scores are represented in percentages.</p>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      // Bar chart data
-      const barChartData = {
-        labels: ['Horse Stance', 'Bow-Arrow Stance', 'Sitting on Crossed Legs Stance', 'Four-Six Stance', 'Tame the Tiger Stance', 'False Stance', 'Golden Rooster Standing on One Leg Stance', 'Squat Stance'],
-        datasets: [{
-          label: 'Average Score (%)',
-          data: [80, 70, 90, 85, 75, 85, 90, 80],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.6)',
-            'rgba(54, 162, 235, 0.6)',
-            'rgba(255, 206, 86, 0.6)',
-            'rgba(75, 192, 192, 0.6)',
-            'rgba(153, 102, 255, 0.6)',
-            'rgba(255, 159, 64, 0.6)',
-            'rgba(255, 99, 132, 0.6)',
-            'rgba(54, 162, 235, 0.6)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)',
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)'
-          ],
-          borderWidth: 1
-        }]
-      };
+      // Retrieve user email from localStorage
+      const userEmail = localStorage.getItem('userEmail');
 
-      // Radar chart data
-      const radarChartData = {
-        labels: ['Horse Stance', 'Bow-Arrow Stance', 'Sitting on Crossed Legs Stance', 'Four-Six Stance', 'Tame the Tiger Stance', 'False Stance', 'Golden Rooster Standing on One Leg Stance', 'Squat Stance'],
-        datasets: [{
-          label: 'Average Score (%)',
-          data: [80, 70, 90, 85, 75, 85, 90, 80],
-          backgroundColor: 'rgba(255, 99, 132, 0.2)',
-          borderColor: 'rgba(255, 99, 132, 1)',
-          borderWidth: 1
-        }]
-      };
-
-      const chartOptions = {
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true,
-              fontColor: '#333' // Change ticks text color to dark gray for better readability
-            },
-            scaleLabel: {
-              display: true,
-              labelString: 'Score (%)',
-              fontColor: '#333' // Change scale label text color to dark gray for better readability
-            }
-          }],
-          xAxes: [{
-            ticks: {
-              fontColor: '#333' // Change ticks text color to dark gray for better readability
-            }
+      // Check if user email is available and validate if the user is "John"
+      if (userEmail && userEmail === 'john@gmail.com') {
+        // Display the chart
+        const barChartData = {
+          labels: ['Horse Stance', 'Bow-Arrow Stance', 'Sitting on Crossed Legs Stance', 'Four-Six Stance', 'Tame the Tiger Stance', 'False Stance', 'Golden Rooster Standing on One Leg Stance', 'Squat Stance'],
+          datasets: [{
+            label: 'Average Score (%)',
+            data: [80, 70, 90, 85, 75, 85, 90, 80],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.6)',
+              'rgba(54, 162, 235, 0.6)',
+              'rgba(255, 206, 86, 0.6)',
+              'rgba(75, 192, 192, 0.6)',
+              'rgba(153, 102, 255, 0.6)',
+              'rgba(255, 159, 64, 0.6)',
+              'rgba(255, 99, 132, 0.6)',
+              'rgba(54, 162, 235, 0.6)'
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+              'rgba(255, 159, 64, 1)',
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)'
+            ],
+            borderWidth: 1
           }]
-        },
-        tooltips: {
-          callbacks: {
-            label: function(tooltipItem, data) {
-              return data.datasets[tooltipItem.datasetIndex].label + ': ' + tooltipItem.yLabel + '%';
+        };
+
+        const radarChartData = {
+          labels: ['Horse Stance', 'Bow-Arrow Stance', 'Sitting on Crossed Legs Stance', 'Four-Six Stance', 'Tame the Tiger Stance', 'False Stance', 'Golden Rooster Standing on One Leg Stance', 'Squat Stance'],
+          datasets: [{
+            label: 'Average Score (%)',
+            data: [80, 70, 90, 85, 75, 85, 90, 80],
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1          }]
+        };
+
+        const chartOptions = {
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: {
+                stepSize: 10,
+                fontColor: '#333'
+              },
+              title: {
+                display: true,
+                text: 'Score (%)',
+                font: {
+                  size: 14,
+                  weight: 'bold'
+                },
+                color: '#333'
+              }
+            },
+            x: {
+              ticks: {
+                fontColor: '#333'
+              }
             }
           },
-          backgroundColor: '#fff', // Change tooltips background color to white for better contrast
-          titleFontColor: '#333', // Change tooltips title text color to dark gray for better readability
-          bodyFontColor: '#333' // Change tooltips body text color to dark gray for better readability
-        },
-        legend: {
-          labels: {
-            fontColor: '#333' // Change legend text color to dark gray for better readability
+          plugins: {
+            legend: {
+              labels: {
+                color: '#333'
+              }
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return context.dataset.label + ': ' + context.parsed.y + '%';
+                }
+              }
+            }
           }
-        }
-      };
+        };
 
-      // Initialize charts
-      const barCtx = document.getElementById('barChart').getContext('2d');
-      const radarCtx = document.getElementById('radarChart').getContext('2d');
+        const barCtx = document.getElementById('barChart').getContext('2d');
+        const radarCtx = document.getElementById('radarChart').getContext('2d');
 
-      const barChart = new Chart(barCtx, {
-        type: 'bar',
-        data: barChartData,
-        options: {
-          ...chartOptions,
-          title: {
-            display: true,
-            text: 'Average Scores for Different Stances',
-            fontColor: '#333' // Change title text color to dark gray for better readability
+        const barChart = new Chart(barCtx, {
+          type: 'bar',
+          data: barChartData,
+          options: {
+            ...chartOptions,
+            responsive: true,
+            aspectRatio: 1.5,
+            plugins: {
+              ...chartOptions.plugins,
+              title: {
+                display: true,
+                text: 'Average Scores for Different Stances',
+                font: {
+                  size: 16,
+                  weight: 'bold'
+                },
+                color: '#333'
+              }
+            }
           }
-        }
-      });
+        });
 
-      const radarChart = new Chart(radarCtx, {
-        type: 'radar',
-        data: radarChartData,
-        options: {
-          ...chartOptions,
-          title: {
-            display: true,
-            text: 'Average Scores for Different Stances',
-            fontColor: '#333' // Change title text color to dark gray for better readability
+        const radarChart = new Chart(radarCtx, {
+          type: 'radar',
+          data: radarChartData,
+          options: {
+            ...chartOptions,
+            responsive: true,
+            aspectRatio: 1.5,
+            plugins: {
+              ...chartOptions.plugins,
+              title: {
+                display: true,
+                text: 'Average Scores for Different Stances',
+                font: {
+                  size: 16,
+                  weight: 'bold'
+                },
+                color: '#333'
+              }
+            }
           }
-        }
-      });
+        });
+      } else {
+        // Hide the charts if the user is not 'John'
+        const chartsContainer = document.querySelector('.charts');
+        chartsContainer.style.display = 'none';
+      }
     });
   </script>
 </body>
 </html>
+

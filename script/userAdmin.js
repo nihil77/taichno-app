@@ -38,9 +38,7 @@ switchMode.addEventListener('change', function () {
 function switchToContent(contentId) {
     const homeContent = document.getElementById('homeContent');
     const myProfileContent = document.getElementById('myProfileContent');
-    const myInformationContent = document.getElementById('myInformationContent');
-    const myHelpSupportContent = document.getElementById('myHelpSupportContent');
-    const mymyKnowledgeNest = document.getElementById('myKnowledgeNest');
+   
 
     if (contentId === 'homeContent') {
         homeContent.style.display = 'block';

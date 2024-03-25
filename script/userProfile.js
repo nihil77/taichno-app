@@ -34,6 +34,8 @@ switchMode.addEventListener('change', function () {
 	}
 })
 
+
+
 // MY PROFILE switch To content
 function switchToContent(contentId) {
     const homeContent = document.getElementById('homeContent');
@@ -94,7 +96,7 @@ const emailDisplay = document.getElementById("user-email-display");
 nameDisplay.textContent = username;
 emailDisplay.textContent = email;
 
-// Array of predefined quotes or statements
+// Array of predefined quotes
 const bioQuotes = [
     "Live life to the fullest.",
     "In every difficulty, there's an opportunity.",
@@ -113,7 +115,7 @@ const bioQuotes = [
     return bioQuotes[randomIndex];
   }
   
-  // Example usage to generate a random bio quote
+  // usage to generate a random bio quote
   const randomBioQuote = generateRandomBioQuote();
   
   // Display the generated bio quote
@@ -145,87 +147,86 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 document.addEventListener("DOMContentLoaded", function() {
-  // Get the parameters from the URL
-  const params = new URLSearchParams(window.location.search);
-  const email = params.get("email");
+    // Get the parameters from the URL
+    const params = new URLSearchParams(window.location.search);
+    const email = params.get("email");
 
-  // Extract the username from the email
-  const emailParts = email.split("@");
-  let username = emailParts[0];
+    // Extract the username from the email
+    const emailParts = email.split("@");
+    let username = emailParts[0];
 
-  // Capitalize the first letter of the username
-  username = username.charAt(0).toUpperCase() + username.slice(1);
+    // Capitalize the first letter of the username
+    username = username.charAt(0).toUpperCase() + username.slice(1);
 
-  // Display the user data including background color
-  const nameDisplay = document.getElementById("user-name-display");
-  const emailDisplay = document.getElementById("user-email-display");
+    // Display the user data including background color
+    const nameDisplay = document.getElementById("user-name-display");
+    const emailDisplay = document.getElementById("user-email-display");
 
-  nameDisplay.textContent = username;
-  emailDisplay.textContent = email;
+    nameDisplay.textContent = username;
+    emailDisplay.textContent = email;
 
-  // Apply green background color to user name if the user's name is 'John'
-  if (username === 'John') {
-      nameDisplay.style.backgroundColor = 'var(--green)';
-  }
+    if (username === 'John') {
+        nameDisplay.style.backgroundColor = 'var(--green)';
+    }
 
-  // Define the completion status for each stance based on the user
-  let completionStatus = {};
-  if (username === 'John') {
-      completionStatus = {
-          "Horse Stance": 100,
-          "Bow-Arrow": 100,
-          "Sitting on Crossed Legs": 100,
-          "Four-Six": 100,
-          "Tame the Tiger": 0,
-          "False Stance": 0,
-          "Golden Rooster Stance": 0,
-          "Squat Stance": 0
+    // Define the completion status for each stance based on the user
+    let completionStatus = {};
+    if (username === 'John') {
+        completionStatus = {
+            "Horse Stance": 100,
+            "Bow-Arrow": 100,
+            "Sitting on Crossed Legs": 100,
+            "Four-Six": 100,
+            "Tame the Tiger": 0,
+            "False Stance": 0,
+            "Golden Rooster Stance": 0,
+            "Squat Stance": 0,
 
-      };
-  } else {
-      completionStatus = {
-          "Horse Stance": 0,
-          "Bow-Arrow": 0,
-          "Sitting on Crossed Legs": 0,
-          "Four-Six": 0,
-          "Tame the Tiger": 0,
-          "False Stance": 0,
-          "Golden Rooster Stance": 0,
-          "Squat Stance": 0
-      };
-  }
 
-  // Get all todo items
-  const todoItems = document.querySelectorAll(".todo-list li");
+        };
+    } else if (username == username){
+        completionStatus = {
+            "Horse Stance": 0,
+            "Bow-Arrow": 0,
+            "Sitting on Crossed Legs": 0,
+            "Four-Six": 0,
+            "Tame the Tiger": 0,
+            "False Stance": 0,
+            "Golden Rooster Stance": 0,
+            "Squat Stance": 0,
+        };
+    }
 
-  // Loop through each todo item
-  todoItems.forEach(item => {
-      // Get the name of the stance from the todo item
-      const stanceName = item.querySelector("p").textContent;
+    // Get all todo items
+    const todoItems = document.querySelectorAll(".todo-list li");
 
-      // Find the corresponding completion percentage
-      const percentage = completionStatus[stanceName];
+    // Loop through each todo item
+    todoItems.forEach(item => {
+        // Get the name of the stance from the todo item
+        const stanceName = item.querySelector("p").textContent;
 
-      // Update the progress bar with the calculated percentage
-      const progressBar = item.querySelector(".progress-bar .percentage");
-      progressBar.textContent = `${percentage}%`;
-      progressBar.style.width = `${percentage}%`;
+        // Find the corresponding completion percentage
+        const percentage = completionStatus[stanceName];
 
-      // Update the class of the todo item based on completion status
-      if (percentage === 100) {
-          item.classList.add("completed");
-          item.classList.remove("not-completed");
-      } else {
-          item.classList.add("not-completed");
-          item.classList.remove("completed");
-      }
 
-      // Apply background color to todo items if the user is 'John'
-      if (username === 'John' && percentage === 100) {
-          item.style.backgroundColor = 'var(--green)';
-      }
-  });
+        // Update the class of the todo item based on completion status
+        if (percentage === 100) {
+            item.classList.add("completed");
+            item.classList.remove("not-completed");
+        } else {
+            item.classList.add("not-completed");
+            item.classList.remove("completed");
+        }
+
+        // Apply green background color to todo item if the user's name is 'John' and the stance is completed
+        if (username === 'John' && percentage === 100) {
+            item.style.backgroundColor = 'var(--green)';
+        } else if (username == username && percentage == 100) {
+            item.style.backgroundColor = 'var(--green)';
+        }
+    });
 });
+
 
 
 function toggleAccordion(element) {

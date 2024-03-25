@@ -145,8 +145,8 @@
 				<div class="order">
 					<div class="head">
 						<h3>Activity</h3>
-						<i class='bx bx-plus' ></i>
-						<i class='bx bx-filter' ></i>
+						<i class='bx bx-refresh' ></i> 
+						<i class='bx bx-sort'></i>
 					</div>
 					<table>
 						<thead>
@@ -228,20 +228,20 @@
 				<div class="todo">
 					<div class="head">
 						<h3>Progress</h3>
-						<i class='bx bx-plus'></i>
-						<i class='bx bx-filter'></i>
+						<i class='bx bx-refresh' ></i>
+						<i class='bx bx-sort'></i>
 					</div>
 					<ul class="todo-list">
 						<li class="completed">
 							<p>Horse Stance</p>
 							<div class="progress-bar">
-								<span class="percentage">0%</span>
+								<span class="completion-status">0%</span>
 							</div>
 						</li>
 						<li class="completed">
 							<p>Bow-Arrow</p>
 							<div class="progress-bar">
-								<span class="percentage">0%</span>
+								<span class="completion-status">0%</span>
 							</div>
 						</li>
 						<li class="not-completed">
@@ -365,16 +365,18 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-    // Sample data for the statistics chart
-    let data;
+    // Initialize variables
+    let data; // Data for the statistics chart
     const params = new URLSearchParams(window.location.search);
     const email = params.get("email");
     const emailParts = email.split("@");
     let username = emailParts[0].toLowerCase(); // Convert to lowercase for case-insensitive comparison
+
+    // Define sample data for statistics chart
     if (username !== "john") {
-        // If the user is not John, set all values to 0
+        // If the user is not John Doe, set all values to 0
         data = {
-            labels: ['Horse Stance', 'Bow Stance', 'Sitting on Crossed', 'Four-Six', 'Tiger Stance', 'False Stance', 'One Leg Stance', 'Squat Stance'],
+            labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
             datasets: [{
                 label: 'Activities Completed',
                 data: [0, 0, 0, 0, 0, 0, 0, 0],
@@ -383,10 +385,22 @@
                 borderWidth: 1
             }]
         };
-    } else {
-        // If the user is John, use the original data
+    } else if(username == username) {
         data = {
-            labels: ['Horse Stance', 'Bow Stance', 'Sitting on Crossed', 'Four-Six', 'Tiger Stance', 'False Stance', 'One Leg Stance', 'Squat Stance'],
+            labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+            datasets: [{
+                label: 'Activities Completed',
+                data: [10, 10, 10, 10, 10, 10, 10, 10],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)', // Fill color
+                borderColor: 'rgba(54, 162, 235, 1)', // Border color
+                borderWidth: 1
+            }]
+        };
+    }
+    else {
+        // If the user is John Doe, use the original data
+        data = {
+            labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
             datasets: [{
                 label: 'Activities Completed',
                 data: [12, 10, 3, 5, 2, 3, 8, 2],
@@ -397,7 +411,7 @@
         };
     }
 
-    // Get the canvas element
+    // Get the canvas element for the statistics chart
     const ctx = document.getElementById('statisticsChart').getContext('2d');
 
     // Create the statistics chart
@@ -407,25 +421,24 @@
         options: {
             scales: {
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true // Start y-axis from zero
                 }
             }
         }
     });
 
     // Function to update chart data based on the clicked stance
-	function updateChartData(newData) {
-		// Sort the newData array from highest to lowest
-		newData.sort((a, b) => b - a);
-		
-		// Update the chart data
-		statisticsChart.data.datasets[0].data = newData;
-		statisticsChart.update();
-	}
+    function updateChartData(newData) {
+        // Sort the newData array from highest to lowest
+        newData.sort((a, b) => b - a);
+        
+        // Update the chart data
+        statisticsChart.data.datasets[0].data = newData;
+        statisticsChart.update();
+    }
 
-
-    // Event listeners for clicking on <p> elements of different stances
-    if (username === "john") {
+     // Event listeners for clicking on <p> elements of different stances
+        if (username === "john") {
         document.getElementById('horse_stance').addEventListener('click', function() {
             updateChartData([2, 4, 3, 5, 5, 6, 8, 1]); // Example data for Horse Stance
         });
@@ -453,11 +466,53 @@
         document.getElementById('one_leg_stance').addEventListener('click', function() {
             updateChartData([2, 1, 10, 2, 8, 4, 9, 6]); // Example data for Golden Rooster Standing on One Leg Stance
         });
-
-        document.getElementById('squat_stance').addEventListener('click', function() {
-            updateChartData([2, 5, 7, 8, 10, 8, 9, 1]); // Example data for Squat Stance
+    } else if (username === username) {
+        document.getElementById('horse_stance').addEventListener('click', function() {
+            const randomData = generateRandomData(); // Generate data
+            updateChartData(randomData);
         });
+
+        document.getElementById('bow_arrow_stance').addEventListener('click', function() {
+            const randomData = generateRandomData();
+            updateChartData(randomData);
+        });
+
+        document.getElementById('sitting_on_stance').addEventListener('click', function() {
+            const randomData = generateRandomData(); // Generate data
+            updateChartData(randomData);
+        });
+
+        document.getElementById('four_six_stance').addEventListener('click', function() {
+            const randomData = generateRandomData(); // Generate data
+            updateChartData(randomData);
+        });
+
+        document.getElementById('tame_the_stance').addEventListener('click', function() {
+            const randomData = generateRandomData(); // Generate data
+            updateChartData(randomData);
+        });
+
+        document.getElementById('false_stance').addEventListener('click', function() {
+            const randomData = generateRandomData(); // Generate data
+            updateChartData(randomData);
+        });
+
+        document.getElementById('one_leg_stance').addEventListener('click', function() {
+            const randomData = generateRandomData(); // Generate data
+            updateChartData(randomData);
+        });
+
+
+        // Function to data
+        function generateRandomData() {
+            const randomData = [];
+            for (let i = 0; i < 7; i++) { 
+                randomData.push(Math.floor(Math.random() * 10) + 1);
+            }
+            return randomData;
+        }
     }
+
 });
 
 
