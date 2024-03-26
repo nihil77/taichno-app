@@ -203,7 +203,7 @@ document.querySelectorAll('.modal-close').forEach(function (element) {
     const modal = this.closest('.modal');
     modal.classList.remove('is-active');
     if (modal.id === 'myModal') {
-      isDetectionModalClosed = true;
+      //isDetectionModalClosed = true;
     }
   });
 });
